@@ -1,9 +1,3 @@
-// Global variables to store our data
-let itemsData = {
-    weapons: [],
-    abilities: []
-};
-
 // DOM elements
 const mainhandSelect = document.getElementById('mainhand-select');
 const offhandSelect = document.getElementById('offhand-select');
@@ -28,25 +22,17 @@ elements.forEach(element => {
     maxElements[element] = document.getElementById(`max-${element}`);
 });
 
-// Fetch items data when page loads
-document.addEventListener('DOMContentLoaded', async () => {
-    try {
-        const response = await fetch('/api/items');
-        itemsData = await response.json();
-        
-        // Populate dropdowns
-        populateDropdowns();
-        
-        // Add event listeners
-        mainhandSelect.addEventListener('change', () => updateItemDetails('mainhand'));
-        offhandSelect.addEventListener('change', () => updateItemDetails('offhand'));
-        accessorySelect.addEventListener('change', () => updateItemDetails('accessory'));
-        abilitySelect.addEventListener('change', () => updateItemDetails('ability'));
-        calculateBtn.addEventListener('click', calculateDamage);
-    } catch (error) {
-        console.error('Error fetching items data:', error);
-        alert('Failed to load items data. Please refresh the page.');
-    }
+// Initialize when page loads - using the global itemsData from data.js
+document.addEventListener('DOMContentLoaded', () => {
+    // Populate dropdowns
+    populateDropdowns();
+    
+    // Add event listeners
+    mainhandSelect.addEventListener('change', () => updateItemDetails('mainhand'));
+    offhandSelect.addEventListener('change', () => updateItemDetails('offhand'));
+    accessorySelect.addEventListener('change', () => updateItemDetails('accessory'));
+    abilitySelect.addEventListener('change', () => updateItemDetails('ability'));
+    calculateBtn.addEventListener('click', calculateDamage);
 });
 
 // Populate dropdown menus with items
