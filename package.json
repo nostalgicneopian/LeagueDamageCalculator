@@ -1,0 +1,12 @@
+{
+    "name": "damage-calculator",
+    "version": "1.0.0",
+    "description": "Tool to calculate damage based on weapons and abilities",
+    "main": "server.js",
+    "scripts": {
+      "start": "node server.js"
+    },
+    "dependencies": {
+      "express": "^4.18.2"
+    }
+  }

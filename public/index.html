@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Damage Calculator</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Damage Calculator</h1>
+        
+        <div class="equipment-selector">
+            <div class="slot">
+                <h2>Main Hand</h2>
+                <select id="mainhand-select">
+                    <option value="">Select a weapon</option>
+                </select>
+                <div id="mainhand-details" class="item-details"></div>
+            </div>
+            
+            <div class="slot">
+                <h2>Off Hand</h2>
+                <select id="offhand-select">
+                    <option value="">Select a weapon</option>
+                </select>
+                <div id="offhand-details" class="item-details"></div>
+            </div>
+            
+            <div class="slot">
+                <h2>Accessory</h2>
+                <select id="accessory-select">
+                    <option value="">Select an accessory</option>
+                </select>
+                <div id="accessory-details" class="item-details"></div>
+            </div>
+
+            <div class="slot">
+                <h2>Ability</h2>
+                <select id="ability-select">
+                    <option value="">Select an ability</option>
+                </select>
+                <div id="ability-details" class="item-details"></div>
+            </div>
+        </div>
+
+        <div class="calculate-section">
+            <button id="calculate-btn">Calculate Damage</button>
+        </div>
+
+        <div class="results-section">
+            <h2>Damage Output</h2>
+            <div class="damage-result" id="damage-result">
+                <div class="element">
+                    <h3>Fire</h3>
+                    <p>Min: <span id="min-fire">0</span> | Max: <span id="max-fire">0</span></p>
+                </div>
+                <div class="element">
+                    <h3>Water</h3>
+                    <p>Min: <span id="min-water">0</span> | Max: <span id="max-water">0</span></p>
+                </div>
+                <div class="element">
+                    <h3>Light</h3>
+                    <p>Min: <span id="min-light">0</span> | Max: <span id="max-light">0</span></p>
+                </div>
+                <div class="element">
+                    <h3>Dark</h3>
+                    <p>Min: <span id="min-dark">0</span> | Max: <span id="max-dark">0</span></p>
+                </div>
+                <div class="element">
+                    <h3>Air</h3>
+                    <p>Min: <span id="min-air">0</span> | Max: <span id="max-air">0</span></p>
+                </div>
+                <div class="element">
+                    <h3>Earth</h3>
+                    <p>Min: <span id="min-earth">0</span> | Max: <span id="max-earth">0</span></p>
+                </div>
+                <div class="element">
+                    <h3>Physical</h3>
+                    <p>Min: <span id="min-physical">0</span> | Max: <span id="max-physical">0</span></p>
+                </div>
+            </div>
+
+            <div class="special-effects">
+                <h3>Special Effects</h3>
+                <ul id="effects-list"></ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
