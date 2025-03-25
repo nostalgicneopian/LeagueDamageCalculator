@@ -1,5 +1,37 @@
-// Special Effects functionality
+// Toggle functionality for sections
 document.addEventListener('DOMContentLoaded', function() {
+    // Define the sections to be toggled
+    const sections = [
+        { toggle: 'toggle-offensive-icons', section: 'offensive-icons-section', inputSelector: '#offensive-icons-section input[type="number"]' },
+        { toggle: 'toggle-defensive-icons', section: 'defensive-icons-section', inputSelector: '#defensive-icons-section input[type="number"]' },
+        { toggle: 'toggle-reflect-percentages', section: 'reflect-percentages-section', inputSelector: '#reflect-percentages-section input[type="number"]' },
+        { toggle: 'toggle-block-percentages', section: 'block-percentages-section', inputSelector: '#block-percentages-section input[type="number"]' }
+    ];
+    
+    // Add event listeners to all toggle checkboxes
+    sections.forEach(item => {
+        const toggleCheckbox = document.getElementById(item.toggle);
+        const sectionElement = document.getElementById(item.section);
+        
+        if (toggleCheckbox && sectionElement) {
+            toggleCheckbox.addEventListener('change', function() {
+                // Toggle the visibility of the section
+                sectionElement.style.display = this.checked ? 'block' : 'none';
+                
+                // Toggle the required attribute for all inputs in the section
+                const inputs = document.querySelectorAll(item.inputSelector);
+                inputs.forEach(input => {
+                    if (this.checked) {
+                        input.setAttribute('required', '');
+                    } else {
+                        input.removeAttribute('required');
+                    }
+                });
+            });
+        }
+    });
+    
+    // Special Effects functionality
     const addEffectBtn = document.getElementById('add-effect-btn');
     const specialEffectsContainer = document.getElementById('special-effects-container');
     

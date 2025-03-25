@@ -71,385 +71,420 @@
                         <label for="KCS">KCS</label>
                     </div>
                 </div>
-                <div class="icon-group-header">Offensive Icons</div>
+                <!-- Offensive Icons -->
+                <div class="section-toggle" onclick="document.getElementById('toggle-offensive-icons').click()">
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="toggle-offensive-icons">
+                        <span class="toggle-arrow"></span>
+                    </label>
+                    <span class="toggle-label">Offensive Icons</span>
+                </div>
+                <div id="offensive-icons-section" class="toggleable-section" style="display: none;">
+                    <div class="icon-input-row">
+                        <div class="icon-input-group">
+                            <label for="item-min-offensive-fire">Min Fire:</label>
+                            <input type="number" id="item-min-offensive-fire" name="item-min-offensive-fire" required>
+                        </div>
+                        <div class="icon-image">
+                            <img src="../images/fire-icon.png" alt="Fire">
+                        </div>
+                        <div class="icon-input-group">
+                            <label for="item-max-offensive-fire">Max Fire:</label>
+                            <input type="number" id="item-max-offensive-fire" name="item-max-offensive-fire" required>
+                        </div>
+                    </div>
 
-                <div class="icon-input-row">
-                    <div class="icon-input-group">
-                        <label for="item-min-offensive-fire">Min Fire:</label>
-                        <input type="number" id="item-min-offensive-fire" name="item-min-offensive-fire" required>
+                    <div class="icon-input-row">
+                        <div class="icon-input-group">
+                            <label for="item-min-offensive-water">Min Water:</label>
+                            <input type="number" id="item-min-offensive-water" name="item-min-offensive-water" required>
+                        </div>
+                        <div class="icon-image">
+                            <img src="../images/water-icon.png" alt="Water">
+                        </div>
+                        <div class="icon-input-group">
+                            <label for="item-max-offensive-water">Max Water:</label>
+                            <input type="number" id="item-max-offensive-water" name="item-max-offensive-water" required>
+                        </div>
                     </div>
-                    <div class="icon-image">
-                        <img src="../images/fire-icon.png" alt="Fire">
-                    </div>
-                    <div class="icon-input-group">
-                        <label for="item-max-offensive-fire">Max Fire:</label>
-                        <input type="number" id="item-max-offensive-fire" name="item-max-offensive-fire" required>
-                    </div>
-                </div>
 
-                <div class="icon-input-row">
-                    <div class="icon-input-group">
-                        <label for="item-min-offensive-water">Min Water:</label>
-                        <input type="number" id="item-min-offensive-water" name="item-min-offensive-water" required>
+                    <div class="icon-input-row">
+                        <div class="icon-input-group">
+                            <label for="item-min-offensive-light">Min Light:</label>
+                            <input type="number" id="item-min-offensive-light" name="item-min-offensive-light" required>
+                        </div>
+                        <div class="icon-image">
+                            <img src="../images/light-icon.png" alt="Light">
+                        </div>
+                        <div class="icon-input-group">
+                            <label for="item-max-offensive-light">Max Light:</label>
+                            <input type="number" id="item-max-offensive-light" name="item-max-offensive-light" required>
+                        </div>
                     </div>
-                    <div class="icon-image">
-                        <img src="../images/water-icon.png" alt="Water">
-                    </div>
-                    <div class="icon-input-group">
-                        <label for="item-max-offensive-water">Max Water:</label>
-                        <input type="number" id="item-max-offensive-water" name="item-max-offensive-water" required>
-                    </div>
-                </div>
 
-                <div class="icon-input-row">
-                    <div class="icon-input-group">
-                        <label for="item-min-offensive-light">Min Light:</label>
-                        <input type="number" id="item-min-offensive-light" name="item-min-offensive-light" required>
+                    <div class="icon-input-row">
+                        <div class="icon-input-group">
+                            <label for="item-min-offensive-dark">Min Dark:</label>
+                            <input type="number" id="item-min-offensive-dark" name="item-min-offensive-dark" required>
+                        </div>
+                        <div class="icon-image">
+                            <img src="../images/dark-icon.png" alt="Dark">
+                        </div>
+                        <div class="icon-input-group">
+                            <label for="item-max-offensive-dark">Max Dark:</label>
+                            <input type="number" id="item-max-offensive-dark" name="item-max-offensive-dark" required>
+                        </div>
                     </div>
-                    <div class="icon-image">
-                        <img src="../images/light-icon.png" alt="Light">
-                    </div>
-                    <div class="icon-input-group">
-                        <label for="item-max-offensive-light">Max Light:</label>
-                        <input type="number" id="item-max-offensive-light" name="item-max-offensive-light" required>
-                    </div>
-                </div>
 
-                <div class="icon-input-row">
-                    <div class="icon-input-group">
-                        <label for="item-min-offensive-dark">Min Dark:</label>
-                        <input type="number" id="item-min-offensive-dark" name="item-min-offensive-dark" required>
+                    <div class="icon-input-row">
+                        <div class="icon-input-group">
+                            <label for="item-min-offensive-air">Min Air:</label>
+                            <input type="number" id="item-min-offensive-air" name="item-min-offensive-air" required>
+                        </div>
+                        <div class="icon-image">
+                            <img src="../images/air-icon.png" alt="Air">
+                        </div>
+                        <div class="icon-input-group">
+                            <label for="item-max-offensive-air">Max Air:</label>
+                            <input type="number" id="item-max-offensive-air" name="item-max-offensive-air" required>
+                        </div>
                     </div>
-                    <div class="icon-image">
-                        <img src="../images/dark-icon.png" alt="Dark">
-                    </div>
-                    <div class="icon-input-group">
-                        <label for="item-max-offensive-dark">Max Dark:</label>
-                        <input type="number" id="item-max-offensive-dark" name="item-max-offensive-dark" required>
-                    </div>
-                </div>
 
-                <div class="icon-input-row">
-                    <div class="icon-input-group">
-                        <label for="item-min-offensive-air">Min Air:</label>
-                        <input type="number" id="item-min-offensive-air" name="item-min-offensive-air" required>
+                    <div class="icon-input-row">
+                        <div class="icon-input-group">
+                            <label for="item-min-offensive-earth">Min Earth:</label>
+                            <input type="number" id="item-min-offensive-earth" name="item-min-offensive-earth" required>
+                        </div>
+                        <div class="icon-image">
+                            <img src="../images/earth-icon.png" alt="Earth">
+                        </div>
+                        <div class="icon-input-group">
+                            <label for="item-max-offensive-earth">Max Earth:</label>
+                            <input type="number" id="item-max-offensive-earth" name="item-max-offensive-earth" required>
+                        </div>
                     </div>
-                    <div class="icon-image">
-                        <img src="../images/air-icon.png" alt="Air">
-                    </div>
-                    <div class="icon-input-group">
-                        <label for="item-max-offensive-air">Max Air:</label>
-                        <input type="number" id="item-max-offensive-air" name="item-max-offensive-air" required>
-                    </div>
-                </div>
 
-                <div class="icon-input-row">
-                    <div class="icon-input-group">
-                        <label for="item-min-offensive-earth">Min Earth:</label>
-                        <input type="number" id="item-min-offensive-earth" name="item-min-offensive-earth" required>
-                    </div>
-                    <div class="icon-image">
-                        <img src="../images/earth-icon.png" alt="Earth">
-                    </div>
-                    <div class="icon-input-group">
-                        <label for="item-max-offensive-earth">Max Earth:</label>
-                        <input type="number" id="item-max-offensive-earth" name="item-max-offensive-earth" required>
-                    </div>
-                </div>
-
-                <div class="icon-input-row">
-                    <div class="icon-input-group">
-                        <label for="item-min-offensive-physical">Min Physical:</label>
-                        <input type="number" id="item-min-offensive-physical" name="item-min-offensive-physical" required>
-                    </div>
-                    <div class="icon-image">
-                        <img src="../images/physical-icon.png" alt="Physical">
-                    </div>
-                    <div class="icon-input-group">
-                        <label for="item-max-offensive-physical">Max Physical:</label>
-                        <input type="number" id="item-max-offensive-physical" name="item-max-offensive-physical" required>
-                    </div>
-                </div>
-
-                <div class="icon-group-header">Defensive Icons</div>
-
-                <div class="icon-input-row">
-                    <div class="icon-input-group">
-                        <label for="item-min-defensive-fire">Min Fire:</label>
-                        <input type="number" id="item-min-defensive-fire" name="item-min-defensive-fire" required>
-                    </div>
-                    <div class="icon-image">
-                        <img src="../images/blocked-fire-icon.png" alt="Fire">
-                    </div>
-                    <div class="icon-input-group">
-                        <label for="item-max-defensive-fire">Max Fire:</label>
-                        <input type="number" id="item-max-defensive-fire" name="item-max-defensive-fire" required>
-                    </div>
-                </div>
-                <div class="icon-input-row">
-                    <div class="icon-input-group">
-                        <label for="item-min-defensive-water">Min Water:</label>
-                        <input type="number" id="item-min-defensive-water" name="item-min-defensive-water" required>
-                    </div>
-                    <div class="icon-image">
-                        <img src="../images/blocked-water-icon.png" alt="Water">
-                    </div>
-                    <div class="icon-input-group">
-                        <label for="item-max-defensive-water">Max Water:</label>
-                        <input type="number" id="item-max-defensive-water" name="item-max-defensive-water" required>
-                    </div>
-                </div>
-                <div class="icon-input-row">
-                    <div class="icon-input-group">
-                        <label for="item-min-defensive-earth">Min Earth:</label>
-                        <input type="number" id="item-min-defensive-earth" name="item-min-defensive-earth" required>
-                    </div>
-                    <div class="icon-image">
-                        <img src="../images/blocked-earth-icon.png" alt="Earth">
-                    </div>
-                    <div class="icon-input-group">
-                        <label for="item-max-defensive-earth">Max Earth:</label>
-                        <input type="number" id="item-max-defensive-earth" name="item-max-defensive-earth" required>
-                    </div>
-                </div>
-                <div class="icon-input-row">
-                    <div class="icon-input-group">
-                        <label for="item-min-defensive-air">Min Air:</label>
-                        <input type="number" id="item-min-defensive-air" name="item-min-defensive-air" required>
-                    </div>
-                    <div class="icon-image">
-                        <img src="../images/blocked-air-icon.png" alt="Air">
-                    </div>
-                    <div class="icon-input-group">
-                        <label for="item-max-defensive-air">Max Air:</label>
-                        <input type="number" id="item-max-defensive-air" name="item-max-defensive-air" required>
-                    </div>
-                </div>
-                <div class="icon-input-row">
-                    <div class="icon-input-group">
-                        <label for="item-min-defensive-light">Min Light:</label>
-                        <input type="number" id="item-min-defensive-light" name="item-min-defensive-light" required>
-                    </div>
-                    <div class="icon-image">
-                        <img src="../images/blocked-light-icon.png" alt="Light">
-                    </div>
-                    <div class="icon-input-group">
-                        <label for="item-max-defensive-light">Max Light:</label>
-                        <input type="number" id="item-max-defensive-light" name="item-max-defensive-light" required>
-                    </div>
-                </div>
-                <div class="icon-input-row">
-                    <div class="icon-input-group">
-                        <label for="item-min-defensive-darkness">Min Darkness:</label>
-                        <input type="number" id="item-min-defensive-darkness" name="item-min-defensive-darkness" required>
-                    </div>
-                    <div class="icon-image">
-                        <img src="../images/blocked-darkness-icon.png" alt="Darkness">
-                    </div>
-                    <div class="icon-input-group">
-                        <label for="item-max-defensive-darkness">Max Darkness:</label>
-                        <input type="number" id="item-max-defensive-darkness" name="item-max-defensive-darkness" required>
-                    </div>
-                </div>
-                <div class="icon-input-row">
-                    <div class="icon-input-group">
-                        <label for="item-min-defensive-physical">Min Physical:</label>
-                        <input type="number" id="item-min-defensive-physical" name="item-min-defensive-physical" required>
-                    </div>
-                    <div class="icon-image">
-                        <img src="../images/blocked-physical-icon.png" alt="Physical">
-                    </div>
-                    <div class="icon-input-group">
-                        <label for="item-max-defensive-physical">Max Physical:</label>
-                        <input type="number" id="item-max-defensive-physical" name="item-max-defensive-physical" required>
+                    <div class="icon-input-row">
+                        <div class="icon-input-group">
+                            <label for="item-min-offensive-physical">Min Physical:</label>
+                            <input type="number" id="item-min-offensive-physical" name="item-min-offensive-physical" required>
+                        </div>
+                        <div class="icon-image">
+                            <img src="../images/physical-icon.png" alt="Physical">
+                        </div>
+                        <div class="icon-input-group">
+                            <label for="item-max-offensive-physical">Max Physical:</label>
+                            <input type="number" id="item-max-offensive-physical" name="item-max-offensive-physical" required>
+                        </div>
                     </div>
                 </div>
 
-                <div class="icon-group-header">Reflect Percentages</div>
+                <!-- Defensive Icons -->
 
-                <div class="icon-input-row">
-                    <div class="icon-input-group">
-                        <label for="item-min-reflect-fire">Min Fire %:</label>
-                        <input type="number" id="item-min-reflect-fire" name="item-min-reflect-fire" required>
-                    </div>
-                    <div class="icon-image">
-                        <img src="../images/fire-icon.png" alt="Fire">
-                    </div>
-                    <div class="icon-input-group">
-                        <label for="item-max-reflect-fire">Max Fire %:</label>
-                        <input type="number" id="item-max-reflect-fire" name="item-max-reflect-fire" required>
-                    </div>
+                <div class="section-toggle" onclick="document.getElementById('toggle-defensive-icons').click()">
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="toggle-defensive-icons">
+                        <span class="toggle-arrow"></span>
+                    </label>
+                    <span class="toggle-label">Defensive Icons</span>
                 </div>
-                <div class="icon-input-row">
-                    <div class="icon-input-group">
-                        <label for="item-min-reflect-water">Min Water %:</label>
-                        <input type="number" id="item-min-reflect-water" name="item-min-reflect-water" required>
+                <div id="defensive-icons-section" class="toggleable-section" style="display: none;">
+                    <div class="icon-input-row">
+                        <div class="icon-input-group">
+                            <label for="item-min-defensive-fire">Min Fire:</label>
+                            <input type="number" id="item-min-defensive-fire" name="item-min-defensive-fire" required>
+                        </div>
+                        <div class="icon-image">
+                            <img src="../images/blocked-fire-icon.png" alt="Fire">
+                        </div>
+                        <div class="icon-input-group">
+                            <label for="item-max-defensive-fire">Max Fire:</label>
+                            <input type="number" id="item-max-defensive-fire" name="item-max-defensive-fire" required>
+                        </div>
                     </div>
-                    <div class="icon-image">
-                        <img src="../images/water-icon.png" alt="Water">
+                    <div class="icon-input-row">
+                        <div class="icon-input-group">
+                            <label for="item-min-defensive-water">Min Water:</label>
+                            <input type="number" id="item-min-defensive-water" name="item-min-defensive-water" required>
+                        </div>
+                        <div class="icon-image">
+                            <img src="../images/blocked-water-icon.png" alt="Water">
+                        </div>
+                        <div class="icon-input-group">
+                            <label for="item-max-defensive-water">Max Water:</label>
+                            <input type="number" id="item-max-defensive-water" name="item-max-defensive-water" required>
+                        </div>
                     </div>
-                    <div class="icon-input-group">
-                        <label for="item-max-reflect-water">Max Water %:</label>
-                        <input type="number" id="item-max-reflect-water" name="item-max-reflect-water" required>
+                    <div class="icon-input-row">
+                        <div class="icon-input-group">
+                            <label for="item-min-defensive-earth">Min Earth:</label>
+                            <input type="number" id="item-min-defensive-earth" name="item-min-defensive-earth" required>
+                        </div>
+                        <div class="icon-image">
+                            <img src="../images/blocked-earth-icon.png" alt="Earth">
+                        </div>
+                        <div class="icon-input-group">
+                            <label for="item-max-defensive-earth">Max Earth:</label>
+                            <input type="number" id="item-max-defensive-earth" name="item-max-defensive-earth" required>
+                        </div>
                     </div>
-                </div>
-                <div class="icon-input-row">
-                    <div class="icon-input-group">
-                        <label for="item-min-reflect-earth">Min Earth %:</label>
-                        <input type="number" id="item-min-reflect-earth" name="item-min-reflect-earth" required>
+                    <div class="icon-input-row">
+                        <div class="icon-input-group">
+                            <label for="item-min-defensive-air">Min Air:</label>
+                            <input type="number" id="item-min-defensive-air" name="item-min-defensive-air" required>
+                        </div>
+                        <div class="icon-image">
+                            <img src="../images/blocked-air-icon.png" alt="Air">
+                        </div>
+                        <div class="icon-input-group">
+                            <label for="item-max-defensive-air">Max Air:</label>
+                            <input type="number" id="item-max-defensive-air" name="item-max-defensive-air" required>
+                        </div>
                     </div>
-                    <div class="icon-image">
-                        <img src="../images/earth-icon.png" alt="Earth">
+                    <div class="icon-input-row">
+                        <div class="icon-input-group">
+                            <label for="item-min-defensive-light">Min Light:</label>
+                            <input type="number" id="item-min-defensive-light" name="item-min-defensive-light" required>
+                        </div>
+                        <div class="icon-image">
+                            <img src="../images/blocked-light-icon.png" alt="Light">
+                        </div>
+                        <div class="icon-input-group">
+                            <label for="item-max-defensive-light">Max Light:</label>
+                            <input type="number" id="item-max-defensive-light" name="item-max-defensive-light" required>
+                        </div>
                     </div>
-                    <div class="icon-input-group">
-                        <label for="item-max-reflect-earth">Max Earth %:</label>
-                        <input type="number" id="item-max-reflect-earth" name="item-max-reflect-earth" required>
+                    <div class="icon-input-row">
+                        <div class="icon-input-group">
+                            <label for="item-min-defensive-darkness">Min Darkness:</label>
+                            <input type="number" id="item-min-defensive-darkness" name="item-min-defensive-darkness" required>
+                        </div>
+                        <div class="icon-image">
+                            <img src="../images/blocked-darkness-icon.png" alt="Darkness">
+                        </div>
+                        <div class="icon-input-group">
+                            <label for="item-max-defensive-darkness">Max Darkness:</label>
+                            <input type="number" id="item-max-defensive-darkness" name="item-max-defensive-darkness" required>
+                        </div>
                     </div>
-                </div>
-                <div class="icon-input-row">
-                    <div class="icon-input-group">
-                        <label for="item-min-reflect-air">Min Air %:</label>
-                        <input type="number" id="item-min-reflect-air" name="item-min-reflect-air" required>
-                    </div>
-                    <div class="icon-image">
-                        <img src="../images/air-icon.png" alt="Air">
-                    </div>
-                    <div class="icon-input-group">
-                        <label for="item-max-reflect-air">Max Air %:</label>
-                        <input type="number" id="item-max-reflect-air" name="item-max-reflect-air" required>
-                    </div>
-                </div>
-                <div class="icon-input-row">
-                    <div class="icon-input-group">
-                        <label for="item-min-reflect-light">Min Light %:</label>
-                        <input type="number" id="item-min-reflect-light" name="item-min-reflect-light" required>
-                    </div>
-                    <div class="icon-image">
-                        <img src="../images/light-icon.png" alt="Light">
-                    </div>
-                    <div class="icon-input-group">
-                        <label for="item-max-reflect-light">Max Light %:</label>
-                        <input type="number" id="item-max-reflect-light" name="item-max-reflect-light" required>
-                    </div>
-                </div>
-                <div class="icon-input-row">
-                    <div class="icon-input-group">
-                        <label for="item-min-reflect-darkness">Min Darkness %:</label>
-                        <input type="number" id="item-min-reflect-darkness" name="item-min-reflect-darkness" required>
-                    </div>
-                    <div class="icon-image">
-                        <img src="../images/dark-icon.png" alt="Darkness">
-                    </div>
-                    <div class="icon-input-group">
-                        <label for="item-max-reflect-darkness">Max Darkness %:</label>
-                        <input type="number" id="item-max-reflect-darkness" name="item-max-reflect-darkness" required>
-                    </div>
-                </div>
-                <div class="icon-input-row">
-                    <div class="icon-input-group">
-                        <label for="item-min-reflect-physical">Min Physical %:</label>
-                        <input type="number" id="item-min-reflect-physical" name="item-min-reflect-physical" required>
-                    </div>
-                    <div class="icon-image">
-                        <img src="../images/physical-icon.png" alt="Physical">
-                    </div>
-                    <div class="icon-input-group">
-                        <label for="item-max-reflect-physical">Max Physical %:</label>
-                        <input type="number" id="item-max-reflect-physical" name="item-max-reflect-physical" required>
+                    <div class="icon-input-row">
+                        <div class="icon-input-group">
+                            <label for="item-min-defensive-physical">Min Physical:</label>
+                            <input type="number" id="item-min-defensive-physical" name="item-min-defensive-physical" required>
+                        </div>
+                        <div class="icon-image">
+                            <img src="../images/blocked-physical-icon.png" alt="Physical">
+                        </div>
+                        <div class="icon-input-group">
+                            <label for="item-max-defensive-physical">Max Physical:</label>
+                            <input type="number" id="item-max-defensive-physical" name="item-max-defensive-physical" required>
+                        </div>
                     </div>
                 </div>
 
-                <div class="icon-group-header">Block Percentages</div>
+                <!-- Reflect Percentages -->
 
-                <div class="icon-input-row">
-                    <div class="icon-input-group">
-                        <label for="item-min-block-fire">Min Fire %:</label>
-                        <input type="number" id="item-min-block-fire" name="item-min-block-fire" required>
+                <div class="section-toggle" onclick="document.getElementById('toggle-reflect-percentages').click()">
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="toggle-reflect-percentages">
+                        <span class="toggle-arrow"></span>
+                    </label>
+                    <span class="toggle-label">Reflect Percentages</span>
+                </div>
+                <div id="reflect-percentages-section" class="toggleable-section" style="display: none;">
+                    <div class="icon-input-row">
+                        <div class="icon-input-group">
+                            <label for="item-min-reflect-fire">Min Fire %:</label>
+                            <input type="number" id="item-min-reflect-fire" name="item-min-reflect-fire" required>
+                        </div>
+                        <div class="icon-image">
+                            <img src="../images/fire-icon.png" alt="Fire">
+                        </div>
+                        <div class="icon-input-group">
+                            <label for="item-max-reflect-fire">Max Fire %:</label>
+                            <input type="number" id="item-max-reflect-fire" name="item-max-reflect-fire" required>
+                        </div>
                     </div>
-                    <div class="icon-image">
-                        <img src="../images/fire-icon.png" alt="Fire">
+                    <div class="icon-input-row">
+                        <div class="icon-input-group">
+                            <label for="item-min-reflect-water">Min Water %:</label>
+                            <input type="number" id="item-min-reflect-water" name="item-min-reflect-water" required>
+                        </div>
+                        <div class="icon-image">
+                            <img src="../images/water-icon.png" alt="Water">
+                        </div>
+                        <div class="icon-input-group">
+                            <label for="item-max-reflect-water">Max Water %:</label>
+                            <input type="number" id="item-max-reflect-water" name="item-max-reflect-water" required>
+                        </div>
                     </div>
-                    <div class="icon-input-group">
-                        <label for="item-max-block-fire">Max Fire %:</label>
-                        <input type="number" id="item-max-block-fire" name="item-max-block-fire" required>
+                    <div class="icon-input-row">
+                        <div class="icon-input-group">
+                            <label for="item-min-reflect-earth">Min Earth %:</label>
+                            <input type="number" id="item-min-reflect-earth" name="item-min-reflect-earth" required>
+                        </div>
+                        <div class="icon-image">
+                            <img src="../images/earth-icon.png" alt="Earth">
+                        </div>
+                        <div class="icon-input-group">
+                            <label for="item-max-reflect-earth">Max Earth %:</label>
+                            <input type="number" id="item-max-reflect-earth" name="item-max-reflect-earth" required>
+                        </div>
+                    </div>
+                    <div class="icon-input-row">
+                        <div class="icon-input-group">
+                            <label for="item-min-reflect-air">Min Air %:</label>
+                            <input type="number" id="item-min-reflect-air" name="item-min-reflect-air" required>
+                        </div>
+                        <div class="icon-image">
+                            <img src="../images/air-icon.png" alt="Air">
+                        </div>
+                        <div class="icon-input-group">
+                            <label for="item-max-reflect-air">Max Air %:</label>
+                            <input type="number" id="item-max-reflect-air" name="item-max-reflect-air" required>
+                        </div>
+                    </div>
+                    <div class="icon-input-row">
+                        <div class="icon-input-group">
+                            <label for="item-min-reflect-light">Min Light %:</label>
+                            <input type="number" id="item-min-reflect-light" name="item-min-reflect-light" required>
+                        </div>
+                        <div class="icon-image">
+                            <img src="../images/light-icon.png" alt="Light">
+                        </div>
+                        <div class="icon-input-group">
+                            <label for="item-max-reflect-light">Max Light %:</label>
+                            <input type="number" id="item-max-reflect-light" name="item-max-reflect-light" required>
+                        </div>
+                    </div>
+                    <div class="icon-input-row">
+                        <div class="icon-input-group">
+                            <label for="item-min-reflect-darkness">Min Darkness %:</label>
+                            <input type="number" id="item-min-reflect-darkness" name="item-min-reflect-darkness" required>
+                        </div>
+                        <div class="icon-image">
+                            <img src="../images/dark-icon.png" alt="Darkness">
+                        </div>
+                        <div class="icon-input-group">
+                            <label for="item-max-reflect-darkness">Max Darkness %:</label>
+                            <input type="number" id="item-max-reflect-darkness" name="item-max-reflect-darkness" required>
+                        </div>
+                    </div>
+                    <div class="icon-input-row">
+                        <div class="icon-input-group">
+                            <label for="item-min-reflect-physical">Min Physical %:</label>
+                            <input type="number" id="item-min-reflect-physical" name="item-min-reflect-physical" required>
+                        </div>
+                        <div class="icon-image">
+                            <img src="../images/physical-icon.png" alt="Physical">
+                        </div>
+                        <div class="icon-input-group">
+                            <label for="item-max-reflect-physical">Max Physical %:</label>
+                            <input type="number" id="item-max-reflect-physical" name="item-max-reflect-physical" required>
+                        </div>
                     </div>
                 </div>
-                <div class="icon-input-row">
-                    <div class="icon-input-group">
-                        <label for="item-min-block-water">Min Water %:</label>
-                        <input type="number" id="item-min-block-water" name="item-min-block-water" required>
-                    </div>
-                    <div class="icon-image">
-                        <img src="../images/water-icon.png" alt="Water">
-                    </div>
-                    <div class="icon-input-group">
-                        <label for="item-max-block-water">Max Water %:</label>
-                        <input type="number" id="item-max-block-water" name="item-max-block-water" required>
-                    </div>
+
+                <!-- Block Percentages -->
+
+                <div class="section-toggle" onclick="document.getElementById('toggle-block-percentages').click()">
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="toggle-block-percentages">
+                        <span class="toggle-arrow"></span>
+                    </label>
+                    <span class="toggle-label">Block Percentages</span>
                 </div>
-                <div class="icon-input-row">
-                    <div class="icon-input-group">
-                        <label for="item-min-block-earth">Min Earth %:</label>
-                        <input type="number" id="item-min-block-earth" name="item-min-block-earth" required>
+                <div id="block-percentages-section" class="toggleable-section" style="display: none;">
+                    <div class="icon-input-row">
+                        <div class="icon-input-group">
+                            <label for="item-min-block-fire">Min Fire %:</label>
+                            <input type="number" id="item-min-block-fire" name="item-min-block-fire" required>
+                        </div>
+                        <div class="icon-image">
+                            <img src="../images/fire-icon.png" alt="Fire">
+                        </div>
+                        <div class="icon-input-group">
+                            <label for="item-max-block-fire">Max Fire %:</label>
+                            <input type="number" id="item-max-block-fire" name="item-max-block-fire" required>
+                        </div>
                     </div>
-                    <div class="icon-image">
-                        <img src="../images/earth-icon.png" alt="Earth">
+                    <div class="icon-input-row">
+                        <div class="icon-input-group">
+                            <label for="item-min-block-water">Min Water %:</label>
+                            <input type="number" id="item-min-block-water" name="item-min-block-water" required>
+                        </div>
+                        <div class="icon-image">
+                            <img src="../images/water-icon.png" alt="Water">
+                        </div>
+                        <div class="icon-input-group">
+                            <label for="item-max-block-water">Max Water %:</label>
+                            <input type="number" id="item-max-block-water" name="item-max-block-water" required>
+                        </div>
                     </div>
-                    <div class="icon-input-group">
-                        <label for="item-max-block-earth">Max Earth %:</label>
-                        <input type="number" id="item-max-block-earth" name="item-max-block-earth" required>
+                    <div class="icon-input-row">
+                        <div class="icon-input-group">
+                            <label for="item-min-block-earth">Min Earth %:</label>
+                            <input type="number" id="item-min-block-earth" name="item-min-block-earth" required>
+                        </div>
+                        <div class="icon-image">
+                            <img src="../images/earth-icon.png" alt="Earth">
+                        </div>
+                        <div class="icon-input-group">
+                            <label for="item-max-block-earth">Max Earth %:</label>
+                            <input type="number" id="item-max-block-earth" name="item-max-block-earth" required>
+                        </div>
                     </div>
-                </div>
-                <div class="icon-input-row">
-                    <div class="icon-input-group">
-                        <label for="item-min-block-air">Min Air %:</label>
-                        <input type="number" id="item-min-block-air" name="item-min-block-air" required>
+                    <div class="icon-input-row">
+                        <div class="icon-input-group">
+                            <label for="item-min-block-air">Min Air %:</label>
+                            <input type="number" id="item-min-block-air" name="item-min-block-air" required>
+                        </div>
+                        <div class="icon-image">
+                            <img src="../images/air-icon.png" alt="Air">
+                        </div>
+                        <div class="icon-input-group">
+                            <label for="item-max-block-air">Max Air %:</label>
+                            <input type="number" id="item-max-block-air" name="item-max-block-air" required>
+                        </div>
                     </div>
-                    <div class="icon-image">
-                        <img src="../images/air-icon.png" alt="Air">
+                    <div class="icon-input-row">
+                        <div class="icon-input-group">
+                            <label for="item-min-block-light">Min Light %:</label>
+                            <input type="number" id="item-min-block-light" name="item-min-block-light" required>
+                        </div>
+                        <div class="icon-image">
+                            <img src="../images/light-icon.png" alt="Light">
+                        </div>
+                        <div class="icon-input-group">
+                            <label for="item-max-block-light">Max Light %:</label>
+                            <input type="number" id="item-max-block-light" name="item-max-block-light" required>
+                        </div>
                     </div>
-                    <div class="icon-input-group">
-                        <label for="item-max-block-air">Max Air %:</label>
-                        <input type="number" id="item-max-block-air" name="item-max-block-air" required>
+                    <div class="icon-input-row">
+                        <div class="icon-input-group">
+                            <label for="item-min-block-darkness">Min Darkness %:</label>
+                            <input type="number" id="item-min-block-darkness" name="item-min-block-darkness" required>
+                        </div>
+                        <div class="icon-image">
+                            <img src="../images/dark-icon.png" alt="Darkness">
+                        </div>
+                        <div class="icon-input-group">
+                            <label for="item-max-block-darkness">Max Darkness %:</label>
+                            <input type="number" id="item-max-block-darkness" name="item-max-block-darkness" required>
+                        </div>
                     </div>
-                </div>
-                <div class="icon-input-row">
-                    <div class="icon-input-group">
-                        <label for="item-min-block-light">Min Light %:</label>
-                        <input type="number" id="item-min-block-light" name="item-min-block-light" required>
-                    </div>
-                    <div class="icon-image">
-                        <img src="../images/light-icon.png" alt="Light">
-                    </div>
-                    <div class="icon-input-group">
-                        <label for="item-max-block-light">Max Light %:</label>
-                        <input type="number" id="item-max-block-light" name="item-max-block-light" required>
-                    </div>
-                </div>
-                <div class="icon-input-row">
-                    <div class="icon-input-group">
-                        <label for="item-min-block-darkness">Min Darkness %:</label>
-                        <input type="number" id="item-min-block-darkness" name="item-min-block-darkness" required>
-                    </div>
-                    <div class="icon-image">
-                        <img src="../images/dark-icon.png" alt="Darkness">
-                    </div>
-                    <div class="icon-input-group">
-                        <label for="item-max-block-darkness">Max Darkness %:</label>
-                        <input type="number" id="item-max-block-darkness" name="item-max-block-darkness" required>
-                    </div>
-                </div>
-                <div class="icon-input-row">
-                    <div class="icon-input-group">
-                        <label for="item-min-block-physical">Min Physical %:</label>
-                        <input type="number" id="item-min-block-physical" name="item-min-block-physical" required>
-                    </div>
-                    <div class="icon-image">
-                        <img src="../images/physical-icon.png" alt="Physical">
-                    </div>
-                    <div class="icon-input-group">
-                        <label for="item-max-block-physical">Max Physical %:</label>
-                        <input type="number" id="item-max-block-physical" name="item-max-block-physical" required>
+                    <div class="icon-input-row">
+                        <div class="icon-input-group">
+                            <label for="item-min-block-physical">Min Physical %:</label>
+                            <input type="number" id="item-min-block-physical" name="item-min-block-physical" required>
+                        </div>
+                        <div class="icon-image">
+                            <img src="../images/physical-icon.png" alt="Physical">
+                        </div>
+                        <div class="icon-input-group">
+                            <label for="item-max-block-physical">Max Physical %:</label>
+                            <input type="number" id="item-max-block-physical" name="item-max-block-physical" required>
+                        </div>
                     </div>
                 </div>
 
