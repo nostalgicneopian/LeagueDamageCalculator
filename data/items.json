@@ -4,7 +4,8 @@
         "id": "fire-sword",
         "name": "Fire Sword",
         "type": "weapon",
-        "slot": "main",
+        "tags": ["l54, dDl, L97"],
+        "description": "Flavor text",
         "minimumFireIcons": 3,
         "maximumFireIcons": 5,
         "minimumWaterIcons": 0,
@@ -19,7 +20,7 @@
         "maximumEarthIcons": 0,
         "minimumPhysicalIcons": 2,
         "maximumPhysicalIcons": 4,
-        "specialEffect": "Has a 10% chance to ignite the target"
+        "specialEffects": ["Has a 10% chance to ignite the target"]
       },
       {
         "id": "water-staff",
