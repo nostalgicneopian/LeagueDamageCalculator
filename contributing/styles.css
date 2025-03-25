@@ -81,6 +81,46 @@ button:hover {
     background-color: #3867d6;
 }
 
+/* Common styles for both checkbox groups */
+#item-tags-checkboxes,
+#item-type-checkboxes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 15px;
+    width: 100%;
+    padding: 10px 0;
+}
+
+#item-tags-checkboxes .checkbox-group,
+#item-type-checkboxes .checkbox-group {
+    display: flex;
+    align-items: center;
+    min-width: 100px;
+    margin-bottom: 8px;
+    flex-shrink: 0; /* Prevent checkbox groups from shrinking */
+}
+
+#item-tags-checkboxes input[type="checkbox"],
+#item-type-checkboxes input[type="checkbox"] {
+    transform: scale(1.5);
+    margin-right: 8px;
+    cursor: pointer;
+}
+
+#item-tags-checkboxes label,
+#item-type-checkboxes label {
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    white-space: nowrap; /* Prevent label text from wrapping */
+}
+
+/* Specific styling for type checkboxes if needed */
+#item-type-checkboxes .checkbox-group {
+    min-width: 120px; /* Slightly wider to accommodate longer option names */
+}
+
 @media (max-width: 768px) {
     .container {
         padding: 10px;

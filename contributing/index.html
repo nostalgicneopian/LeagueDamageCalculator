@@ -19,11 +19,56 @@
                 <input type="text" id="item-name" name="item-name" required>
                 <br><br>
                 <label for="item-type">Type:</label>
-                <input type="text" id="item-type" name="item-type" required>
+                <div id="item-type-checkboxes">
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="constant" name="constant" value="constant">
+                        <label for="constant">Constant</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="blocks" name="blocks" value="blocks">
+                        <label for="blocks">Blocks</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="healer" name="healer" value="healer">
+                        <label for="healer">Healer</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="freezer" name="freezer" value="freezer">
+                        <label for="freezer">Freezer</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="reflector" name="reflector" value="reflector">
+                        <label for="reflector">Reflector</label>
+                    </div>
+                </div>
                 <br><br>
                 <label for="item-tags">Tags:</label>
-                <input type="text" id="item-tags" name="item-tags" required>
-                <br><br>
+                <div id="item-tags-checkboxes">
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="L54" name="L54" value="L54">
+                        <label for="L54">L54</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="DDL" name="DDL" value="DDL">
+                        <label for="DDL">DDL</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="L97" name="L97" value="L97">
+                        <label for="L97">L97</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="TPL" name="TPL" value="TPL">
+                        <label for="TPL">TPL</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="OPL" name="OPL" value="OPL">
+                        <label for="OPL">OPL</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="KCS" name="KCS" value="KCS">
+                        <label for="KCS">KCS</label>
+                    </div>
+                </div>
                 <label for="item-description">Description:</label>
                 <input type="text" id="item-description" name="item-description">
                 <br><br>
@@ -245,7 +290,6 @@
             <div id="form-status"></div>
         </div>
         <div class="navigation">
-            <a href="/index.html">Main Page</a>
             <button onclick="window.location.href='/index.html'">Back to Calculator</button>
         </div>
     </div>
