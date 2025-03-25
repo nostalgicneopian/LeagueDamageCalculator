@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Damage Calculator</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-section">
+            <h2>Add New Item</h2>
+            <form id="add-item-form">
+                <label for="item-id">ID:</label>
+                <input type="text" id="item-id" name="item-id" required>
+                <br><br>
+                <label for="item-name">Name:</label>
+                <input type="text" id="item-name" name="item-name" required>
+                <br><br>
+                <label for="item-type">Type:</label>
+                <input type="text" id="item-type" name="item-type" required>
+                <br><br>
+                <label for="item-tags">Tags:</label>
+                <input type="text" id="item-tags" name="item-tags" required>
+                <br><br>
+                <label for="item-description">Description:</label>
+                <input type="text" id="item-description" name="item-description">
+                <br><br>
+                <label for="item-min-fire">Min Fire Icons:</label>
+                <input type="number" id="item-min-fire" name="item-min-fire" required>
+                <br><br>
+                <label for="item-max-fire">Max Fire Icons:</label>
+                <input type="number" id="item-max-fire" name="item-max-fire" required>
+                <br><br>
+                <label for="item-min-water">Min Water Icons:</label>
+                <input type="number" id="item-min-water" name="item-min-water" required>
+                <br><br>
+                <label for="item-max-water">Max Water Icons:</label>
+                <input type="number" id="item-max-water" name="item-max-water" required>
+                <br><br>
+                <label for="item-min-light">Min Light Icons:</label>
+                <input type="number" id="item-min-light" name="item-min-light" required>
+                <br><br>
+                <label for="item-max-light">Max Light Icons:</label>
+                <input type="number" id="item-max-light" name="item-max-light" required>
+                <br><br>
+                <label for="item-min-dark">Min Dark Icons:</label>
+                <input type="number" id="item-min-dark" name="item-min-dark" required>
+                <br><br>
+                <label for="item-max-dark">Max Dark Icons:</label>
+                <input type="number" id="item-max-dark" name="item-max-dark" required>
+                <br><br>
+                <label for="item-min-air">Min Air Icons:</label>
+                <input type="number" id="item-min-air" name="item-min-air" required>
+                <br><br>
+                <label for="item-max-air">Max Air Icons:</label>
+                <input type="number" id="item-max-air" name="item-max-air" required>
+                <br><br>
+                <label for="item-min-earth">Min Earth Icons:</label>
+                <input type="number" id="item-min-earth" name="item-min-earth" required>
+                <br><br>
+                <label for="item-max-earth">Max Earth Icons:</label>
+                <input type="number" id="item-max-earth" name="item-max-earth" required>
+                <br><br>
+                <label for="item-min-physical">Min Physical Icons:</label>
+                <input type="number" id="item-min-physical" name="item-min-physical" required>
+                <br><br>
+                <label for="item-max-physical">Max Physical Icons:</label>
+                <input type="number" id="item-max-physical" name="item-max-physical" required>
+                <br><br>
+                <label for="item-special-effects">Special Effects:</label>
+                <input type="text" id="item-special-effects" name="item-special-effects">
+                <br><br>
+                <button type="submit">Add Item</button>
+            </form>
+            <div id="form-status"></div>
+        </div>
+    </div>
+
+    <!-- Include data.js first, then main.js -->
+    <script src="../js/data.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html>

@@ -1,18 +1,17 @@
-// DOM elements
 const mainhandSelect = document.getElementById('mainhand-select');
 const offhandSelect = document.getElementById('offhand-select');
 const accessorySelect = document.getElementById('accessory-select');
 const abilitySelect = document.getElementById('ability-select');
 const calculateBtn = document.getElementById('calculate-btn');
 const effectsList = document.getElementById('effects-list');
+const addItemForm = document.getElementById('add-item-form');
+const formStatus = document.getElementById('form-status');
 
-// Detail display elements
 const mainhandDetails = document.getElementById('mainhand-details');
 const offhandDetails = document.getElementById('offhand-details');
 const accessoryDetails = document.getElementById('accessory-details');
 const abilityDetails = document.getElementById('ability-details');
 
-// Result elements for each element
 const elements = ['fire', 'water', 'light', 'dark', 'air', 'earth', 'physical'];
 const minElements = {};
 const maxElements = {};
@@ -22,27 +21,21 @@ elements.forEach(element => {
     maxElements[element] = document.getElementById(`max-${element}`);
 });
 
-// Initialize when page loads - using the global itemsData from data.js
 document.addEventListener('DOMContentLoaded', () => {
-    // Populate dropdowns
     populateDropdowns();
-    
-    // Add event listeners
     mainhandSelect.addEventListener('change', () => updateItemDetails('mainhand'));
     offhandSelect.addEventListener('change', () => updateItemDetails('offhand'));
     accessorySelect.addEventListener('change', () => updateItemDetails('accessory'));
     abilitySelect.addEventListener('change', () => updateItemDetails('ability'));
     calculateBtn.addEventListener('click', calculateDamage);
+    addItemForm.addEventListener('submit', handleFormSubmit);
 });
 
-// Populate dropdown menus with items
 function populateDropdowns() {
-    // Filter weapons by slot
     const mainHandWeapons = itemsData.weapons.filter(weapon => weapon.slot === 'main');
     const offHandWeapons = itemsData.weapons.filter(weapon => weapon.slot === 'offhand');
     const accessories = itemsData.weapons.filter(weapon => weapon.slot === 'accessory');
     
-    // Populate main hand dropdown
     mainHandWeapons.forEach(weapon => {
         const option = document.createElement('option');
         option.value = weapon.id;
@@ -50,7 +43,6 @@ function populateDropdowns() {
         mainhandSelect.appendChild(option);
     });
     
-    // Populate off hand dropdown
     offHandWeapons.forEach(weapon => {
         const option = document.createElement('option');
         option.value = weapon.id;
@@ -58,7 +50,6 @@ function populateDropdowns() {
         offhandSelect.appendChild(option);
     });
     
-    // Populate accessory dropdown
     accessories.forEach(accessory => {
         const option = document.createElement('option');
         option.value = accessory.id;
@@ -66,7 +57,6 @@ function populateDropdowns() {
         accessorySelect.appendChild(option);
     });
     
-    // Populate abilities dropdown
     itemsData.abilities.forEach(ability => {
         const option = document.createElement('option');
         option.value = ability.id;
@@ -75,7 +65,6 @@ function populateDropdowns() {
     });
 }
 
-// Update item details when selection changes
 function updateItemDetails(slotType) {
     let selectedId, detailsElement, item;
     
@@ -97,20 +86,17 @@ function updateItemDetails(slotType) {
         item = itemsData.abilities.find(ability => ability.id === selectedId);
     }
     
-    // Clear previous details
     detailsElement.innerHTML = '';
     
     if (!item) return;
     
     if (slotType === 'ability') {
-        // Display ability details
         detailsElement.innerHTML = `
             <p><strong>Type:</strong> ${item.damageType.charAt(0).toUpperCase() + item.damageType.slice(1)}</p>
             <p><strong>Damage:</strong> ${item.minimumIcons} - ${item.maximumIcons} icons</p>
             <p><strong>Effect:</strong> ${item.effect}</p>
         `;
     } else {
-        // Display weapon details
         let detailsHTML = '<p><strong>Element Icons:</strong></p>';
         
         elements.forEach(element => {
@@ -130,23 +116,19 @@ function updateItemDetails(slotType) {
     }
 }
 
-// Calculate total damage based on selected items
 function calculateDamage() {
     const mainhandId = mainhandSelect.value;
     const offhandId = offhandSelect.value;
     const accessoryId = accessorySelect.value;
     const abilityId = abilitySelect.value;
     
-    // Get the selected items
     const mainhand = itemsData.weapons.find(weapon => weapon.id === mainhandId);
     const offhand = itemsData.weapons.find(weapon => weapon.id === offhandId);
     const accessory = itemsData.weapons.find(weapon => weapon.id === accessoryId);
     const ability = itemsData.abilities.find(ability => ability.id === abilityId);
     
-    // Clear the effects list
     effectsList.innerHTML = '';
     
-    // Initialize results
     const results = {};
     elements.forEach(element => {
         results[element] = {
@@ -155,7 +137,6 @@ function calculateDamage() {
         };
     });
     
-    // Calculate damage for each element from weapons
     [mainhand, offhand, accessory].forEach(item => {
         if (item) {
             elements.forEach(element => {
@@ -166,7 +147,6 @@ function calculateDamage() {
                 results[element].max += item[maxKey] || 0;
             });
             
-            // Add special effects to the list
             if (item.specialEffect) {
                 const effectItem = document.createElement('li');
                 effectItem.textContent = `${item.name}: ${item.specialEffect}`;
@@ -175,27 +155,55 @@ function calculateDamage() {
         }
     });
     
-    // Add ability damage if selected
     if (ability) {
-        // For abilities that deal damage
         if (ability.damageType !== 'heal') {
             results[ability.damageType].min += ability.minimumIcons || 0;
             results[ability.damageType].max += ability.maximumIcons || 0;
         } else {
-            // For healing abilities, add to light damage
             results['light'].min += ability.minimumIcons || 0;
             results['light'].max += ability.maximumIcons || 0;
         }
         
-        // Add ability effect to the list
         const abilityEffectItem = document.createElement('li');
         abilityEffectItem.textContent = `${ability.name}: ${ability.effect}`;
         effectsList.appendChild(abilityEffectItem);
     }
     
-    // Update the UI with calculated results
     elements.forEach(element => {
         minElements[element].textContent = results[element].min;
         maxElements[element].textContent = results[element].max;
     });
+}
+
+function handleFormSubmit(event) {
+    event.preventDefault();
+    
+    const newItem = {
+        id: document.getElementById('item-id').value,
+        name: document.getElementById('item-name').value,
+        type: document.getElementById('item-type').value,
+        tags: document.getElementById('item-tags').value.split(',').map(tag => tag.trim()),
+        description: document.getElementById('item-description').value,
+        minimumFireIcons: parseInt(document.getElementById('item-min-fire').value),
+        maximumFireIcons: parseInt(document.getElementById('item-max-fire').value),
+        minimumWaterIcons: parseInt(document.getElementById('item-min-water').value),
+        maximumWaterIcons: parseInt(document.getElementById('item-max-water').value),
+        minimumLightIcons: parseInt(document.getElementById('item-min-light').value),
+        maximumLightIcons: parseInt(document.getElementById('item-max-light').value),
+        minimumDarkIcons: parseInt(document.getElementById('item-min-dark').value),
+        maximumDarkIcons: parseInt(document.getElementById('item-max-dark').value),
+        minimumAirIcons: parseInt(document.getElementById('item-min-air').value),
+        maximumAirIcons: parseInt(document.getElementById('item-max-air').value),
+        minimumEarthIcons: parseInt(document.getElementById('item-min-earth').value),
+        maximumEarthIcons: parseInt(document.getElementById('item-max-earth').value),
+        minimumPhysicalIcons: parseInt(document.getElementById('item-min-physical').value),
+        maximumPhysicalIcons: parseInt(document.getElementById('item-max-physical').value),
+        specialEffects: document.getElementById('item-special-effects').value.split(',').map(effect => effect.trim())
+    };
+    
+    itemsData.weapons.push(newItem);
+    formStatus.textContent = 'Item added successfully!';
+    formStatus.style.color = 'green';
+    addItemForm.reset();
+    populateDropdowns();
 }
