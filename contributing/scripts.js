@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function() {
     addEffectBtn.addEventListener('click', function() {
         // Show the remove button for the first row if it's hidden
         if (specialEffectsContainer.children.length === 1) {
-            specialEffectsContainer.querySelector('.remove-effect-btn').style.display = 'block';
+            specialEffectsContainer.querySelector('.remove-effect-btn').style.display = 'flex';
         }
         
         // Create new row
@@ -53,11 +53,11 @@ document.addEventListener('DOMContentLoaded', function() {
         newInput.name = 'item-special-effects[]';
         newInput.placeholder = 'Enter special effect';
         
-        // Create remove button
+        // Create remove button with X
         const removeBtn = document.createElement('button');
         removeBtn.type = 'button';
         removeBtn.className = 'remove-effect-btn';
-        removeBtn.textContent = 'Remove';
+        removeBtn.textContent = '×'; // Use × symbol instead of "Remove"
         
         // Add functionality to remove button
         removeBtn.addEventListener('click', function() {
@@ -77,15 +77,18 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Add event listener to the initial remove button
     const initialRemoveBtn = specialEffectsContainer.querySelector('.remove-effect-btn');
-    initialRemoveBtn.addEventListener('click', function() {
-        const row = this.parentElement;
-        if (specialEffectsContainer.children.length > 1) {
-            specialEffectsContainer.removeChild(row);
-            
-            // Hide the remove button on first row if it's the only one left
-            if (specialEffectsContainer.children.length === 1) {
-                specialEffectsContainer.querySelector('.remove-effect-btn').style.display = 'none';
+    if (initialRemoveBtn) {
+        initialRemoveBtn.textContent = '×'; // Set initial button text to ×
+        initialRemoveBtn.addEventListener('click', function() {
+            const row = this.parentElement;
+            if (specialEffectsContainer.children.length > 1) {
+                specialEffectsContainer.removeChild(row);
+                
+                // Hide the remove button on first row if it's the only one left
+                if (specialEffectsContainer.children.length === 1) {
+                    specialEffectsContainer.querySelector('.remove-effect-btn').style.display = 'none';
+                }
             }
-        }
-    });
+        });
+    }
 });

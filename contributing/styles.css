@@ -191,15 +191,28 @@ button:hover {
     font-size: 16px;
 }
 
+/* Updated remove button as an X icon */
 .remove-effect-btn {
     background-color: #ff4d4d;
     color: white;
     border: none;
     border-radius: 4px;
-    padding: 8px 12px;
+    width: 30px;        /* Make it square */
+    height: 30px;       /* Make it square */
+    min-width: 30px;    /* Ensure it stays square */
+    font-size: 18px;    /* Make the X bigger */
+    display: flex;      /* Center the X */
+    align-items: center;
+    justify-content: center;
     margin-left: 10px;
     cursor: pointer;
     font-weight: bold;
+    padding: 0;         /* Remove padding */
+    line-height: 1;     /* Align the X properly */
+}
+
+.remove-effect-btn:hover {
+    background-color: #ff3333;
 }
 
 .add-effect-container {
@@ -222,10 +235,6 @@ button:hover {
 
 #add-effect-btn:hover {
     background-color: #45a049;
-}
-
-.remove-effect-btn:hover {
-    background-color: #ff3333;
 }
 
 /* Section toggle styling with arrows */
