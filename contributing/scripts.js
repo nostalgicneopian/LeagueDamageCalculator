@@ -17,16 +17,6 @@ document.addEventListener('DOMContentLoaded', function() {
             toggleCheckbox.addEventListener('change', function() {
                 // Toggle the visibility of the section
                 sectionElement.style.display = this.checked ? 'block' : 'none';
-                
-                // Toggle the required attribute for all inputs in the section
-                const inputs = document.querySelectorAll(item.inputSelector);
-                inputs.forEach(input => {
-                    if (this.checked) {
-                        input.setAttribute('required', '');
-                    } else {
-                        input.removeAttribute('required');
-                    }
-                });
             });
         }
     });
@@ -91,4 +81,24 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+
+    // Dark mode functionality
+    const darkModeToggle = document.getElementById('dark-mode-toggle');
+    
+    // Check for saved dark mode preference
+    if (localStorage.getItem('darkMode') === 'enabled') {
+        document.body.classList.add('dark-mode');
+    }
+    
+    // Toggle dark mode
+    darkModeToggle.addEventListener('click', function() {
+        document.body.classList.toggle('dark-mode');
+        
+        // Save preference
+        if (document.body.classList.contains('dark-mode')) {
+            localStorage.setItem('darkMode', 'enabled');
+        } else {
+            localStorage.setItem('darkMode', 'disabled');
+        }
+    });
 });

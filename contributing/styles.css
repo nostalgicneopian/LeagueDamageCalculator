@@ -5,29 +5,104 @@
     font-family: 'Arial', sans-serif;
 }
 
+/* Dark mode variables and styles */
+:root {
+    /* Light mode (default) */
+    --bg-color: #ffffff;
+    --text-color: #333333;
+    --input-bg: #ffffff;
+    --input-border: #cccccc;
+    --header-color: #333333;
+    --section-bg: #f9f9f9;
+    --section-border: #4CAF50;
+    --toggle-bg: #eeeeee;
+    --toggle-active: #4CAF50;
+    --button-bg: #4CAF50;
+    --button-text: white;
+    --button-hover: #45a049;
+    --remove-btn-bg: #ff4d4d;
+    --remove-btn-hover: #ff3333;
+    --form-section-bg: #ffffff;
+    --form-border: #e0e0e0;
+    --container-bg: #f7f7f7;
+}
+
+body.dark-mode {
+    /* Dark mode */
+    --bg-color: #1a1a1a;
+    --text-color: #e0e0e0;
+    --input-bg: #333333;
+    --input-border: #555555;
+    --header-color: #4CAF50;
+    --section-bg: #2a2a2a;
+    --section-border: #4CAF50;
+    --toggle-bg: #444444;
+    --toggle-active: #4CAF50;
+    --button-bg: #4CAF50;
+    --button-text: #e0e0e0;
+    --button-hover: #45a049;
+    --remove-btn-bg: #cc3333;
+    --remove-btn-hover: #aa2222;
+    --form-section-bg: #252525;
+    --form-border: #444444;
+    --container-bg: #1a1a1a;
+}
+
 body {
-    background-color: #f0f0f0;
-    color: #333;
+    background-color: var(--bg-color);
+    color: var(--text-color);
     padding: 20px;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .container {
     max-width: 1000px;
     margin: 0 auto;
-    background-color: #fff;
+    background-color: var(--container-bg);
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
 }
 
 h1, h2 {
     text-align: center;
     margin-bottom: 30px;
     color: #444;
+    transition: color 0.3s;
 }
 
+/* Improved form padding */
 .form-section {
-    margin-bottom: 30px;
+    background-color: var(--form-section-bg);
+    border: 1px solid var(--form-border);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, border-color 0.3s, box-shadow 0.3s;
+    padding: 30px;  /* Increased padding */
+    border-radius: 6px; /* Optional: slightly rounded corners */
+}
+
+/* Add some horizontal spacing to the form elements */
+#add-item-form {
+    padding: 0 15px;
+}
+
+/* Add more spacing around the form title */
+.form-section h2 {
+    margin-top: 0;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--form-border);
+}
+
+/* Better spacing for input groups */
+.form-section label {
+    margin-bottom: 8px;
+    display: inline-block;
+}
+
+body.dark-mode .form-section {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
 }
 
 label {
@@ -47,16 +122,25 @@ button {
     font-size: 16px;
 }
 
+input[type="text"],
+input[type="number"],
+.special-effect-input {
+    background-color: var(--input-bg);
+    border: 1px solid var(--input-border);
+    color: var(--text-color);
+    transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+}
+
 button {
-    background-color: #4b7bec;
-    color: white;
+    background-color: var(--button-bg);
+    color: var(--button-text);
     border: none;
     cursor: pointer;
     transition: background-color 0.3s;
 }
 
 button:hover {
-    background-color: #3867d6;
+    background-color: var(--button-hover);
 }
 
 .navigation {
@@ -87,7 +171,7 @@ button:hover {
     display: flex;
     flex-wrap: wrap;
     gap: 12px;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     width: 100%;
     padding: 10px 0;
 }
@@ -166,9 +250,9 @@ button:hover {
     margin-bottom: 15px;
     font-weight: bold;
     font-size: 18px;
-    color: #333;
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 5px;
+    color: var(--header-color);
+    border-bottom: 1px solid var(--input-border);
+    padding-bottom: 10px;
 }
 
 /* Updated Special Effects section */
@@ -193,7 +277,7 @@ button:hover {
 
 /* Updated remove button as an X icon */
 .remove-effect-btn {
-    background-color: #ff4d4d;
+    background-color: var(--remove-btn-bg);
     color: white;
     border: none;
     border-radius: 4px;
@@ -212,7 +296,7 @@ button:hover {
 }
 
 .remove-effect-btn:hover {
-    background-color: #ff3333;
+    background-color: var(--remove-btn-hover);
 }
 
 .add-effect-container {
@@ -241,11 +325,17 @@ button:hover {
 .section-toggle {
     display: flex;
     align-items: center;
-    margin-top: 20px;
+    margin-top: 25px;
     margin-bottom: 15px;
     padding-bottom: 5px;
     border-bottom: 1px solid #ddd;
     cursor: pointer; /* Make the entire header clickable */
+}
+
+/* Make content section spacing consistent */
+.toggleable-section {
+    margin-bottom: 25px;
+    padding: 20px;
 }
 
 .toggle-label {
@@ -293,8 +383,120 @@ input:checked + .toggle-arrow {
     margin-bottom: 20px;
     padding: 15px;
     border-radius: 4px;
-    background-color: #f9f9f9;
-    border-left: 3px solid #4CAF50;
+    background-color: var(--section-bg);
+    border-left: 3px solid var(--section-border);
+    transition: all 0.3s ease;
+}
+
+/* Improved Dark Mode Toggle Button with fixed centering */
+.dark-mode-container {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 100;
+}
+
+.dark-mode-toggle {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: #cccccc;
+    border: 2px solid #4CAF50;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.dark-mode-toggle:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.25);
+    background: #f2f9f2;
+}
+
+.dark-mode-toggle:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Fixed centering for both icons */
+.dark-mode-toggle .sun-icon,
+.dark-mode-toggle .moon-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.3s ease, transform 0.5s ease;
+    width: 26px;
+    height: 26px;
+}
+
+.dark-mode-toggle .sun-icon {
+    opacity: 1;
+    stroke: #ff8800;
+    fill: rgba(255, 136, 0, 0.1);
+}
+
+.dark-mode-toggle .moon-icon {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.5);
+    stroke: #2c3e50;
+}
+
+/* Dark mode styles */
+body.dark-mode .dark-mode-toggle {
+    background: #2a2a2a;
+    border-color: #4CAF50;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.4);
+}
+
+body.dark-mode .dark-mode-toggle:hover {
+    background: #333333;
+}
+
+body.dark-mode .dark-mode-toggle .sun-icon {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.5);
+}
+
+body.dark-mode .dark-mode-toggle .moon-icon {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+    stroke: #a0c1ff;
+    fill: rgba(160, 193, 255, 0.1);
+}
+
+/* Add a subtle pulse animation */
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(76, 175, 80, 0.4); }
+    70% { box-shadow: 0 0 0 8px rgba(76, 175, 80, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(76, 175, 80, 0); }
+}
+
+/* Apply animation only on page load */
+.dark-mode-toggle {
+    animation: pulse 2s 1;
+}
+
+/* Additional dark mode adjustments */
+body.dark-mode label {
+    color: var(--text-color);
+}
+
+body.dark-mode .toggle-label {
+    color: var(--text-color);
+}
+
+body.dark-mode .checkbox-group label {
+    color: var(--text-color);
+}
+
+body.dark-mode .toggle-arrow {
+    border-top-color: var(--toggle-active);
 }
 
 @media (max-width: 768px) {
@@ -307,4 +509,42 @@ input:checked + .toggle-arrow {
     button {
         font-size: 14px;
     }
+}
+
+/* Add transition for smooth color changes */
+.toggleable-section,
+.section-toggle,
+.icon-group-header,
+.navigation button,
+.checkbox-group,
+button {
+    transition: all 0.3s ease;
+}
+
+/* Ensure navigation buttons follow the theme */
+.navigation button {
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    border: none;
+}
+
+/* Fix for special effects section */
+.icon-group-header {
+    color: var(--header-color);
+    border-bottom: 1px solid var(--input-border);
+}
+
+/* Add a subtle border to sections in dark mode for better visibility */
+body.dark-mode .toggleable-section {
+    border: 1px solid var(--form-border);
+}
+
+/* Submit button spacing */
+button[type="submit"] {
+    margin-top: 10px;
+}
+
+/* Form status section spacing */
+#form-status {
+    margin-top: 20px;
 }
