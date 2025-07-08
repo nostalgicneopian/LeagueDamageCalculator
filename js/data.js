@@ -32,7 +32,8 @@ const itemsData = {
             "defenseDarkMin": 0,
             "defenseLightMin": 0,
             "offenseLightMax": 0,
-            "defensePhysicalMin": 0
+            "defensePhysicalMin": 0,
+            "id": "Bow of the Hegelob"
         },
         {
             "defenseFireMax": 0,
@@ -64,7 +65,8 @@ const itemsData = {
             "defenseDarkMin": 0,
             "defenseLightMin": 0,
             "offenseLightMax": 3,
-            "defensePhysicalMin": 0
+            "defensePhysicalMin": 0,
+            "id": "Carved Qasalan Blowgun"
         },
         {
             "defenseFireMax": 0,
@@ -96,7 +98,8 @@ const itemsData = {
             "defenseDarkMin": 0,
             "defenseLightMin": 0,
             "offenseLightMax": 5,
-            "defensePhysicalMin": 0
+            "defensePhysicalMin": 0,
+            "id": "Chia Ray Gun (Chia)"
         },
         {
             "defenseFireMax": 0,
@@ -128,7 +131,8 @@ const itemsData = {
             "defenseAirMax": 0,
             "defenseLightMin": 0,
             "offenseLightMax": 0,
-            "defensePhysicalMin": 0
+            "defensePhysicalMin": 0,
+            "id": "Cooty Crossbow"
         },
         {
             "defenseFireMax": 0,
@@ -160,7 +164,8 @@ const itemsData = {
             "defenseAirMax": 0,
             "defenseLightMin": 0,
             "offenseLightMax": 0,
-            "defensePhysicalMin": 0
+            "defensePhysicalMin": 0,
+            "id": "Dangerous Dodgeball"
         },
         {
             "defenseFireMax": 0,
@@ -192,7 +197,8 @@ const itemsData = {
             "defenseAirMax": 0,
             "defenseLightMin": 0,
             "offenseLightMax": 0,
-            "defensePhysicalMin": 0
+            "defensePhysicalMin": 0,
+            "id": "Dark Battle Duck"
         },
         {
             "defenseFireMax": 0,
@@ -224,7 +230,8 @@ const itemsData = {
             "defenseAirMax": 0,
             "defenseLightMin": 0,
             "offenseLightMax": 0,
-            "defensePhysicalMin": 0
+            "defensePhysicalMin": 0,
+            "id": "Decorative Maractite Sword"
         },
         {
             "defenseFireMax": 0,
@@ -256,7 +263,8 @@ const itemsData = {
             "defenseAirMax": 0,
             "defenseLightMin": 0,
             "offenseLightMax": 2,
-            "defensePhysicalMin": 0
+            "defensePhysicalMin": 0,
+            "id": "Desert Crossbow"
         },
         {
             "defenseFireMax": 0,
@@ -288,7 +296,8 @@ const itemsData = {
             "defenseAirMax": 0,
             "defenseLightMin": 0,
             "offenseLightMax": 0,
-            "defensePhysicalMin": 0
+            "defensePhysicalMin": 0,
+            "id": "Dual Batons of Katsuo"
         },
         {
             "defenseFireMax": 0,
@@ -320,7 +329,8 @@ const itemsData = {
             "defenseAirMax": 0,
             "defenseLightMin": 0,
             "offenseLightMax": 0,
-            "defensePhysicalMin": 0
+            "defensePhysicalMin": 0,
+            "id": "Essence of Esophagor"
         },
         {
             "defenseFireMax": 0,
@@ -352,7 +362,8 @@ const itemsData = {
             "defenseAirMax": 0,
             "defenseLightMin": 0,
             "offenseLightMax": 3,
-            "defensePhysicalMin": 0
+            "defensePhysicalMin": 0,
+            "id": "Exceptionally Tiny Laser Cannon"
         },
         {
             "defenseFireMax": 0,
@@ -384,7 +395,8 @@ const itemsData = {
             "defenseAirMax": 0,
             "defenseLightMin": 0,
             "offenseLightMax": 0,
-            "defensePhysicalMin": 0
+            "defensePhysicalMin": 0,
+            "id": "Festive Cutlass"
         },
         {
             "defenseFireMax": 0,
@@ -416,7 +428,8 @@ const itemsData = {
             "defenseAirMax": 0,
             "defenseLightMin": 0,
             "offenseLightMax": 0,
-            "defensePhysicalMin": 0
+            "defensePhysicalMin": 0,
+            "id": "Ice Club"
         },
         {
             "defenseFireMax": 0,
@@ -448,7 +461,8 @@ const itemsData = {
             "defenseAirMax": 0,
             "defenseLightMin": 0,
             "offenseLightMax": 0,
-            "defensePhysicalMin": 0
+            "defensePhysicalMin": 0,
+            "id": "Kazeriu Whip"
         },
         {
             "defenseFireMax": 0,
@@ -480,7 +494,8 @@ const itemsData = {
             "defenseAirMax": 0,
             "defenseLightMin": 0,
             "offenseLightMax": 0,
-            "defensePhysicalMin": 0
+            "defensePhysicalMin": 0,
+            "id": "Korbat Power Blaster"
         },
         {
             "defenseFireMax": 0,
@@ -512,7 +527,8 @@ const itemsData = {
             "defenseAirMax": 0,
             "defenseLightMin": 0,
             "offenseLightMax": 0,
-            "defensePhysicalMin": 0
+            "defensePhysicalMin": 0,
+            "id": "Lavaball"
         },
         {
             "defenseFireMax": 0,
@@ -544,7 +560,8 @@ const itemsData = {
             "defenseAirMax": 0,
             "defenseLightMin": 0,
             "offenseLightMax": 0,
-            "defensePhysicalMin": 0
+            "defensePhysicalMin": 0,
+            "id": "Lutari Lance (Lutari)"
         },
         {
             "defenseFireMax": 0,
@@ -576,7 +593,8 @@ const itemsData = {
             "defenseAirMax": 0,
             "defenseLightMin": 0,
             "offenseLightMax": 3,
-            "defensePhysicalMin": 0
+            "defensePhysicalMin": 0,
+            "id": "Merciless Idiom"
         },
         {
             "defenseFireMax": 0,
@@ -608,7 +626,8 @@ const itemsData = {
             "defenseAirMax": 0,
             "defenseLightMin": 0,
             "offenseLightMax": 0,
-            "defensePhysicalMin": 0
+            "defensePhysicalMin": 0,
+            "id": "Night Katana"
         },
         {
             "defenseFireMax": 0,
@@ -640,7 +659,8 @@ const itemsData = {
             "defenseAirMax": 0,
             "defenseLightMin": 0,
             "offenseLightMax": 0,
-            "defensePhysicalMin": 0
+            "defensePhysicalMin": 0,
+            "id": "Pickle Spear"
         },
         {
             "defenseFireMax": 0,
@@ -672,7 +692,8 @@ const itemsData = {
             "defenseAirMax": 0,
             "defenseLightMin": 0,
             "offenseLightMax": 4.5,
-            "defensePhysicalMin": 0
+            "defensePhysicalMin": 0,
+            "id": "Pike Pike"
         },
         {
             "defenseFireMax": 0,
@@ -704,7 +725,8 @@ const itemsData = {
             "defenseDarkMin": 0,
             "defenseLightMin": 0,
             "offenseLightMax": 3,
-            "defensePhysicalMin": 0
+            "defensePhysicalMin": 0,
+            "id": "Psellias Fighting Fan"
         },
         {
             "defenseFireMax": 0,
@@ -736,7 +758,8 @@ const itemsData = {
             "defenseDarkMin": 0,
             "defenseLightMin": 0,
             "offenseLightMax": 3,
-            "defensePhysicalMin": 0
+            "defensePhysicalMin": 0,
+            "id": "Rainbow Scroll"
         },
         {
             "defenseFireMax": 0,
@@ -768,7 +791,8 @@ const itemsData = {
             "defenseDarkMin": 0,
             "defenseLightMin": 0,
             "offenseLightMax": 0,
-            "defensePhysicalMin": 0
+            "defensePhysicalMin": 0,
+            "id": "Ridiculously Heavy Battle Hammer"
         },
         {
             "defenseFireMax": 0,
@@ -800,7 +824,8 @@ const itemsData = {
             "defenseDarkMin": 0,
             "defenseLightMin": 0,
             "offenseLightMax": 0,
-            "defensePhysicalMin": 0
+            "defensePhysicalMin": 0,
+            "id": "Rusty Cleaver"
         },
         {
             "defenseFireMax": 0,
@@ -832,7 +857,8 @@ const itemsData = {
             "defenseDarkMin": 0,
             "defenseLightMin": 0,
             "offenseLightMax": 0,
-            "defensePhysicalMin": 0
+            "defensePhysicalMin": 0,
+            "id": "Scroll of Forgotten Promises"
         },
         {
             "defenseFireMax": 0,
@@ -864,7 +890,8 @@ const itemsData = {
             "defenseDarkMin": 0,
             "defenseLightMin": 0,
             "offenseLightMax": 0,
-            "defensePhysicalMin": 0
+            "defensePhysicalMin": 0,
+            "id": "Scroll of the Battlefield"
         },
         {
             "defenseFireMax": 0,
@@ -896,7 +923,8 @@ const itemsData = {
             "defenseDarkMin": 0,
             "defenseLightMin": 0,
             "offenseLightMax": 0,
-            "defensePhysicalMin": 0
+            "defensePhysicalMin": 0,
+            "id": "Scroll of the Earth"
         },
         {
             "defenseFireMax": 0,
@@ -928,7 +956,8 @@ const itemsData = {
             "defenseDarkMin": 0,
             "defenseLightMin": 0,
             "offenseLightMax": 0,
-            "defensePhysicalMin": 0
+            "defensePhysicalMin": 0,
+            "id": "Shuko"
         },
         {
             "defenseFireMax": 0,
@@ -960,7 +989,8 @@ const itemsData = {
             "defenseDarkMin": 0,
             "defenseLightMin": 0,
             "offenseLightMax": 0,
-            "defensePhysicalMin": 0
+            "defensePhysicalMin": 0,
+            "id": "Silver Draik Bow (Draik)"
         },
         {
             "defenseFireMax": 0,
@@ -992,7 +1022,8 @@ const itemsData = {
             "defenseDarkMin": 0,
             "defenseLightMin": 0,
             "offenseLightMax": 2,
-            "defensePhysicalMin": 0
+            "defensePhysicalMin": 0,
+            "id": "Skeletal Fire Gun"
         },
         {
             "defenseFireMax": 0,
@@ -1024,7 +1055,8 @@ const itemsData = {
             "defenseDarkMin": 0,
             "defenseLightMin": 0,
             "offenseLightMax": 0,
-            "defensePhysicalMin": 0
+            "defensePhysicalMin": 0,
+            "id": "Spearmint"
         },
         {
             "defenseFireMax": 0,
@@ -1056,7 +1088,8 @@ const itemsData = {
             "defenseDarkMin": 0,
             "defenseLightMin": 0,
             "offenseLightMax": 0,
-            "defensePhysicalMin": 0
+            "defensePhysicalMin": 0,
+            "id": "Stone Club"
         },
         {
             "defenseFireMax": 0,
@@ -1088,7 +1121,8 @@ const itemsData = {
             "defenseDarkMin": 0,
             "defenseLightMin": 0,
             "offenseLightMax": 3,
-            "defensePhysicalMin": 0
+            "defensePhysicalMin": 0,
+            "id": "Strange Marking Stone Necklace"
         },
         {
             "defenseFireMax": 0,
@@ -1120,7 +1154,8 @@ const itemsData = {
             "defenseDarkMin": 0,
             "defenseLightMin": 0,
             "offenseLightMax": 0,
-            "defensePhysicalMin": 0
+            "defensePhysicalMin": 0,
+            "id": "Throwing Cutlass"
         },
         {
             "defenseFireMax": 0,
@@ -1152,7 +1187,8 @@ const itemsData = {
             "defenseDarkMin": 0,
             "defenseLightMin": 0,
             "offenseLightMax": 0,
-            "defensePhysicalMin": 0
+            "defensePhysicalMin": 0,
+            "id": "Tuskaninny Battle Trumpet (Tusk)"
         },
         {
             "defenseFireMax": 0,
@@ -1184,7 +1220,8 @@ const itemsData = {
             "defenseDarkMin": 0,
             "defenseLightMin": 0,
             "offenseLightMax": 0,
-            "defensePhysicalMin": 0
+            "defensePhysicalMin": 0,
+            "id": "Water Bazooka"
         },
         {
             "defenseFireMax": 0,
@@ -1216,7 +1253,8 @@ const itemsData = {
             "defenseDarkMin": 0,
             "defenseLightMin": 0,
             "offenseLightMax": 2,
-            "defensePhysicalMin": 0
+            "defensePhysicalMin": 0,
+            "id": "Sword of Elements"
         },
         {
             "defenseFireMax": 0,
@@ -1248,7 +1286,8 @@ const itemsData = {
             "defenseDarkMin": 0,
             "defenseLightMin": 0,
             "offenseLightMax": 8,
-            "defensePhysicalMin": 0
+            "defensePhysicalMin": 0,
+            "id": "Pumpkin Stick"
         },
         {
             "defenseFireMax": 0,
@@ -1280,7 +1319,8 @@ const itemsData = {
             "defenseDarkMin": 0,
             "defenseLightMin": 0,
             "offenseLightMax": 0,
-            "defensePhysicalMin": 0
+            "defensePhysicalMin": 0,
+            "id": "Altadorian Swordbreaker"
         },
         {
             "defenseFireMax": 0,
@@ -1312,7 +1352,8 @@ const itemsData = {
             "defenseDarkMin": 0,
             "defenseLightMin": 0,
             "offenseLightMax": 3,
-            "defensePhysicalMin": 3
+            "defensePhysicalMin": 3,
+            "id": "Amulet of Altador"
         },
         {
             "defenseFireMax": 0,
@@ -1344,7 +1385,8 @@ const itemsData = {
             "offenseWaterMax": 3,
             "defenseLightMin": 0,
             "offenseLightMax": 0,
-            "defensePhysicalMin": 0
+            "defensePhysicalMin": 0,
+            "id": "Amulet of Inevitable Betrayal"
         },
         {
             "defenseFireMax": 0,
@@ -1376,7 +1418,8 @@ const itemsData = {
             "offenseWaterMax": 0,
             "defenseLightMin": 0,
             "offenseLightMax": 0,
-            "defensePhysicalMin": 0
+            "defensePhysicalMin": 0,
+            "id": "Ancient Gnarled Wand"
         },
         {
             "defenseFireMax": 0,
@@ -1408,7 +1451,8 @@ const itemsData = {
             "offenseWaterMax": 0,
             "defenseLightMin": 0,
             "offenseLightMax": 0,
-            "defensePhysicalMin": 0
+            "defensePhysicalMin": 0,
+            "id": "Bleached Bone Staff"
         },
         {
             "defenseFireMax": 0,
@@ -1440,7 +1484,8 @@ const itemsData = {
             "offenseWaterMax": 0,
             "defenseLightMin": 0,
             "offenseLightMax": 0,
-            "defensePhysicalMin": 0
+            "defensePhysicalMin": 0,
+            "id": "Blunted Qasalan Gladius Sword"
         },
         {
             "defenseFireMax": 0,
@@ -1472,7 +1517,8 @@ const itemsData = {
             "offenseWaterMax": 3,
             "defenseLightMin": 0,
             "offenseLightMax": 3,
-            "defensePhysicalMin": 0
+            "defensePhysicalMin": 0,
+            "id": "Bubble Wands"
         },
         {
             "defenseFireMax": 0,
@@ -1504,7 +1550,8 @@ const itemsData = {
             "offenseWaterMax": 0,
             "defenseLightMin": 0,
             "offenseLightMax": 0,
-            "defensePhysicalMin": 0
+            "defensePhysicalMin": 0,
+            "id": "Chain Spear"
         },
         {
             "defenseFireMax": 0,
@@ -1536,7 +1583,8 @@ const itemsData = {
             "offenseWaterMax": 0,
             "defenseLightMin": 0,
             "offenseLightMax": 0,
-            "defensePhysicalMin": 0
+            "defensePhysicalMin": 0,
+            "id": "Chia Skunk Tail (Chia)"
         },
         {
             "defenseFireMax": 0,
@@ -1568,7 +1616,8 @@ const itemsData = {
             "offenseWaterMax": 2,
             "defenseLightMin": 0,
             "offenseLightMax": 0,
-            "defensePhysicalMin": 0
+            "defensePhysicalMin": 0,
+            "id": "Cloudy Wand of Storms"
         },
         {
             "defenseFireMax": 0,
@@ -1600,7 +1649,8 @@ const itemsData = {
             "offenseWaterMax": 0,
             "defenseLightMin": 0,
             "offenseLightMax": 0,
-            "defensePhysicalMin": 0
+            "defensePhysicalMin": 0,
+            "id": "Deadly Pugio"
         },
         {
             "defenseFireMax": 0,
@@ -1632,7 +1682,8 @@ const itemsData = {
             "offenseWaterMax": 0,
             "defenseLightMin": 0,
             "offenseLightMax": 0,
-            "defensePhysicalMin": 0
+            "defensePhysicalMin": 0,
+            "id": "Devious Top Hat and Cane"
         },
         {
             "defenseFireMax": 3,
@@ -1664,7 +1715,8 @@ const itemsData = {
             "offenseWaterMax": 0,
             "defenseLightMin": 3,
             "offenseLightMax": 0,
-            "defensePhysicalMin": 0
+            "defensePhysicalMin": 0,
+            "id": "Elegant Desert Sword"
         },
         {
             "defenseFireMax": 0,
@@ -1696,7 +1748,8 @@ const itemsData = {
             "offenseWaterMax": 0,
             "defenseLightMin": 0,
             "offenseLightMax": 0,
-            "defensePhysicalMin": 0
+            "defensePhysicalMin": 0,
+            "id": "Florins Flask"
         },
         {
             "defenseFireMax": 1,
@@ -1728,7 +1781,8 @@ const itemsData = {
             "offenseWaterMax": 3,
             "defenseLightMin": 3,
             "offenseLightMax": 0,
-            "defensePhysicalMin": 0
+            "defensePhysicalMin": 0,
+            "id": "Flotsam Ice Shell (Flotsam)"
         },
         {
             "defenseFireMax": 0,
@@ -1760,7 +1814,8 @@ const itemsData = {
             "offenseWaterMax": 0,
             "defenseLightMin": 0,
             "offenseLightMax": 3,
-            "defensePhysicalMin": 3
+            "defensePhysicalMin": 3,
+            "id": "Frozen Wand of Crystals"
         },
         {
             "defenseFireMax": 0,
@@ -1792,7 +1847,8 @@ const itemsData = {
             "offenseWaterMax": 3,
             "defenseLightMin": 0,
             "offenseLightMax": 0,
-            "defensePhysicalMin": 2
+            "defensePhysicalMin": 2,
+            "id": "Frozen Water Daggers"
         },
         {
             "defenseFireMax": 0,
@@ -1824,7 +1880,8 @@ const itemsData = {
             "offenseWaterMax": 3,
             "defenseLightMin": 0,
             "offenseLightMax": 0,
-            "defensePhysicalMin": 0
+            "defensePhysicalMin": 0,
+            "id": "Frozen Wave Scimitar"
         },
         {
             "defenseFireMax": 0,
@@ -1856,7 +1913,8 @@ const itemsData = {
             "offenseWaterMax": 2,
             "defenseLightMin": 0,
             "offenseLightMax": 0,
-            "defensePhysicalMin": 0
+            "defensePhysicalMin": 0,
+            "id": "Ghostly Jetsam Sword (Jetsam)"
         },
         {
             "defenseFireMax": 0,
@@ -1888,7 +1946,8 @@ const itemsData = {
             "offenseWaterMax": 0,
             "defenseLightMin": 0,
             "offenseLightMax": 3,
-            "defensePhysicalMin": 0
+            "defensePhysicalMin": 0,
+            "id": "Gilded War Hammer"
         },
         {
             "defenseFireMax": 0,
@@ -1920,7 +1979,8 @@ const itemsData = {
             "offenseWaterMax": 0,
             "defenseLightMin": 0,
             "offenseLightMax": 0,
-            "defensePhysicalMin": 0
+            "defensePhysicalMin": 0,
+            "id": "Glaive of Verdancy"
         },
         {
             "defenseFireMax": 0,
@@ -1952,7 +2012,8 @@ const itemsData = {
             "offenseWaterMax": 0,
             "defenseLightMin": 0,
             "offenseLightMax": 3,
-            "defensePhysicalMin": 0
+            "defensePhysicalMin": 0,
+            "id": "Golden Coin Amulet"
         },
         {
             "defenseFireMax": 0,
@@ -1984,7 +2045,8 @@ const itemsData = {
             "offenseWaterMax": 0,
             "defenseLightMin": 0,
             "offenseLightMax": 3,
-            "defensePhysicalMin": 0
+            "defensePhysicalMin": 0,
+            "id": "Golden Compass"
         },
         {
             "defenseFireMax": 0,
@@ -2016,7 +2078,8 @@ const itemsData = {
             "offenseWaterMax": 0,
             "defenseLightMin": 0,
             "offenseLightMax": 0,
-            "defensePhysicalMin": 0
+            "defensePhysicalMin": 0,
+            "id": "Golden Geraptiku Talisman"
         },
         {
             "defenseFireMax": 0,
@@ -2048,7 +2111,8 @@ const itemsData = {
             "offenseWaterMax": 0,
             "defenseLightMin": 0,
             "offenseLightMax": 0,
-            "defensePhysicalMin": 0
+            "defensePhysicalMin": 0,
+            "id": "Greater Air Potion"
         },
         {
             "defenseFireMax": 0,
@@ -2080,7 +2144,8 @@ const itemsData = {
             "offenseWaterMax": 7,
             "defenseLightMin": 0,
             "offenseLightMax": 0,
-            "defensePhysicalMin": 3
+            "defensePhysicalMin": 3,
+            "id": "Greater Water Potion"
         },
         {
             "defenseFireMax": 0,
@@ -2112,7 +2177,8 @@ const itemsData = {
             "offenseWaterMax": 0,
             "defenseLightMin": 0,
             "offenseLightMax": 0,
-            "defensePhysicalMin": 0
+            "defensePhysicalMin": 0,
+            "id": "Haunted Skull Fan"
         },
         {
             "defenseFireMax": 0,
@@ -2144,7 +2210,8 @@ const itemsData = {
             "offenseWaterMax": 3,
             "defenseLightMin": 0,
             "offenseLightMax": 0,
-            "defensePhysicalMin": 0
+            "defensePhysicalMin": 0,
+            "id": "Ice Dagger"
         },
         {
             "defenseFireMax": 0,
@@ -2176,7 +2243,8 @@ const itemsData = {
             "offenseWaterMax": 0,
             "defenseLightMin": 0,
             "offenseLightMax": 0,
-            "defensePhysicalMin": 0
+            "defensePhysicalMin": 0,
+            "id": "Iron Lupe Helm (Lupe)"
         },
         {
             "defenseFireMax": 0,
@@ -2208,7 +2276,8 @@ const itemsData = {
             "offenseWaterMax": 2,
             "defenseLightMin": 0,
             "offenseLightMax": 0,
-            "defensePhysicalMin": 0
+            "defensePhysicalMin": 0,
+            "id": "Jhudoras Cursed Sword"
         },
         {
             "defenseFireMax": 0,
@@ -2240,7 +2309,8 @@ const itemsData = {
             "offenseWaterMax": 0,
             "defenseLightMin": 0,
             "offenseLightMax": 0,
-            "defensePhysicalMin": 0
+            "defensePhysicalMin": 0,
+            "id": "Kau Knight Helmet (Kau)"
         },
         {
             "defenseFireMax": 3,
@@ -2272,7 +2342,8 @@ const itemsData = {
             "offenseWaterMax": 0,
             "defenseLightMin": 3,
             "offenseLightMax": 0,
-            "defensePhysicalMin": 0
+            "defensePhysicalMin": 0,
+            "id": "Kiko Battle Legs (Kiko)"
         },
         {
             "defenseFireMax": 0,
@@ -2304,7 +2375,8 @@ const itemsData = {
             "offenseWaterMax": 6,
             "defenseLightMin": 0,
             "offenseLightMax": 0,
-            "defensePhysicalMin": 0
+            "defensePhysicalMin": 0,
+            "id": "Kikovision Goggles (Kiko)"
         },
         {
             "defenseFireMax": 3,
@@ -2336,7 +2408,8 @@ const itemsData = {
             "offenseWaterMax": 0,
             "defenseLightMin": 3,
             "offenseLightMax": 0,
-            "defensePhysicalMin": 0
+            "defensePhysicalMin": 0,
+            "id": "Lightweight Black Tunic (150 INT)"
         },
         {
             "defenseFireMax": 0,
@@ -2368,7 +2441,8 @@ const itemsData = {
             "offenseWaterMax": 0,
             "defenseLightMin": 0,
             "offenseLightMax": 0,
-            "defensePhysicalMin": 0
+            "defensePhysicalMin": 0,
+            "id": "Makeshift Ships Hammer"
         },
         {
             "defenseFireMax": 0,
@@ -2400,7 +2474,8 @@ const itemsData = {
             "offenseWaterMax": 0,
             "defenseLightMin": 0,
             "offenseLightMax": 0,
-            "defensePhysicalMin": 3
+            "defensePhysicalMin": 3,
+            "id": "Moehog Eye Guards (Moehog)"
         },
         {
             "defenseFireMax": 0,
@@ -2432,7 +2507,8 @@ const itemsData = {
             "offenseWaterMax": 0,
             "defenseLightMin": 0,
             "offenseLightMax": 0,
-            "defensePhysicalMin": 0
+            "defensePhysicalMin": 0,
+            "id": "Mynci Helmet (Mynci)"
         },
         {
             "defenseFireMax": 2,
@@ -2464,7 +2540,8 @@ const itemsData = {
             "offenseWaterMax": 0,
             "defenseLightMin": 2,
             "offenseLightMax": 0,
-            "defensePhysicalMin": 0
+            "defensePhysicalMin": 0,
+            "id": "Nightsteed Mace"
         },
         {
             "defenseFireMax": 0,
@@ -2496,7 +2573,8 @@ const itemsData = {
             "offenseWaterMax": 3,
             "defenseLightMin": 0,
             "offenseLightMax": 2,
-            "defensePhysicalMin": 3
+            "defensePhysicalMin": 3,
+            "id": "Oversized Maractite Rune Sword"
         },
         {
             "defenseFireMax": 2,
@@ -2528,7 +2606,8 @@ const itemsData = {
             "offenseWaterMax": 0,
             "defenseLightMin": 2,
             "offenseLightMax": 0,
-            "defensePhysicalMin": 0
+            "defensePhysicalMin": 0,
+            "id": "Parachute Dynamite"
         },
         {
             "defenseFireMax": 0,
@@ -2560,7 +2639,8 @@ const itemsData = {
             "offenseWaterMax": 0,
             "defenseLightMin": 0,
             "offenseLightMax": 0,
-            "defensePhysicalMin": 0
+            "defensePhysicalMin": 0,
+            "id": "Phial of the Dreamer"
         },
         {
             "defenseFireMax": 0,
@@ -2592,7 +2672,8 @@ const itemsData = {
             "offenseWaterMax": 0,
             "defenseLightMin": 0,
             "offenseLightMax": 3,
-            "defensePhysicalMin": 3
+            "defensePhysicalMin": 3,
+            "id": "Plush Gelert Collar (Gelert)"
         },
         {
             "defenseFireMax": 0,
@@ -2624,7 +2705,8 @@ const itemsData = {
             "offenseWaterMax": 3,
             "defenseLightMin": 0,
             "offenseLightMax": 0,
-            "defensePhysicalMin": 0
+            "defensePhysicalMin": 0,
+            "id": "Pyon Stinger Mace"
         },
         {
             "defenseFireMax": 0,
@@ -2656,7 +2738,8 @@ const itemsData = {
             "defenseDarkMin": 0,
             "defenseLightMin": 0,
             "offenseLightMax": 5,
-            "defensePhysicalMin": 0
+            "defensePhysicalMin": 0,
+            "id": "Rusty Lamppost"
         },
         {
             "defenseFireMax": 3,
@@ -2688,7 +2771,8 @@ const itemsData = {
             "defenseDarkMin": 0,
             "defenseLightMin": 3,
             "offenseLightMax": 0,
-            "defensePhysicalMin": 0
+            "defensePhysicalMin": 0,
+            "id": "Scarab Ring"
         },
         {
             "defenseFireMax": 0,
@@ -2720,7 +2804,8 @@ const itemsData = {
             "defenseDarkMin": 0,
             "defenseLightMin": 0,
             "offenseLightMax": 0,
-            "defensePhysicalMin": 0
+            "defensePhysicalMin": 0,
+            "id": "Seti Hilt Sword"
         },
         {
             "defenseFireMax": 0,
@@ -2752,7 +2837,8 @@ const itemsData = {
             "defenseDarkMin": 0,
             "defenseLightMin": 0,
             "offenseLightMax": 0,
-            "defensePhysicalMin": 0
+            "defensePhysicalMin": 0,
+            "id": "Silver Korbat Amulet (Korbat)"
         },
         {
             "defenseFireMax": 0,
@@ -2784,7 +2870,8 @@ const itemsData = {
             "defenseDarkMin": 0,
             "defenseLightMin": 0,
             "offenseLightMax": 0,
-            "defensePhysicalMin": 0
+            "defensePhysicalMin": 0,
+            "id": "Sinister Scythe"
         },
         {
             "defenseFireMax": 3,
@@ -2816,7 +2903,8 @@ const itemsData = {
             "defenseDarkMin": 0,
             "defenseLightMin": 3,
             "offenseLightMax": 0,
-            "defensePhysicalMin": 0
+            "defensePhysicalMin": 0,
+            "id": "Snowager Sword"
         },
         {
             "defenseFireMax": 0,
@@ -2848,7 +2936,8 @@ const itemsData = {
             "defenseDarkMin": 0,
             "defenseLightMin": 0,
             "offenseLightMax": 0,
-            "defensePhysicalMin": 5
+            "defensePhysicalMin": 5,
+            "id": "Sophies Wooden Spoon"
         },
         {
             "defenseFireMax": 0,
@@ -2880,7 +2969,8 @@ const itemsData = {
             "defenseDarkMin": 0,
             "defenseLightMin": 0,
             "offenseLightMax": 0,
-            "defensePhysicalMin": 0
+            "defensePhysicalMin": 0,
+            "id": "Spiked Negg Mace"
         },
         {
             "defenseFireMax": 0,
@@ -2912,7 +3002,8 @@ const itemsData = {
             "defenseDarkMin": 0,
             "defenseLightMin": 0,
             "offenseLightMax": 0,
-            "defensePhysicalMin": 0
+            "defensePhysicalMin": 0,
+            "id": "Sword of the Dead"
         },
         {
             "defenseFireMax": 0,
@@ -2944,7 +3035,8 @@ const itemsData = {
             "defenseDarkMin": 0,
             "defenseLightMin": 0,
             "offenseLightMax": 6,
-            "defensePhysicalMin": 0
+            "defensePhysicalMin": 0,
+            "id": "The Scimitar of Lyra"
         },
         {
             "defenseFireMax": 0,
@@ -2976,7 +3068,8 @@ const itemsData = {
             "defenseDarkMin": 0,
             "defenseLightMin": 0,
             "offenseLightMax": 0,
-            "defensePhysicalMin": 0
+            "defensePhysicalMin": 0,
+            "id": "Tooth of Terask"
         },
         {
             "defenseFireMax": 3,
@@ -3008,7 +3101,8 @@ const itemsData = {
             "defenseDarkMin": 0,
             "defenseLightMin": 3,
             "offenseLightMax": 0,
-            "defensePhysicalMin": 0
+            "defensePhysicalMin": 0,
+            "id": "Twisted Dark Dagger"
         },
         {
             "defenseFireMax": 0,
@@ -3040,7 +3134,8 @@ const itemsData = {
             "defenseDarkMin": 0,
             "defenseLightMin": 0,
             "offenseLightMax": 0,
-            "defensePhysicalMin": 0
+            "defensePhysicalMin": 0,
+            "id": "Ultimate Negg Hammer"
         },
         {
             "defenseFireMax": 0,
@@ -3072,7 +3167,8 @@ const itemsData = {
             "defenseDarkMin": 0,
             "defenseLightMin": 0,
             "offenseLightMax": 2.65,
-            "defensePhysicalMin": 0
+            "defensePhysicalMin": 0,
+            "id": "Ultra Supreme Kiko Walker (Kiko)"
         },
         {
             "defenseFireMax": 0,
@@ -3104,7 +3200,8 @@ const itemsData = {
             "defenseDarkMin": 0,
             "defenseLightMin": 0,
             "offenseLightMax": 2,
-            "defensePhysicalMin": 0
+            "defensePhysicalMin": 0,
+            "id": "Wand of the Moon"
         },
         {
             "defenseFireMax": 0,
@@ -3136,7 +3233,8 @@ const itemsData = {
             "defenseDarkMin": 0,
             "defenseLightMin": 0,
             "offenseLightMax": 0,
-            "defensePhysicalMin": 0
+            "defensePhysicalMin": 0,
+            "id": "Zombie Fist on a Stick"
         },
         {
             "defenseFireMax": 5,
@@ -3168,7 +3266,8 @@ const itemsData = {
             "defenseDarkMin": 0,
             "defenseLightMin": 5,
             "offenseLightMax": 0,
-            "defensePhysicalMin": 0
+            "defensePhysicalMin": 0,
+            "id": "Wand of Lameness"
         },
         {
             "defenseFireMax": 0,
@@ -3200,7 +3299,8 @@ const itemsData = {
             "defenseDarkMin": 0,
             "defenseLightMin": 0,
             "offenseLightMax": 0,
-            "defensePhysicalMin": 0
+            "defensePhysicalMin": 0,
+            "id": "Grimoire of Thade"
         },
         {
             "defenseFireMax": 0,
@@ -3232,7 +3332,8 @@ const itemsData = {
             "defenseDarkMin": 0,
             "defenseLightMin": 0,
             "offenseLightMax": 3,
-            "defensePhysicalMin": 0
+            "defensePhysicalMin": 0,
+            "id": "Asparagus Dagger"
         },
         {
             "defenseFireMax": 0,
@@ -3264,7 +3365,8 @@ const itemsData = {
             "defenseDarkMin": 0,
             "defenseLightMin": 0,
             "offenseLightMax": 0,
-            "defensePhysicalMin": 0
+            "defensePhysicalMin": 0,
+            "id": "Hansos Masamune"
         },
         {
             "defenseFireMax": 0,
@@ -3296,7 +3398,8 @@ const itemsData = {
             "defenseDarkMin": 0,
             "defenseLightMin": 0,
             "offenseLightMax": 3,
-            "defensePhysicalMin": 0
+            "defensePhysicalMin": 0,
+            "id": "Amulet of the Unblinking Eye"
         },
         {
             "defenseFireMax": 0,
@@ -3328,7 +3431,8 @@ const itemsData = {
             "defenseDarkMin": 0,
             "defenseLightMin": 0,
             "offenseLightMax": 0,
-            "defensePhysicalMin": 0
+            "defensePhysicalMin": 0,
+            "id": "Dusty Magic Broom!"
         },
         {
             "defenseFireMax": 0,
@@ -3360,7 +3464,8 @@ const itemsData = {
             "defenseDarkMin": 0,
             "defenseLightMin": 0,
             "offenseLightMax": 0,
-            "defensePhysicalMin": 0
+            "defensePhysicalMin": 0,
+            "id": "Glaive of Verdancy"
         },
         {
             "defenseFireMax": 0,
@@ -3392,7 +3497,8 @@ const itemsData = {
             "defenseDarkMin": 0,
             "defenseLightMin": 0,
             "offenseLightMax": 0,
-            "defensePhysicalMin": 0
+            "defensePhysicalMin": 0,
+            "id": "Sinister Scythe"
         },
         {
             "defenseFireMax": 0,
@@ -3424,7 +3530,8 @@ const itemsData = {
             "defenseDarkMin": 0,
             "defenseLightMin": 0,
             "offenseLightMax": 5,
-            "defensePhysicalMin": 0
+            "defensePhysicalMin": 0,
+            "id": "Space Faerie Token"
         },
         {
             "defenseFireMax": 0,
@@ -3456,7 +3563,8 @@ const itemsData = {
             "defenseDarkMin": 0,
             "defenseLightMin": 0,
             "offenseLightMax": 0,
-            "defensePhysicalMin": 0
+            "defensePhysicalMin": 0,
+            "id": "Fighting Folder (+2hp)"
         },
         {
             "defenseFireMax": 0,
@@ -3488,7 +3596,8 @@ const itemsData = {
             "defenseDarkMin": 2,
             "defenseLightMin": 0,
             "offenseLightMax": 3,
-            "defensePhysicalMin": 0
+            "defensePhysicalMin": 0,
+            "id": "Sunblade Replica (def when dark)"
         },
         {
             "defenseFireMax": 0,
@@ -3520,12 +3629,13 @@ const itemsData = {
             "defenseDarkMin": 0,
             "defenseLightMin": 0,
             "offenseLightMax": 0,
-            "defensePhysicalMin": 0
+            "defensePhysicalMin": 0,
+            "id": "Downsize! Reduces all damage by 50%"
         },
         {
             "defenseFireMax": 0,
             "offenseFireMin": 0,
-            "name": "\"Pretty Negg Shield. Blocks 60% Earth\/Light",
+            "name": "\"Pretty Negg Shield. Blocks 60% Earth/Light",
             "defenseWaterMin": 0,
             "defenseWaterMax": 0,
             "defenseLightMax": 0,
@@ -3552,7 +3662,8 @@ const itemsData = {
             "defenseDarkMin": 0,
             "defenseLightMin": 0,
             "offenseLightMax": 0,
-            "defensePhysicalMin": 0
+            "defensePhysicalMin": 0,
+            "id": "\"Pretty Negg Shield. Blocks 60% Earth/Light"
         },
         {
             "defenseFireMax": 0,
@@ -3584,7 +3695,8 @@ const itemsData = {
             "defenseDarkMin": 3,
             "defenseLightMin": 0,
             "offenseLightMax": 0,
-            "defensePhysicalMin": 0
+            "defensePhysicalMin": 0,
+            "id": "Nebula Force Field Generator"
         },
         {
             "defenseFireMax": 3,
@@ -3616,7 +3728,8 @@ const itemsData = {
             "defenseDarkMin": 0,
             "defenseLightMin": 0,
             "offenseLightMax": 0,
-            "defensePhysicalMin": 0
+            "defensePhysicalMin": 0,
+            "id": "Sophies Magic Hat"
         },
         {
             "defenseFireMax": 0,
@@ -3648,7 +3761,8 @@ const itemsData = {
             "defenseDarkMin": 0,
             "defenseLightMin": 0,
             "offenseLightMax": 0,
-            "defensePhysicalMin": 5
+            "defensePhysicalMin": 5,
+            "id": "Kiko Skull Pirate Hat"
         },
         {
             "defenseFireMax": 3,
@@ -3680,7 +3794,8 @@ const itemsData = {
             "defenseDarkMin": 3,
             "defenseLightMin": 3,
             "offenseLightMax": 0,
-            "defensePhysicalMin": 3
+            "defensePhysicalMin": 3,
+            "id": "Solar Flare Shield"
         },
         {
             "defenseFireMax": 3,
@@ -3712,7 +3827,8 @@ const itemsData = {
             "defenseDarkMin": 2,
             "defenseLightMin": 3,
             "offenseLightMax": 0,
-            "defensePhysicalMin": 2
+            "defensePhysicalMin": 2,
+            "id": "Wanderers Cloak"
         },
         {
             "defenseFireMax": 0,
@@ -3744,7 +3860,8 @@ const itemsData = {
             "defenseDarkMin": 0,
             "defenseLightMin": 0,
             "offenseLightMax": 0,
-            "defensePhysicalMin": 5
+            "defensePhysicalMin": 5,
+            "id": "Leaf Shield"
         },
         {
             "defenseFireMax": 0,
@@ -3776,7 +3893,8 @@ const itemsData = {
             "defenseDarkMin": 0,
             "defenseLightMin": 0,
             "offenseLightMax": 0,
-            "defensePhysicalMin": 2
+            "defensePhysicalMin": 2,
+            "id": "Virtupets X-514 Super Shield"
         },
         {
             "defenseFireMax": 0,
@@ -3808,7 +3926,8 @@ const itemsData = {
             "defenseDarkMin": 5,
             "defenseLightMin": 0,
             "offenseLightMax": 0,
-            "defensePhysicalMin": 0
+            "defensePhysicalMin": 0,
+            "id": "Parchment Cloak (+150INT)"
         },
         {
             "defenseFireMax": 0,
@@ -3840,7 +3959,8 @@ const itemsData = {
             "defenseDarkMin": 0,
             "defenseLightMin": 0,
             "offenseLightMax": 0,
-            "defensePhysicalMin": 3
+            "defensePhysicalMin": 3,
+            "id": "Parasol of Unfortunate Demise"
         },
         {
             "defenseFireMax": 0,
@@ -3872,7 +3992,8 @@ const itemsData = {
             "defenseDarkMin": 5,
             "defenseLightMin": 0,
             "offenseLightMax": 0,
-            "defensePhysicalMin": 5
+            "defensePhysicalMin": 5,
+            "id": "Kaylas Magic Cloak (Zafara)"
         },
         {
             "defenseFireMax": 3,
@@ -3904,7 +4025,8 @@ const itemsData = {
             "defenseDarkMin": 3,
             "defenseLightMin": 3,
             "offenseLightMax": 0,
-            "defensePhysicalMin": 0
+            "defensePhysicalMin": 0,
+            "id": "Royal Blue Cape"
         },
         {
             "defenseFireMax": 3.27,
@@ -3936,7 +4058,8 @@ const itemsData = {
             "defenseDarkMin": 3.24,
             "defenseLightMin": 3.27,
             "offenseLightMax": 0,
-            "defensePhysicalMin": 0
+            "defensePhysicalMin": 0,
+            "id": "Full Buzz Armour (Buzz)"
         },
         {
             "defenseFireMax": 2,
@@ -3968,7 +4091,8 @@ const itemsData = {
             "defenseDarkMin": 2,
             "defenseLightMin": 2,
             "offenseLightMax": 0,
-            "defensePhysicalMin": 0
+            "defensePhysicalMin": 0,
+            "id": "Tower Shield"
         }
     ]
 };

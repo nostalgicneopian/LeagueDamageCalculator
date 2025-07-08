@@ -38,14 +38,14 @@ function populateDropdowns() {
     
     mainHandWeapons.forEach(weapon => {
         const option = document.createElement('option');
-        option.value = weapon.name;
+        option.value = weapon.id;
         option.textContent = weapon.name;
         mainhandSelect.appendChild(option);
     });
     
     offHandWeapons.forEach(weapon => {
         const option = document.createElement('option');
-        option.value = weapon.name;
+        option.value = weapon.id;
         option.textContent = weapon.name;
         offhandSelect.appendChild(option);
     });
@@ -71,15 +71,15 @@ function updateItemDetails(slotType) {
     if (slotType === 'mainhand') {
         selectedId = mainhandSelect.value;
         detailsElement = mainhandDetails;
-        item = itemsData.weapons.find(weapon => weapon.name === selectedId);
+        item = itemsData.weapons.find(weapon => weapon.id === selectedId);
     } else if (slotType === 'offhand') {
         selectedId = offhandSelect.value;
         detailsElement = offhandDetails;
-        item = itemsData.weapons.find(weapon => weapon.name === selectedId);
+        item = itemsData.weapons.find(weapon => weapon.id === selectedId);
     } else if (slotType === 'accessory') {
         selectedId = accessorySelect.value;
         detailsElement = accessoryDetails;
-        item = itemsData.weapons.find(weapon => weapon.name === selectedId);
+        item = itemsData.weapons.find(weapon => weapon.id === selectedId);
     } else if (slotType === 'ability') {
         selectedId = abilitySelect.value;
         detailsElement = abilityDetails;
