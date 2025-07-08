@@ -50,19 +50,12 @@ function populateDropdowns() {
         offhandSelect.appendChild(option);
     });
     
-    accessories.forEach(accessory => {
-        const option = document.createElement('option');
-        option.value = accessory.id;
-        option.textContent = accessory.name;
-        accessorySelect.appendChild(option);
-    });
-    
-    itemsData.abilities.forEach(ability => {
-        const option = document.createElement('option');
-        option.value = ability.id;
-        option.textContent = ability.name;
-        abilitySelect.appendChild(option);
-    });
+    // itemsData.abilities.forEach(ability => {
+    //     const option = document.createElement('option');
+    //     option.value = ability.id;
+    //     option.textContent = ability.name;
+    //     abilitySelect.appendChild(option);
+    // });
 }
 
 function updateItemDetails(slotType) {
@@ -76,7 +69,8 @@ function updateItemDetails(slotType) {
         selectedId = offhandSelect.value;
         detailsElement = offhandDetails;
         item = itemsData.weapons.find(weapon => weapon.id === selectedId);
-    } else if (slotType === 'accessory') {
+    } /*
+    else if (slotType === 'accessory') {
         selectedId = accessorySelect.value;
         detailsElement = accessoryDetails;
         item = itemsData.weapons.find(weapon => weapon.id === selectedId);
@@ -85,7 +79,7 @@ function updateItemDetails(slotType) {
         detailsElement = abilityDetails;
         item = itemsData.abilities.find(ability => ability.id === selectedId);
     }
-    
+    */
     detailsElement.innerHTML = '';
     
     if (!item) return;
@@ -119,13 +113,11 @@ function updateItemDetails(slotType) {
 function calculateDamage() {
     const mainhandId = mainhandSelect.value;
     const offhandId = offhandSelect.value;
-    const accessoryId = accessorySelect.value;
-    const abilityId = abilitySelect.value;
+    // const abilityId = abilitySelect.value;
     
     const mainhand = itemsData.weapons.find(weapon => weapon.id === mainhandId);
     const offhand = itemsData.weapons.find(weapon => weapon.id === offhandId);
-    const accessory = itemsData.weapons.find(weapon => weapon.id === accessoryId);
-    const ability = itemsData.abilities.find(ability => ability.id === abilityId);
+    // const ability = itemsData.abilities.find(ability => ability.id === abilityId);
     
     effectsList.innerHTML = '';
     
@@ -141,7 +133,7 @@ function calculateDamage() {
         };
     });
     
-    [mainhand, offhand, accessory].forEach(item => {
+    [mainhand, offhand].forEach(item => {
         if (item) {
             elements.forEach(element => {
                 const offenseKeyMin = `offense${element.charAt(0).toUpperCase() + element.slice(1)}Min`;
@@ -165,19 +157,19 @@ function calculateDamage() {
         }
     });
     
-    if (ability) {
-        if (ability.damageType !== 'heal') {
-            results[ability.damageType].min += ability.minimumIcons || 0;
-            results[ability.damageType].max += ability.maximumIcons || 0;
-        } else {
-            results['light'].min += ability.minimumIcons || 0;
-            results['light'].max += ability.maximumIcons || 0;
-        }
+    // if (ability) {
+    //     if (ability.damageType !== 'heal') {
+    //         results[ability.damageType].min += ability.minimumIcons || 0;
+    //         results[ability.damageType].max += ability.maximumIcons || 0;
+    //     } else {
+    //         results['light'].min += ability.minimumIcons || 0;
+    //         results['light'].max += ability.maximumIcons || 0;
+    //     }
         
-        const abilityEffectItem = document.createElement('li');
-        abilityEffectItem.textContent = `${ability.name}: ${ability.effect}`;
-        effectsList.appendChild(abilityEffectItem);
-    }
+    //     const abilityEffectItem = document.createElement('li');
+    //     abilityEffectItem.textContent = `${ability.name}: ${ability.effect}`;
+    //     effectsList.appendChild(abilityEffectItem);
+    // }
     
     elements.forEach(element => {
         const offenseKeyResult = `offense${element.charAt(0).toUpperCase() + element.slice(1)}`;
