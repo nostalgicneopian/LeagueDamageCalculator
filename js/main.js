@@ -90,14 +90,22 @@ function updateItemDetails(slotType) {
     let detailsHTML = '';
     
     elements.forEach(element => {
-        const min = item[`minimum${element.charAt(0).toUpperCase() + element.slice(1)}Icons`];
-        const max = item[`maximum${element.charAt(0).toUpperCase() + element.slice(1)}Icons`];
+        const offenseMin = item[`offense${element.charAt(0).toUpperCase() + element.slice(1)}Min`];
+        const offenseMax = item[`offense${element.charAt(0).toUpperCase() + element.slice(1)}Max`];
+        const defenseMin = item[`offense${element.charAt(0).toUpperCase() + element.slice(1)}Min`];
+        const defenseMax = item[`offense${element.charAt(0).toUpperCase() + element.slice(1)}Max`];
         
-        if (min > 0 || max > 0) {
+        if (offenseMin > 0 || offenseMax > 0) {
             if( detailsHTML === '') {
-                detailsHTML += `<p><strong>Element Icons:</strong></p>`;
+                detailsHTML += `<p><strong>Offense Icons:</strong></p>`;
             }
-            detailsHTML += `<p>${element.charAt(0).toUpperCase() + element.slice(1)}: ${min} - ${max}</p>`;
+            detailsHTML += `<p>${element.charAt(0).toUpperCase() + element.slice(1)}: ${offenseMin} - ${offenseMax}</p>`;
+        }
+        if (defenseMin > 0 || defenseMax > 0) {
+            if( detailsHTML === '') {
+                detailsHTML += `<p><strong>Offense Icons:</strong></p>`;
+            }
+            detailsHTML += `<p>${element.charAt(0).toUpperCase() + element.slice(1)}: ${defenseMin} - ${defenseMax}</p>`;
         }
     });
     
