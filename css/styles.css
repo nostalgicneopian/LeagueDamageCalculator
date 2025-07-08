@@ -99,7 +99,7 @@ button:hover {
     color: #555;
 }
 
-.offense-result, .defense-result {
+.damage-result, .offense-result, .defense-result {
     display: flex;
     flex-wrap: wrap;
     gap: 15px;
@@ -152,11 +152,7 @@ button:hover {
         flex-direction: column;
     }
     
-    .offense-result {
-        flex-direction: column;
-    }
-
-    .defense-result {
+    .damage-result, .offense-result, .defense-result {
         flex-direction: column;
     }
 }
