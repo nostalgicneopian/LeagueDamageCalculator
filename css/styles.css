@@ -152,7 +152,11 @@ button:hover {
         flex-direction: column;
     }
     
-    .damage-result {
+    .offense-result {
+        flex-direction: column;
+    }
+
+    .defense-result {
         flex-direction: column;
     }
 }
