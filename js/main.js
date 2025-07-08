@@ -4,7 +4,6 @@ const accessorySelect = document.getElementById('accessory-select');
 const abilitySelect = document.getElementById('ability-select');
 const calculateBtn = document.getElementById('calculate-btn');
 const effectsList = document.getElementById('effects-list');
-const addItemForm = document.getElementById('add-item-form');
 const formStatus = document.getElementById('form-status');
 
 const mainhandDetails = document.getElementById('mainhand-details');
@@ -263,6 +262,5 @@ function handleFormSubmit(event) {
     itemsData.weapons.push(newItem);
     formStatus.textContent = 'Item added successfully!';
     formStatus.style.color = 'green';
-    addItemForm.reset();
     populateDropdowns();
 }
