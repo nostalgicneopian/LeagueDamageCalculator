@@ -88,30 +88,63 @@ function updateItemDetails(slotType) {
     if (!item) return;
     
     let detailsHTML = '';
+    let hasOffenseIcons = false;
+    let hasDefenseIcons = false;
     
+    // Helper function to get the correct icon filename
+    function getIconFileName(element, isDefense = false) {
+        const iconName = element === 'dark' ? 'darkness' : element;
+        return isDefense ? `blocked-${iconName}-icon.png` : `${iconName}-icon.png`;
+    }
+    
+    // Helper function to generate icon HTML
+    function generateIconsHTML(count, iconPath) {
+        let iconsHTML = '';
+        for (let i = 0; i < count; i++) {
+            iconsHTML += `<img src="images/${iconPath}" alt="" style="width: 20px; height: 20px; margin-right: 2px;">`;
+        }
+        return iconsHTML;
+    }
+    
+    // Check for offense icons first
     elements.forEach(element => {
-        const offenseMin = item[`offense${element.charAt(0).toUpperCase() + element.slice(1)}Min`];
-        const offenseMax = item[`offense${element.charAt(0).toUpperCase() + element.slice(1)}Max`];
-        const defenseMin = item[`offense${element.charAt(0).toUpperCase() + element.slice(1)}Min`];
-        const defenseMax = item[`offense${element.charAt(0).toUpperCase() + element.slice(1)}Max`];
+        const offenseMin = item[`offense${element.charAt(0).toUpperCase() + element.slice(1)}Min`] || 0;
+        const offenseMax = item[`offense${element.charAt(0).toUpperCase() + element.slice(1)}Max`] || 0;
         
         if (offenseMin > 0 || offenseMax > 0) {
-            if( detailsHTML === '') {
+            if (!hasOffenseIcons) {
                 detailsHTML += `<p><strong>Offense Icons:</strong></p>`;
+                hasOffenseIcons = true;
             }
-            detailsHTML += `<p>${element.charAt(0).toUpperCase() + element.slice(1)}: ${offenseMin} - ${offenseMax}</p>`;
-        }
-        if (defenseMin > 0 || defenseMax > 0) {
-            if( detailsHTML === '') {
-                detailsHTML += `<p><strong>Offense Icons:</strong></p>`;
-            }
-            detailsHTML += `<p>${element.charAt(0).toUpperCase() + element.slice(1)}: ${defenseMin} - ${defenseMax}</p>`;
+            
+            const iconPath = getIconFileName(element, false);
+            const iconsHTML = generateIconsHTML(offenseMin, iconPath);
+            detailsHTML += `<p>${iconsHTML} ${offenseMin}-${offenseMax}</p>`;
         }
     });
     
-    if (item.effects) {
-        for( const effect of item.effects) {
-            detailsHTML += `<p><strong>Effect:</strong> ${effect}</p>`;
+    // Check for defense icons
+    elements.forEach(element => {
+        const defenseMin = item[`defense${element.charAt(0).toUpperCase() + element.slice(1)}Min`] || 0;
+        const defenseMax = item[`defense${element.charAt(0).toUpperCase() + element.slice(1)}Max`] || 0;
+        
+        if (defenseMin > 0 || defenseMax > 0) {
+            if (!hasDefenseIcons) {
+                detailsHTML += `<p><strong>Defense Icons:</strong></p>`;
+                hasDefenseIcons = true;
+            }
+            
+            const iconPath = getIconFileName(element, true);
+            const iconsHTML = generateIconsHTML(defenseMin, iconPath);
+            detailsHTML += `<p>${iconsHTML} ${defenseMin}-${defenseMax}</p>`;
+        }
+    });
+    
+    // Add effects
+    if (item.effects && item.effects.length > 0) {
+        detailsHTML += `<p><strong>Effects:</strong></p>`;
+        for (const effect of item.effects) {
+            detailsHTML += `<p>• ${effect}</p>`;
         }
     }
     
