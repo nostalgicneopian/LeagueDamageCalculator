@@ -152,16 +152,14 @@ function calculateDamage() {
                 results[defenseKeyResult].max += item[defenseKeyMax] || 0;
             });
             
-            if (item.specialEffect) {
-                const effectItem = document.createElement('li');
-                effectItem.textContent = `${item.name}: ${item.specialEffect}`;
-                effectsList.appendChild(effectItem);
+            if (item.effects) {
+                for( const effect of item.effects) {
+                    const effectItem = document.createElement('li');
+                    effectItem.textContent = `${item.name}: ${effect}`;
+                    effectsList.appendChild(effectItem);
+                }
             }
         }
-        
-        const abilityEffectItem = document.createElement('li');
-        abilityEffectItem.textContent = `${ability.name}: ${ability.effect}`;
-        effectsList.appendChild(abilityEffectItem);
     });
     
     elements.forEach(element => {
