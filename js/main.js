@@ -98,7 +98,7 @@ function updateItemDetails(slotType) {
         }
     });
     
-    if (item.specialEffect) {
+    if (item.effects && item.effects.length > 0) {
         detailsHTML += `<p><strong>Special Effect:</strong> ${item.specialEffect}</p>`;
     }
     
