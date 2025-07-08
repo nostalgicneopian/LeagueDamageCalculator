@@ -98,8 +98,10 @@ function updateItemDetails(slotType) {
         }
     });
     
-    if (item.effects && item.effects.length > 0) {
-        detailsHTML += `<p><strong>Special Effect:</strong> ${item.specialEffect}</p>`;
+    if (item.effects) {
+        for( const effect of item.effects) {
+            detailsHTML += `<p><strong>Effect:</strong> ${effect}</p>`;
+        }
     }
     
     detailsElement.innerHTML = detailsHTML;
