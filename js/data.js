@@ -1550,7 +1550,7 @@ const itemsData = {
             "offenseWaterMax": 0,
             "defenseLightMin": 0,
             "offenseLightMax": 0,
-            "defensePhysicalMin": 0,
+            "defensePhysicalMin": 3,
             "id": "Chain Spear"
         },
         {

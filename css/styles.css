@@ -99,7 +99,7 @@ button:hover {
     color: #555;
 }
 
-.damage-result {
+.offense-result, .defense-result {
     display: flex;
     flex-wrap: wrap;
     gap: 15px;
