@@ -1,13 +1,11 @@
 const mainhandSelect = document.getElementById('mainhand-select');
 const offhandSelect = document.getElementById('offhand-select');
-const accessorySelect = document.getElementById('accessory-select');
 const abilitySelect = document.getElementById('ability-select');
 const effectsList = document.getElementById('effects-list');
 const formStatus = document.getElementById('form-status');
 
 const mainhandDetails = document.getElementById('mainhand-details');
 const offhandDetails = document.getElementById('offhand-details');
-const accessoryDetails = document.getElementById('accessory-details');
 const abilityDetails = document.getElementById('ability-details');
 
 const elements = ['fire', 'water', 'light', 'dark', 'air', 'earth', 'physical'];
@@ -33,10 +31,6 @@ document.addEventListener('DOMContentLoaded', () => {
         updateItemDetails('offhand');
         calculateDamage();
     });
-    accessorySelect.addEventListener('change', () => {
-        updateItemDetails('accessory');
-        calculateDamage();
-    });
     abilitySelect.addEventListener('change', () => {
         updateItemDetails('ability');
         calculateDamage();
@@ -49,7 +43,6 @@ document.addEventListener('DOMContentLoaded', () => {
 function populateDropdowns() {
     const mainHandWeapons = itemsData.weapons;
     const offHandWeapons = itemsData.weapons;
-    const accessories = itemsData.accessories || [];
     
     mainHandWeapons.forEach(weapon => {
         const option = document.createElement('option');
@@ -85,11 +78,7 @@ function updateItemDetails(slotType) {
         detailsElement = offhandDetails;
         item = itemsData.weapons.find(weapon => weapon.id === selectedId);
     } /*
-    else if (slotType === 'accessory') {
-        selectedId = accessorySelect.value;
-        detailsElement = accessoryDetails;
-        item = itemsData.weapons.find(weapon => weapon.id === selectedId);
-    } else if (slotType === 'ability') {
+    else if (slotType === 'ability') {
         selectedId = abilitySelect.value;
         detailsElement = abilityDetails;
         item = itemsData.abilities.find(ability => ability.id === selectedId);
