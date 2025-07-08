@@ -87,13 +87,16 @@ function updateItemDetails(slotType) {
     
     if (!item) return;
     
-    let detailsHTML = '<p><strong>Element Icons:</strong></p>';
+    let detailsHTML = '';
     
     elements.forEach(element => {
         const min = item[`minimum${element.charAt(0).toUpperCase() + element.slice(1)}Icons`];
         const max = item[`maximum${element.charAt(0).toUpperCase() + element.slice(1)}Icons`];
         
         if (min > 0 || max > 0) {
+            if( detailsHTML === '') {
+                detailsHTML += `<p><strong>Element Icons:</strong></p>`;
+            }
             detailsHTML += `<p>${element.charAt(0).toUpperCase() + element.slice(1)}: ${min} - ${max}</p>`;
         }
     });
