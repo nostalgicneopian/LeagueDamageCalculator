@@ -42,6 +42,9 @@ document.addEventListener('DOMContentLoaded', () => {
     initCustomDropdown('offhand', allWeapons, 'Select a weapon');
     initCustomDropdown('ability', allAbilities, 'Select an ability');
     
+    // Initialize dark mode
+    initDarkMode();
+    
     // Close dropdowns when clicking outside
     document.addEventListener('click', (e) => {
         if (!e.target.closest('.custom-dropdown')) {
@@ -360,5 +363,30 @@ function calculateDamage() {
         maxElements[element].textContent = results[offenseKeyResult].max;
         defenseMinElements[element].textContent = results[defenseKeyResult].min;
         defenseMaxElements[element].textContent = results[defenseKeyResult].max;
+    });
+}
+
+function initDarkMode() {
+    const darkModeToggle = document.getElementById('dark-mode-toggle');
+    const toggleIcon = darkModeToggle.querySelector('.toggle-icon');
+    
+    // Check for saved dark mode preference or default to light mode
+    const isDarkMode = localStorage.getItem('darkMode') === 'true';
+    
+    if (isDarkMode) {
+        document.body.classList.add('dark-mode');
+        toggleIcon.textContent = '☀️';
+    }
+    
+    // Add click event listener to toggle button
+    darkModeToggle.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+        const isNowDarkMode = document.body.classList.contains('dark-mode');
+        
+        // Update icon
+        toggleIcon.textContent = isNowDarkMode ? '☀️' : '🌙';
+        
+        // Save preference to localStorage
+        localStorage.setItem('darkMode', isNowDarkMode.toString());
     });
 }
