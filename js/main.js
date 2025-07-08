@@ -368,7 +368,12 @@ function calculateDamage() {
 
 function initDarkMode() {
     const darkModeToggle = document.getElementById('dark-mode-toggle');
-    const toggleIcon = darkModeToggle.querySelector('.toggle-icon');
+    const toggleIcon = darkModeToggle?.querySelector('.toggle-icon');
+    
+    if (!darkModeToggle || !toggleIcon) {
+        console.error('Dark mode toggle elements not found');
+        return;
+    }
     
     // Check for saved dark mode preference or default to light mode
     const isDarkMode = localStorage.getItem('darkMode') === 'true';
@@ -376,10 +381,13 @@ function initDarkMode() {
     if (isDarkMode) {
         document.body.classList.add('dark-mode');
         toggleIcon.textContent = '☀️';
+    } else {
+        toggleIcon.textContent = '🌙';
     }
     
     // Add click event listener to toggle button
-    darkModeToggle.addEventListener('click', () => {
+    darkModeToggle.addEventListener('click', (e) => {
+        e.preventDefault();
         document.body.classList.toggle('dark-mode');
         const isNowDarkMode = document.body.classList.contains('dark-mode');
         
@@ -388,5 +396,9 @@ function initDarkMode() {
         
         // Save preference to localStorage
         localStorage.setItem('darkMode', isNowDarkMode.toString());
+        
+        console.log('Dark mode toggled:', isNowDarkMode);
     });
+    
+    console.log('Dark mode initialized. Current state:', document.body.classList.contains('dark-mode'));
 }
