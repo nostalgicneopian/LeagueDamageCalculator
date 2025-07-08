@@ -14,19 +14,38 @@ const abilityDetails = document.getElementById('ability-details');
 const elements = ['fire', 'water', 'light', 'dark', 'air', 'earth', 'physical'];
 const minElements = {};
 const maxElements = {};
+const defenseMinElements = {};
+const defenseMaxElements = {};
 
 elements.forEach(element => {
     minElements[element] = document.getElementById(`min-${element}`);
     maxElements[element] = document.getElementById(`max-${element}`);
+    defenseMinElements[element] = document.getElementById(`defense-min-${element}`);
+    defenseMaxElements[element] = document.getElementById(`defense-max-${element}`);
 });
 
 document.addEventListener('DOMContentLoaded', () => {
     populateDropdowns();
-    mainhandSelect.addEventListener('change', () => updateItemDetails('mainhand'));
-    offhandSelect.addEventListener('change', () => updateItemDetails('offhand'));
-    accessorySelect.addEventListener('change', () => updateItemDetails('accessory'));
-    abilitySelect.addEventListener('change', () => updateItemDetails('ability'));
+    mainhandSelect.addEventListener('change', () => {
+        updateItemDetails('mainhand');
+        calculateDamage();
+    });
+    offhandSelect.addEventListener('change', () => {
+        updateItemDetails('offhand');
+        calculateDamage();
+    });
+    accessorySelect.addEventListener('change', () => {
+        updateItemDetails('accessory');
+        calculateDamage();
+    });
+    abilitySelect.addEventListener('change', () => {
+        updateItemDetails('ability');
+        calculateDamage();
+    });
     calculateBtn.addEventListener('click', calculateDamage);
+    
+    // Initial calculation to show default state
+    calculateDamage();
 });
 
 function populateDropdowns() {
@@ -173,7 +192,9 @@ function calculateDamage() {
         const offenseKeyResult = `offense${element.charAt(0).toUpperCase() + element.slice(1)}`;
         const defenseKeyResult = `defense${element.charAt(0).toUpperCase() + element.slice(1)}`;
         minElements[element].textContent = results[offenseKeyResult].min;
-        maxElements[element].textContent = results[defenseKeyResult].max;
+        maxElements[element].textContent = results[offenseKeyResult].max;
+        defenseMinElements[element].textContent = results[defenseKeyResult].min;
+        defenseMaxElements[element].textContent = results[defenseKeyResult].max;
     });
 }
 
