@@ -2,7 +2,6 @@ const mainhandSelect = document.getElementById('mainhand-select');
 const offhandSelect = document.getElementById('offhand-select');
 const accessorySelect = document.getElementById('accessory-select');
 const abilitySelect = document.getElementById('ability-select');
-const calculateBtn = document.getElementById('calculate-btn');
 const effectsList = document.getElementById('effects-list');
 const formStatus = document.getElementById('form-status');
 
@@ -42,7 +41,6 @@ document.addEventListener('DOMContentLoaded', () => {
         updateItemDetails('ability');
         calculateDamage();
     });
-    calculateBtn.addEventListener('click', calculateDamage);
     
     // Initial calculation to show default state
     calculateDamage();
