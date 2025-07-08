@@ -3638,7 +3638,7 @@ const itemsData = {
         {
             "defenseFireMax": 0,
             "offenseFireMin": 0,
-            "name": "\"Pretty Negg Shield. Blocks 60% Earth/Light",
+            "name": "Pretty Negg Shield",
             "defenseWaterMin": 0,
             "defenseWaterMax": 0,
             "defenseLightMax": 0,
@@ -3647,7 +3647,14 @@ const itemsData = {
             "defenseEarthMax": 0,
             "offensePhysicalMin": 0,
             "offenseDarkMax": 0,
-            "effects": [],
+            "effects": [
+              "Blocks 60% of Earth and Light damage.",
+              "Reflects 20% of Earth and Light damage back to the attacker."
+            ],
+            "percentageEarthBlocked": 20,
+            "percentageLightBlocked": 20,
+            "percentageEarthReflected": 60,
+            "percentageLightReflected": 60,
             "offensePhysicalMax": 0,
             "offenseWaterMin": 0,
             "offenseDarkMin": 0,
@@ -3666,7 +3673,7 @@ const itemsData = {
             "defenseLightMin": 0,
             "offenseLightMax": 0,
             "defensePhysicalMin": 0,
-            "id": "\"Pretty Negg Shield. Blocks 60% Earth/Light"
+            "id": "Pretty Negg Shield. Blocks 60% Earth/Light"
         },
         {
             "defenseFireMax": 0,

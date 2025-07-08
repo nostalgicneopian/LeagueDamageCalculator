@@ -259,23 +259,46 @@ function updateItemDetails(slotType) {
         const defenseMin = item[`defense${element.charAt(0).toUpperCase() + element.slice(1)}Min`] || 0;
         const defenseMax = item[`defense${element.charAt(0).toUpperCase() + element.slice(1)}Max`] || 0;
         const percentageBlocked = item[`percentage${element.charAt(0).toUpperCase() + element.slice(1)}Blocked`] || 0;
+        const percentageReflected = item[`percentage${element.charAt(0).toUpperCase() + element.slice(1)}Reflected`] || 0;
         
-        if (defenseMin > 0 || defenseMax > 0 || percentageBlocked > 0) {
+        if (defenseMin > 0 || defenseMax > 0 || percentageBlocked > 0 || percentageReflected > 0) {
             if (!hasDefenseIcons) {
                 detailsHTML += `<p><strong>Defense Icons:</strong></p>`;
                 hasDefenseIcons = true;
             }
             
             const iconPath = getIconFileName(element, true);
+            const blockIcon = `<img src="images/${iconPath}" alt="" style="width: 20px; height: 20px; margin-right: 2px;">`;
             
+            let defenseDisplay = '';
+            
+            // Handle blocking
             if (percentageBlocked > 0) {
-                // Show single icon with percentage for blocking
-                const blockIcon = `<img src="images/${iconPath}" alt="" style="width: 20px; height: 20px; margin-right: 2px;">`;
-                detailsHTML += `<p>${blockIcon} ${percentageBlocked}%</p>`;
-            } else {
-                // Show normal range display
+                if (percentageBlocked === 100) {
+                    // Complete blocking - show icon with "100%"
+                    defenseDisplay += `${blockIcon} 100%`;
+                } else {
+                    // Partial blocking - show icon with shield symbol and percentage
+                    defenseDisplay += `${blockIcon} 🛡️${percentageBlocked}%`;
+                }
+            }
+            
+            // Handle reflection
+            if (percentageReflected > 0) {
+                if (defenseDisplay) defenseDisplay += ' ';
+                // Reflection - show icon with reflection symbol and percentage
+                defenseDisplay += `${blockIcon} ↩️${percentageReflected}%`;
+            }
+            
+            // Handle normal defense ranges
+            if (defenseMin > 0 || defenseMax > 0) {
+                if (defenseDisplay) defenseDisplay += ' ';
                 const iconsHTML = generateIconsHTML(defenseMin, defenseMax, iconPath);
-                detailsHTML += `<p>${iconsHTML} ${defenseMin}-${defenseMax}</p>`;
+                defenseDisplay += `${iconsHTML} ${defenseMin}-${defenseMax}`;
+            }
+            
+            if (defenseDisplay) {
+                detailsHTML += `<p>${defenseDisplay}</p>`;
             }
         }
     });
