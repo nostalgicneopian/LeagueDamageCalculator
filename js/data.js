@@ -4094,5 +4094,31 @@ const itemsData = {
             "defensePhysicalMin": 0,
             "id": "Tower Shield"
         }
+    ],
+    "abilities": [
+      {
+        "id": "Halitosis",
+        "name": "Halitosis",
+        "effects": ["Deals 2 earth damage on this turn and the next turn. 1 turn cooldown after last damage."],
+        "offenseEarthMax": 2,
+        "offenseEarthMin": 2
+      },
+      {
+        "id": "Static Cling",
+        "name": "Static Cling",
+        "effects": ["Deals 3 light damage on this turn"],
+        "offenseLightMax": 3,
+        "offenseLightMin": 3
+      },
+      {
+        "id": "Shade",
+        "name": "Shade",
+        "effects": ["Protects 3 icons from 3 different elements for 1 turn. 4 turns cooldown"]
+      },
+      {
+        "id": "Positive Thinking",
+        "name": "Positive Thinking",
+        "effects": ["Restores 5% (Up to 2.7, rounded to 3) of your current HP to your Neopet. Once per battle"]
+      }
     ]
 };
