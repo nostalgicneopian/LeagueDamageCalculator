@@ -281,7 +281,7 @@ function updateItemDetails(slotType) {
             if (percentageReflected > 0) {
                 if (defenseDisplay) defenseDisplay += ' ';
                 // Reflection - show icon with reflection symbol and percentage
-                defenseDisplay += `${blockIcon} 🪞${percentageReflected}%`;
+                defenseDisplay += `${blockIcon} ↩️${percentageReflected}%`;
             }
             
             // Handle normal defense ranges
