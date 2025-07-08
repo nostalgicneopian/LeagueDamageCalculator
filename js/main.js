@@ -258,16 +258,25 @@ function updateItemDetails(slotType) {
     elements.forEach(element => {
         const defenseMin = item[`defense${element.charAt(0).toUpperCase() + element.slice(1)}Min`] || 0;
         const defenseMax = item[`defense${element.charAt(0).toUpperCase() + element.slice(1)}Max`] || 0;
+        const percentageBlocked = item[`percentage${element.charAt(0).toUpperCase() + element.slice(1)}Blocked`] || 0;
         
-        if (defenseMin > 0 || defenseMax > 0) {
+        if (defenseMin > 0 || defenseMax > 0 || percentageBlocked > 0) {
             if (!hasDefenseIcons) {
                 detailsHTML += `<p><strong>Defense Icons:</strong></p>`;
                 hasDefenseIcons = true;
             }
             
             const iconPath = getIconFileName(element, true);
-            const iconsHTML = generateIconsHTML(defenseMin, defenseMax, iconPath);
-            detailsHTML += `<p>${iconsHTML} ${defenseMin}-${defenseMax}</p>`;
+            
+            if (percentageBlocked > 0) {
+                // Show single icon with percentage for blocking
+                const blockIcon = `<img src="images/${iconPath}" alt="" style="width: 20px; height: 20px; margin-right: 2px;">`;
+                detailsHTML += `<p>${blockIcon} ${percentageBlocked}%</p>`;
+            } else {
+                // Show normal range display
+                const iconsHTML = generateIconsHTML(defenseMin, defenseMax, iconPath);
+                detailsHTML += `<p>${iconsHTML} ${defenseMin}-${defenseMax}</p>`;
+            }
         }
     });
     

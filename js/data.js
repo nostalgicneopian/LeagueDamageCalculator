@@ -1297,11 +1297,13 @@ const itemsData = {
             "defenseWaterMax": 0,
             "defenseLightMax": 0,
             "defenseDarkMax": 0,
-            "defensePhysicalMax": 9999,
+            "defensePhysicalMax": 0,
             "defenseEarthMax": 0,
             "offensePhysicalMin": 0,
             "offenseDarkMax": 0,
-            "effects": [],
+            "effects": [
+                "Blocks 100% of physical"
+            ],
             "offensePhysicalMax": 0,
             "offenseWaterMin": 0,
             "offenseDarkMin": 0,
@@ -1320,7 +1322,8 @@ const itemsData = {
             "defenseLightMin": 0,
             "offenseLightMax": 0,
             "defensePhysicalMin": 0,
-            "id": "Altadorian Swordbreaker"
+            "id": "Altadorian Swordbreaker",
+            "percentagePhysicalBlocked": 100
         },
         {
             "defenseFireMax": 0,
@@ -3933,15 +3936,18 @@ const itemsData = {
             "defenseFireMax": 0,
             "offenseFireMin": 0,
             "name": "Parasol of Unfortunate Demise",
-            "defenseWaterMin": 9999,
+            "defenseWaterMin": 0,
             "defenseWaterMax": 3,
-            "defenseLightMax": 9999,
+            "defenseLightMax": 0,
             "defenseDarkMax": 0,
             "defensePhysicalMax": 0,
             "defenseEarthMax": 1.4,
             "offensePhysicalMin": 0,
             "offenseDarkMax": 0,
-            "effects": [],
+            "effects": [
+                "Blocks 100% of water",
+                "Blocks 100% of light"
+            ],
             "offensePhysicalMax": 0,
             "offenseWaterMin": 0,
             "offenseDarkMin": 0,
@@ -3960,7 +3966,9 @@ const itemsData = {
             "defenseLightMin": 0,
             "offenseLightMax": 0,
             "defensePhysicalMin": 3,
-            "id": "Parasol of Unfortunate Demise"
+            "id": "Parasol of Unfortunate Demise",
+            "percentageWaterBlocked": 100,
+            "percentageLightBlocked": 100
         },
         {
             "defenseFireMax": 0,
@@ -4096,29 +4104,37 @@ const itemsData = {
         }
     ],
     "abilities": [
-      {
-        "id": "Halitosis",
-        "name": "Halitosis",
-        "effects": ["Deals 2 earth damage on this turn and the next turn. 1 turn cooldown after last damage."],
-        "offenseEarthMax": 2,
-        "offenseEarthMin": 2
-      },
-      {
-        "id": "Static Cling",
-        "name": "Static Cling",
-        "effects": ["Deals 3 light damage on this turn"],
-        "offenseLightMax": 3,
-        "offenseLightMin": 3
-      },
-      {
-        "id": "Shade",
-        "name": "Shade",
-        "effects": ["Protects 3 icons from 3 different elements for 1 turn. 4 turns cooldown"]
-      },
-      {
-        "id": "Positive Thinking",
-        "name": "Positive Thinking",
-        "effects": ["Restores 5% (Up to 2.7, rounded to 3) of your current HP to your Neopet. Once per battle"]
-      }
+        {
+            "id": "Halitosis",
+            "name": "Halitosis",
+            "effects": [
+                "Deals 2 earth damage on this turn and the next turn. 1 turn cooldown after last damage."
+            ],
+            "offenseEarthMax": 2,
+            "offenseEarthMin": 2
+        },
+        {
+            "id": "Static Cling",
+            "name": "Static Cling",
+            "effects": [
+                "Deals 3 light damage on this turn"
+            ],
+            "offenseLightMax": 3,
+            "offenseLightMin": 3
+        },
+        {
+            "id": "Shade",
+            "name": "Shade",
+            "effects": [
+                "Protects 3 icons from 3 different elements for 1 turn. 4 turns cooldown"
+            ]
+        },
+        {
+            "id": "Positive Thinking",
+            "name": "Positive Thinking",
+            "effects": [
+                "Restores 5% (Up to 2.7, rounded to 3) of your current HP to your Neopet. Once per battle"
+            ]
+        }
     ]
 };
