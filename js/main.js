@@ -87,30 +87,22 @@ function updateItemDetails(slotType) {
     
     if (!item) return;
     
-    if (slotType === 'ability') {
-        detailsElement.innerHTML = `
-            <p><strong>Type:</strong> ${item.damageType.charAt(0).toUpperCase() + item.damageType.slice(1)}</p>
-            <p><strong>Damage:</strong> ${item.minimumIcons} - ${item.maximumIcons} icons</p>
-            <p><strong>Effect:</strong> ${item.effect}</p>
-        `;
-    } else {
-        let detailsHTML = '<p><strong>Element Icons:</strong></p>';
+    let detailsHTML = '<p><strong>Element Icons:</strong></p>';
+    
+    elements.forEach(element => {
+        const min = item[`minimum${element.charAt(0).toUpperCase() + element.slice(1)}Icons`];
+        const max = item[`maximum${element.charAt(0).toUpperCase() + element.slice(1)}Icons`];
         
-        elements.forEach(element => {
-            const min = item[`minimum${element.charAt(0).toUpperCase() + element.slice(1)}Icons`];
-            const max = item[`maximum${element.charAt(0).toUpperCase() + element.slice(1)}Icons`];
-            
-            if (min > 0 || max > 0) {
-                detailsHTML += `<p>${element.charAt(0).toUpperCase() + element.slice(1)}: ${min} - ${max}</p>`;
-            }
-        });
-        
-        if (item.specialEffect) {
-            detailsHTML += `<p><strong>Special Effect:</strong> ${item.specialEffect}</p>`;
+        if (min > 0 || max > 0) {
+            detailsHTML += `<p>${element.charAt(0).toUpperCase() + element.slice(1)}: ${min} - ${max}</p>`;
         }
-        
-        detailsElement.innerHTML = detailsHTML;
+    });
+    
+    if (item.specialEffect) {
+        detailsHTML += `<p><strong>Special Effect:</strong> ${item.specialEffect}</p>`;
     }
+    
+    detailsElement.innerHTML = detailsHTML;
 }
 
 function calculateDamage() {
