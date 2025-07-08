@@ -28,7 +28,6 @@ document.addEventListener('DOMContentLoaded', () => {
     accessorySelect.addEventListener('change', () => updateItemDetails('accessory'));
     abilitySelect.addEventListener('change', () => updateItemDetails('ability'));
     calculateBtn.addEventListener('click', calculateDamage);
-    addItemForm.addEventListener('submit', handleFormSubmit);
 });
 
 function populateDropdowns() {
