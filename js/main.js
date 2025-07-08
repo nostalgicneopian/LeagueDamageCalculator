@@ -32,9 +32,9 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function populateDropdowns() {
-    const mainHandWeapons = itemsData.weapons.filter(weapon => weapon.slot === 'main');
-    const offHandWeapons = itemsData.weapons.filter(weapon => weapon.slot === 'offhand');
-    const accessories = itemsData.weapons.filter(weapon => weapon.slot === 'accessory');
+    const mainHandWeapons = itemsData.weapons;
+    const offHandWeapons = itemsData.weapons;
+    const accessories = itemsData.accessories || [];
     
     mainHandWeapons.forEach(weapon => {
         const option = document.createElement('option');
