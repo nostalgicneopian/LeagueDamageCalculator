@@ -1,6 +1,3 @@
-const mainhandSelect = document.getElementById('mainhand-select');
-const offhandSelect = document.getElementById('offhand-select');
-const abilitySelect = document.getElementById('ability-select');
 const effectsList = document.getElementById('effects-list');
 const formStatus = document.getElementById('form-status');
 
@@ -8,11 +5,25 @@ const mainhandDetails = document.getElementById('mainhand-details');
 const offhandDetails = document.getElementById('offhand-details');
 const abilityDetails = document.getElementById('ability-details');
 
+// Custom dropdown elements
+const mainhandDropdown = document.getElementById('mainhand-dropdown');
+const offhandDropdown = document.getElementById('offhand-dropdown');
+const abilityDropdown = document.getElementById('ability-dropdown');
+
 const elements = ['fire', 'water', 'light', 'dark', 'air', 'earth', 'physical'];
 const minElements = {};
 const maxElements = {};
 const defenseMinElements = {};
 const defenseMaxElements = {};
+
+// Store all items and current selections
+let allWeapons = [];
+let allAbilities = [];
+let currentSelections = {
+    mainhand: null,
+    offhand: null,
+    ability: null
+};
 
 elements.forEach(element => {
     minElements[element] = document.getElementById(`min-${element}`);
@@ -22,65 +33,169 @@ elements.forEach(element => {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-    populateDropdowns();
-    mainhandSelect.addEventListener('change', () => {
-        updateItemDetails('mainhand');
-        calculateDamage();
-    });
-    offhandSelect.addEventListener('change', () => {
-        updateItemDetails('offhand');
-        calculateDamage();
-    });
-    abilitySelect.addEventListener('change', () => {
-        updateItemDetails('ability');
-        calculateDamage();
+    // Sort weapons and abilities alphabetically by name
+    allWeapons = [...itemsData.weapons].sort((a, b) => a.name.localeCompare(b.name));
+    allAbilities = [...itemsData.abilities].sort((a, b) => a.name.localeCompare(b.name));
+    
+    // Initialize custom dropdowns
+    initCustomDropdown('mainhand', allWeapons, 'Select a weapon');
+    initCustomDropdown('offhand', allWeapons, 'Select a weapon');
+    initCustomDropdown('ability', allAbilities, 'Select an ability');
+    
+    // Close dropdowns when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('.custom-dropdown')) {
+            closeAllDropdowns();
+        }
     });
     
     // Initial calculation to show default state
     calculateDamage();
 });
 
-function populateDropdowns() {
-    const mainHandWeapons = itemsData.weapons;
-    const offHandWeapons = itemsData.weapons;
+function initCustomDropdown(type, items, placeholder) {
+    const dropdown = document.getElementById(`${type}-dropdown`);
+    const selected = dropdown.querySelector('.dropdown-selected');
+    const options = dropdown.querySelector('.dropdown-options');
     
-    mainHandWeapons.forEach(weapon => {
-        const option = document.createElement('option');
-        option.value = weapon.id;
-        option.textContent = weapon.name;
-        mainhandSelect.appendChild(option);
+    selected.textContent = placeholder;
+    
+    // Handle clicking on the selected area
+    selected.addEventListener('click', (e) => {
+        e.stopPropagation();
+        closeAllDropdowns();
+        toggleDropdown(type, items);
+    });
+}
+
+function toggleDropdown(type, items) {
+    const dropdown = document.getElementById(`${type}-dropdown`);
+    const selected = dropdown.querySelector('.dropdown-selected');
+    const options = dropdown.querySelector('.dropdown-options');
+    
+    if (options.classList.contains('show')) {
+        closeDropdown(type);
+        return;
+    }
+    
+    // Show dropdown and replace selected area with search input
+    selected.classList.add('active');
+    options.classList.add('show');
+    
+    // Create search input
+    const searchInput = document.createElement('input');
+    searchInput.type = 'text';
+    searchInput.className = 'dropdown-search';
+    searchInput.placeholder = `Search ${type === 'ability' ? 'abilities' : 'weapons'}...`;
+    searchInput.value = '';
+    
+    // Replace selected content with search input
+    const originalContent = selected.textContent;
+    selected.innerHTML = '';
+    selected.appendChild(searchInput);
+    
+    // Focus the search input
+    searchInput.focus();
+    
+    // Populate options
+    populateDropdownOptions(type, items);
+    
+    // Handle search input
+    searchInput.addEventListener('input', (e) => {
+        const searchTerm = e.target.value.toLowerCase();
+        const filteredItems = items.filter(item => 
+            item.name.toLowerCase().includes(searchTerm)
+        );
+        populateDropdownOptions(type, filteredItems);
     });
     
-    offHandWeapons.forEach(weapon => {
-        const option = document.createElement('option');
-        option.value = weapon.id;
-        option.textContent = weapon.name;
-        offhandSelect.appendChild(option);
+    // Handle search input blur/escape
+    searchInput.addEventListener('blur', () => {
+        setTimeout(() => closeDropdown(type), 150);
     });
     
-    itemsData.abilities.forEach(ability => {
-        const option = document.createElement('option');
-        option.value = ability.id;
-        option.textContent = ability.name;
-        abilitySelect.appendChild(option);
+    searchInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            closeDropdown(type);
+        }
+    });
+}
+
+function populateDropdownOptions(type, items) {
+    const options = document.getElementById(`${type}-options`);
+    options.innerHTML = '';
+    
+    items.forEach(item => {
+        const option = document.createElement('div');
+        option.className = 'dropdown-option';
+        option.textContent = item.name;
+        option.dataset.value = item.id;
+        
+        if (currentSelections[type] && currentSelections[type].id === item.id) {
+            option.classList.add('selected');
+        }
+        
+        option.addEventListener('click', (e) => {
+            e.stopPropagation();
+            selectOption(type, item);
+        });
+        
+        options.appendChild(option);
+    });
+}
+
+function selectOption(type, item) {
+    currentSelections[type] = item;
+    
+    const dropdown = document.getElementById(`${type}-dropdown`);
+    const selected = dropdown.querySelector('.dropdown-selected');
+    
+    // Update display
+    selected.textContent = item.name;
+    selected.classList.remove('active');
+    
+    // Close dropdown
+    closeDropdown(type);
+    
+    // Update item details and recalculate
+    updateItemDetails(type);
+    calculateDamage();
+}
+
+function closeDropdown(type) {
+    const dropdown = document.getElementById(`${type}-dropdown`);
+    const selected = dropdown.querySelector('.dropdown-selected');
+    const options = dropdown.querySelector('.dropdown-options');
+    
+    selected.classList.remove('active');
+    options.classList.remove('show');
+    
+    // Restore selected display
+    if (currentSelections[type]) {
+        selected.textContent = currentSelections[type].name;
+    } else {
+        selected.textContent = selected.dataset.placeholder;
+    }
+}
+
+function closeAllDropdowns() {
+    ['mainhand', 'offhand', 'ability'].forEach(type => {
+        closeDropdown(type);
     });
 }
 
 function updateItemDetails(slotType) {
-    let selectedId, detailsElement, item;
+    let detailsElement, item;
     
     if (slotType === 'mainhand') {
-        selectedId = mainhandSelect.value;
         detailsElement = mainhandDetails;
-        item = itemsData.weapons.find(weapon => weapon.id === selectedId);
+        item = currentSelections.mainhand;
     } else if (slotType === 'offhand') {
-        selectedId = offhandSelect.value;
         detailsElement = offhandDetails;
-        item = itemsData.weapons.find(weapon => weapon.id === selectedId);
+        item = currentSelections.offhand;
     } else if (slotType === 'ability') {
-        selectedId = abilitySelect.value;
         detailsElement = abilityDetails;
-        item = itemsData.abilities.find(ability => ability.id === selectedId);
+        item = currentSelections.ability;
     }
 
     detailsElement.innerHTML = '';
@@ -152,13 +267,9 @@ function updateItemDetails(slotType) {
 }
 
 function calculateDamage() {
-    const mainhandId = mainhandSelect.value;
-    const offhandId = offhandSelect.value;
-    const abilityId = abilitySelect.value;
-    
-    const mainhand = itemsData.weapons.find(weapon => weapon.id === mainhandId);
-    const offhand = itemsData.weapons.find(weapon => weapon.id === offhandId);
-    const ability = itemsData.abilities.find(ability => ability.id === abilityId);
+    const mainhand = currentSelections.mainhand;
+    const offhand = currentSelections.offhand;
+    const ability = currentSelections.ability;
     
     effectsList.innerHTML = '';
     

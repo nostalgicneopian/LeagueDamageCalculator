@@ -57,6 +57,113 @@ select {
     margin-bottom: 10px;
 }
 
+.search-box {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    margin-bottom: 5px;
+    background-color: #fff;
+}
+
+.search-box:focus {
+    outline: none;
+    border-color: #4b7bec;
+    box-shadow: 0 0 3px rgba(75, 123, 236, 0.3);
+}
+
+.custom-dropdown {
+    position: relative;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.dropdown-selected {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: #fff;
+    cursor: pointer;
+    position: relative;
+}
+
+.dropdown-selected:after {
+    content: '▼';
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #666;
+    font-size: 12px;
+}
+
+.dropdown-selected.active:after {
+    content: '▲';
+}
+
+.dropdown-selected:hover {
+    border-color: #aaa;
+}
+
+.dropdown-selected:focus {
+    outline: none;
+    border-color: #4b7bec;
+    box-shadow: 0 0 3px rgba(75, 123, 236, 0.3);
+}
+
+.dropdown-options {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-top: none;
+    border-radius: 0 0 4px 4px;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 1000;
+    display: none;
+}
+
+.dropdown-options.show {
+    display: block;
+}
+
+.dropdown-option {
+    padding: 8px;
+    cursor: pointer;
+    border-bottom: 1px solid #eee;
+}
+
+.dropdown-option:hover {
+    background-color: #f0f0f0;
+}
+
+.dropdown-option:last-child {
+    border-bottom: none;
+}
+
+.dropdown-option.selected {
+    background-color: #4b7bec;
+    color: white;
+}
+
+.dropdown-search {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: #fff;
+    outline: none;
+    border-color: #4b7bec;
+    box-shadow: 0 0 3px rgba(75, 123, 236, 0.3);
+}
+
 .item-details {
     margin-top: 10px;
     font-size: 14px;

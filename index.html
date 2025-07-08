@@ -13,25 +13,28 @@
         <div class="equipment-selector">
             <div class="slot">
                 <h2>Weapon #1</h2>
-                <select id="mainhand-select">
-                    <option value="">Select a weapon</option>
-                </select>
+                <div class="custom-dropdown" id="mainhand-dropdown">
+                    <div class="dropdown-selected" data-placeholder="Select a weapon">Select a weapon</div>
+                    <div class="dropdown-options" id="mainhand-options"></div>
+                </div>
                 <div id="mainhand-details" class="item-details"></div>
             </div>
             
             <div class="slot">
                 <h2>Weapon #2</h2>
-                <select id="offhand-select">
-                    <option value="">Select a weapon</option>
-                </select>
+                <div class="custom-dropdown" id="offhand-dropdown">
+                    <div class="dropdown-selected" data-placeholder="Select a weapon">Select a weapon</div>
+                    <div class="dropdown-options" id="offhand-options"></div>
+                </div>
                 <div id="offhand-details" class="item-details"></div>
             </div>
 
             <div class="slot">
                 <h2>Ability</h2>
-                <select id="ability-select">
-                    <option value="">Select an ability</option>
-                </select>
+                <div class="custom-dropdown" id="ability-dropdown">
+                    <div class="dropdown-selected" data-placeholder="Select an ability">Select an ability</div>
+                    <div class="dropdown-options" id="ability-options"></div>
+                </div>
                 <div id="ability-details" class="item-details"></div>
             </div>
         </div>
