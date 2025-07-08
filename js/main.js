@@ -212,12 +212,28 @@ function updateItemDetails(slotType) {
         return isDefense ? `blocked-${iconName}-icon.png` : `${iconName}-icon.png`;
     }
     
-    // Helper function to generate icon HTML
-    function generateIconsHTML(count, iconPath) {
+    // Helper function to generate icon HTML with min + additional format
+    function generateIconsHTML(minValue, maxValue, iconPath) {
         let iconsHTML = '';
-        for (let i = 0; i < count; i++) {
+        
+        // Handle fractional values by rounding up for display
+        const minIcons = Math.ceil(minValue);
+        const maxIcons = Math.ceil(maxValue);
+        
+        // Generate minimum icons
+        for (let i = 0; i < minIcons; i++) {
             iconsHTML += `<img src="images/${iconPath}" alt="" style="width: 20px; height: 20px; margin-right: 2px;">`;
         }
+        
+        // If there are additional icons beyond minimum, add plus sign and additional icons
+        const additionalIcons = maxIcons - minIcons;
+        if (additionalIcons > 0) {
+            iconsHTML += `<span style="margin: 0 4px; font-weight: bold;">+</span>`;
+            for (let i = 0; i < additionalIcons; i++) {
+                iconsHTML += `<img src="images/${iconPath}" alt="" style="width: 20px; height: 20px; margin-right: 2px; opacity: 0.6;">`;
+            }
+        }
+        
         return iconsHTML;
     }
     
@@ -233,7 +249,7 @@ function updateItemDetails(slotType) {
             }
             
             const iconPath = getIconFileName(element, false);
-            const iconsHTML = generateIconsHTML(offenseMin, iconPath);
+            const iconsHTML = generateIconsHTML(offenseMin, offenseMax, iconPath);
             detailsHTML += `<p>${iconsHTML} ${offenseMin}-${offenseMax}</p>`;
         }
     });
@@ -250,7 +266,7 @@ function updateItemDetails(slotType) {
             }
             
             const iconPath = getIconFileName(element, true);
-            const iconsHTML = generateIconsHTML(defenseMin, iconPath);
+            const iconsHTML = generateIconsHTML(defenseMin, defenseMax, iconPath);
             detailsHTML += `<p>${iconsHTML} ${defenseMin}-${defenseMax}</p>`;
         }
     });
