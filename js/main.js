@@ -131,7 +131,11 @@ function calculateDamage() {
     
     const results = {};
     elements.forEach(element => {
-        results[element] = {
+        results[`offense${element.charAt(0).toUpperCase() + element.slice(1)}`] = {
+            min: 0,
+            max: 0
+        };
+        results[`defense${element.charAt(0).toUpperCase() + element.slice(1)}`] = {
             min: 0,
             max: 0
         };
@@ -140,11 +144,17 @@ function calculateDamage() {
     [mainhand, offhand, accessory].forEach(item => {
         if (item) {
             elements.forEach(element => {
-                const minKey = `minimum${element.charAt(0).toUpperCase() + element.slice(1)}Icons`;
-                const maxKey = `maximum${element.charAt(0).toUpperCase() + element.slice(1)}Icons`;
+                const offenseKeyMin = `offense${element.charAt(0).toUpperCase() + element.slice(1)}Min`;
+                const offenseKeyMax = `offense${element.charAt(0).toUpperCase() + element.slice(1)}Max`;
+                const defenseKeyMin = `defense${element.charAt(0).toUpperCase() + element.slice(1)}Min`;
+                const defenseKeyMax = `defense${element.charAt(0).toUpperCase() + element.slice(1)}Max`;
+                const offenseKeyResult = `offense${element.charAt(0).toUpperCase() + element.slice(1)}`;
+                const defenseKeyResult = `defense${element.charAt(0).toUpperCase() + element.slice(1)}`;
                 
-                results[element].min += item[minKey] || 0;
-                results[element].max += item[maxKey] || 0;
+                results[offenseKeyResult].min += item[offenseKeyMin] || 0;
+                results[offenseKeyResult].max += item[offenseKeyMax] || 0;
+                results[defenseKeyResult].min += item[defenseKeyMin] || 0;
+                results[defenseKeyResult].max += item[defenseKeyMax] || 0;
             });
             
             if (item.specialEffect) {
@@ -170,8 +180,10 @@ function calculateDamage() {
     }
     
     elements.forEach(element => {
-        minElements[element].textContent = results[element].min;
-        maxElements[element].textContent = results[element].max;
+        const offenseKeyResult = `offense${element.charAt(0).toUpperCase() + element.slice(1)}`;
+        const defenseKeyResult = `defense${element.charAt(0).toUpperCase() + element.slice(1)}`;
+        minElements[element].textContent = results[offenseKeyResult].min;
+        maxElements[element].textContent = results[defenseKeyResult].max;
     });
 }
 
