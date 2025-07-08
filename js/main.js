@@ -274,13 +274,7 @@ function updateItemDetails(slotType) {
             
             // Handle blocking
             if (percentageBlocked > 0) {
-                if (percentageBlocked === 100) {
-                    // Complete blocking - show icon with "100%"
-                    defenseDisplay += `${blockIcon} 100%`;
-                } else {
-                    // Partial blocking - show icon with shield symbol and percentage
-                    defenseDisplay += `${blockIcon} 🛡️${percentageBlocked}%`;
-                }
+                defenseDisplay += `${blockIcon} 🛡️${percentageBlocked}%`;
             }
             
             // Handle reflection
