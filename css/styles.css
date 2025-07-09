@@ -347,42 +347,92 @@ body.dark-mode .element {
     border-color: #666;
 }
 
+/* Element-specific colors */
 .element h3 {
     color: #333;
     margin-bottom: 5px;
+    font-weight: bold;
 }
 
 body.dark-mode .element h3 {
     color: #e0e0e0;
 }
 
-.element p {
-    color: #666;
+/* Fire element (1st element) */
+.offense-result .element:nth-child(1) h3,
+.defense-result .element:nth-child(1) h3 {
+    color: #ff4757;
 }
 
-body.dark-mode .element p {
-    color: #ccc;
+body.dark-mode .offense-result .element:nth-child(1) h3,
+body.dark-mode .defense-result .element:nth-child(1) h3 {
+    color: #ff6b7a;
 }
 
-.special-effects {
-    margin-top: 20px;
+/* Water element (2nd element) */
+.offense-result .element:nth-child(2) h3,
+.defense-result .element:nth-child(2) h3 {
+    color: #3742fa;
 }
 
-.special-effects h3 {
-    color: #555;
-    margin-bottom: 10px;
+body.dark-mode .offense-result .element:nth-child(2) h3,
+body.dark-mode .defense-result .element:nth-child(2) h3 {
+    color: #5352ed;
 }
 
-body.dark-mode .special-effects h3 {
-    color: #e0e0e0;
+/* Light element (3rd element) */
+.offense-result .element:nth-child(3) h3,
+.defense-result .element:nth-child(3) h3 {
+    color: #ffa502;
 }
 
-.special-effects ul {
-    color: #666;
+body.dark-mode .offense-result .element:nth-child(3) h3,
+body.dark-mode .defense-result .element:nth-child(3) h3 {
+    color: #ffb142;
 }
 
-body.dark-mode .special-effects ul {
-    color: #ccc;
+/* Dark element (4th element) */
+.offense-result .element:nth-child(4) h3,
+.defense-result .element:nth-child(4) h3 {
+    color: #7f4397;
+}
+
+body.dark-mode .offense-result .element:nth-child(4) h3,
+body.dark-mode .defense-result .element:nth-child(4) h3 {
+    color: #9c6cb7;
+}
+
+/* Air element (5th element) */
+.offense-result .element:nth-child(5) h3,
+.defense-result .element:nth-child(5) h3 {
+    color: #2ed573;
+}
+
+body.dark-mode .offense-result .element:nth-child(5) h3,
+body.dark-mode .defense-result .element:nth-child(5) h3 {
+    color: #4feb86;
+}
+
+/* Earth element (6th element) */
+.offense-result .element:nth-child(6) h3,
+.defense-result .element:nth-child(6) h3 {
+    color: #8d6e63;
+}
+
+body.dark-mode .offense-result .element:nth-child(6) h3,
+body.dark-mode .defense-result .element:nth-child(6) h3 {
+    color: #a1887f;
+}
+
+/* Physical element (7th element) */
+.offense-result .element:nth-child(7) h3,
+.defense-result .element:nth-child(7) h3 {
+    color: #57606f;
+}
+
+body.dark-mode .offense-result .element:nth-child(7) h3,
+body.dark-mode .defense-result .element:nth-child(7) h3 {
+    color: #747d8c;
 }
 
 /* Mobile responsive styles */
