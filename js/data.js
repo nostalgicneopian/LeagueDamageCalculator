@@ -4133,7 +4133,7 @@ const itemsData = {
             "id": "Shade",
             "name": "Shade",
             "effects": [
-                "Protects 3 icons from 3 different elements for 1 turn. 4 turns cooldown"
+                "Protects 3 icons from 3 different elements for 1 turn, except Physical and Dark. 4 turns cooldown. Note: This ability could protect against glitch darkness but not dark."
             ]
         },
         {
