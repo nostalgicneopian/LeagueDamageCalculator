@@ -3,6 +3,7 @@
     "name": "Decorative Maractite Sword",
     "icon": "https://images.neopets.com/items/bd_maractite_sword.gif",
     "effects": ["This is an example effect.", "This is another example effect"],
+    "tags": ["L54", "DDL", "L97", "TPL", "constant", "multi-duty", "blocker", "reflector", "defense"],
     "defenseWaterMin": 0,
     "defenseWaterMax": 0,
     "defenseFireMin": 0,
