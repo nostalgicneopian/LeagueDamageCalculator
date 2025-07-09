@@ -485,7 +485,6 @@ const itemsData = {
             "offenseLightMin": 3,
             "defenseDarkMin": 3,
             "offenseLightMax": 3,
-            "defensePhysicalMin": 3,
             "id": "Amulet of Altador",
             "icon": "https://images.neopets.com/items/bd_amulet_of_altador.gif",
             "tags": ["L54", "multi-duty"]
