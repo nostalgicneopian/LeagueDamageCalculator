@@ -539,67 +539,67 @@ body.dark-mode .defense-result .element:nth-child(4).has-damage p {
 /* Air element (5th element) - only when active */
 .offense-result .element:nth-child(5).has-damage,
 .defense-result .element:nth-child(5).has-damage {
-    background-color: rgba(46, 213, 115, 0.15);
-    border-color: #2ed573;
+    background-color: rgba(135, 206, 235, 0.15);
+    border-color: #87ceeb;
 }
 
 .offense-result .element:nth-child(5).has-damage h3,
 .defense-result .element:nth-child(5).has-damage h3 {
-    color: #1fa654;
+    color: #4682b4;
 }
 
 .offense-result .element:nth-child(5).has-damage p,
 .defense-result .element:nth-child(5).has-damage p {
-    color: #1fa654;
+    color: #4682b4;
 }
 
 body.dark-mode .offense-result .element:nth-child(5).has-damage,
 body.dark-mode .defense-result .element:nth-child(5).has-damage {
-    background-color: rgba(79, 235, 134, 0.15);
-    border-color: #4feb86;
+    background-color: rgba(135, 206, 235, 0.15);
+    border-color: #87ceeb;
 }
 
 body.dark-mode .offense-result .element:nth-child(5).has-damage h3,
 body.dark-mode .defense-result .element:nth-child(5).has-damage h3 {
-    color: #4feb86;
+    color: #87ceeb;
 }
 
 body.dark-mode .offense-result .element:nth-child(5).has-damage p,
 body.dark-mode .defense-result .element:nth-child(5).has-damage p {
-    color: #4feb86;
+    color: #87ceeb;
 }
 
 /* Earth element (6th element) - only when active */
 .offense-result .element:nth-child(6).has-damage,
 .defense-result .element:nth-child(6).has-damage {
-    background-color: rgba(141, 110, 99, 0.15);
-    border-color: #8d6e63;
+    background-color: rgba(34, 139, 34, 0.15);
+    border-color: #228b22;
 }
 
 .offense-result .element:nth-child(6).has-damage h3,
 .defense-result .element:nth-child(6).has-damage h3 {
-    color: #6d4c41;
+    color: #006400;
 }
 
 .offense-result .element:nth-child(6).has-damage p,
 .defense-result .element:nth-child(6).has-damage p {
-    color: #6d4c41;
+    color: #006400;
 }
 
 body.dark-mode .offense-result .element:nth-child(6).has-damage,
 body.dark-mode .defense-result .element:nth-child(6).has-damage {
-    background-color: rgba(161, 136, 127, 0.15);
-    border-color: #a1887f;
+    background-color: rgba(34, 139, 34, 0.15);
+    border-color: #228b22;
 }
 
 body.dark-mode .offense-result .element:nth-child(6).has-damage h3,
 body.dark-mode .defense-result .element:nth-child(6).has-damage h3 {
-    color: #a1887f;
+    color: #32cd32;
 }
 
 body.dark-mode .offense-result .element:nth-child(6).has-damage p,
 body.dark-mode .defense-result .element:nth-child(6).has-damage p {
-    color: #a1887f;
+    color: #32cd32;
 }
 
 /* Physical element (7th element) - only when active */
