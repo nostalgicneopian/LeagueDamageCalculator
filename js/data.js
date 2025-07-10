@@ -1691,7 +1691,8 @@ const itemsData = {
             ],
             "offenseEarthMax": 2,
             "offenseEarthMin": 2,
-            "icon": "https://images.neopets.com/bd2/abilities/0010_p1yh839wh5_halitosis/thumb_10.png"
+            "icon": "https://images.neopets.com/bd2/abilities/0010_p1yh839wh5_halitosis/thumb_10.png",
+            "tags": ["L54", "DDL", "L97"]
         },
         {
             "id": "Static Cling",
@@ -1701,7 +1702,8 @@ const itemsData = {
             ],
             "offenseLightMax": 3,
             "offenseLightMin": 3,
-            "icon": "https://images.neopets.com/bd2/abilities/0001_h743ty2wez_staticcling/thumb_1.png"
+            "icon": "https://images.neopets.com/bd2/abilities/0001_h743ty2wez_staticcling/thumb_1.png",
+            "tags": ["L54", "DDL", "L97"]
         },
         {
             "id": "Shade",
@@ -1709,7 +1711,8 @@ const itemsData = {
             "effects": [
                 "Protects 3 icons from 3 different elements for 1 turn, except Physical and Dark. 4 turns cooldown. Note: This ability could protect against glitch darkness but not dark."
             ],
-            "icon": "https://images.neopets.com/bd2/abilities/0014_jhuh934z0p_shade/thumb_14.png"
+            "icon": "https://images.neopets.com/bd2/abilities/0014_jhuh934z0p_shade/thumb_14.png",
+            "tags": ["L54", "DDL", "L97"]
         },
         {
             "id": "Positive Thinking",
@@ -1717,7 +1720,17 @@ const itemsData = {
             "effects": [
                 "Restores 5% (Up to 2.7, rounded to 3) of your current HP to your Neopet. Once per battle"
             ],
-            "icon": "https://images.neopets.com/bd2/abilities/0017_v342uy79hz_thinkpositive/thumb_17.png"
+            "icon": "https://images.neopets.com/bd2/abilities/0017_v342uy79hz_thinkpositive/thumb_17.png",
+            "tags": ["L54", "DDL", "L97"]
+        },
+        {
+            "id": "An Icicle",
+            "name": "An Icicle",
+            "effects": ["Deals 6 water damage on this turn. No cooldown."],
+            "offenseWaterMax": 6,
+            "offenseWaterMin": 6,
+            "icon": "https://images.neopets.com/bd2/abilities/0002_qx4b5ievrb_anicicle/thumb_2.png",
+            "tags": ["DDL", "L97"]
         }
     ]
 };
