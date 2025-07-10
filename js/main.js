@@ -372,6 +372,24 @@ function calculateDamage() {
         maxElements[element].textContent = results[offenseKeyResult].max;
         defenseMinElements[element].textContent = results[defenseKeyResult].min;
         defenseMaxElements[element].textContent = results[defenseKeyResult].max;
+        
+        // Add conditional coloring based on damage values
+        const offenseElement = minElements[element].closest('.element');
+        const defenseElement = defenseMinElements[element].closest('.element');
+        
+        // For offense - add has-damage class if min > 0 or max > 0
+        if (results[offenseKeyResult].min > 0 || results[offenseKeyResult].max > 0) {
+            offenseElement.classList.add('has-damage');
+        } else {
+            offenseElement.classList.remove('has-damage');
+        }
+        
+        // For defense - add has-damage class if min > 0 or max > 0
+        if (results[defenseKeyResult].min > 0 || results[defenseKeyResult].max > 0) {
+            defenseElement.classList.add('has-damage');
+        } else {
+            defenseElement.classList.remove('has-damage');
+        }
     });
 }
 

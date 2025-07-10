@@ -387,112 +387,252 @@ body.dark-mode .element:not(.offense-result .element):not(.defense-result .eleme
 
 /* Element-specific colors */
 .element h3 {
-    color: #fff;
+    color: #333;
     margin-bottom: 5px;
     font-weight: bold;
 }
 
 .element p {
-    color: #fff;
+    color: #444;
 }
 
 body.dark-mode .element h3 {
-    color: #fff;
+    color: #e0e0e0;
 }
 
 body.dark-mode .element p {
-    color: #fff;
+    color: #ccc;
 }
 
-/* Fire element (1st element) */
-.offense-result .element:nth-child(1),
-.defense-result .element:nth-child(1) {
-    background-color: #ff4757;
+/* Fire element (1st element) - only when active */
+.offense-result .element:nth-child(1).has-damage,
+.defense-result .element:nth-child(1).has-damage {
+    background-color: rgba(255, 71, 87, 0.15);
     border-color: #ff4757;
 }
 
-body.dark-mode .offense-result .element:nth-child(1),
-body.dark-mode .defense-result .element:nth-child(1) {
-    background-color: #ff6b7a;
+.offense-result .element:nth-child(1).has-damage h3,
+.defense-result .element:nth-child(1).has-damage h3 {
+    color: #cc1e2f;
+}
+
+.offense-result .element:nth-child(1).has-damage p,
+.defense-result .element:nth-child(1).has-damage p {
+    color: #cc1e2f;
+}
+
+body.dark-mode .offense-result .element:nth-child(1).has-damage,
+body.dark-mode .defense-result .element:nth-child(1).has-damage {
+    background-color: rgba(255, 107, 122, 0.15);
     border-color: #ff6b7a;
 }
 
-/* Water element (2nd element) */
-.offense-result .element:nth-child(2),
-.defense-result .element:nth-child(2) {
-    background-color: #3742fa;
+body.dark-mode .offense-result .element:nth-child(1).has-damage h3,
+body.dark-mode .defense-result .element:nth-child(1).has-damage h3 {
+    color: #ff6b7a;
+}
+
+body.dark-mode .offense-result .element:nth-child(1).has-damage p,
+body.dark-mode .defense-result .element:nth-child(1).has-damage p {
+    color: #ff6b7a;
+}
+
+/* Water element (2nd element) - only when active */
+.offense-result .element:nth-child(2).has-damage,
+.defense-result .element:nth-child(2).has-damage {
+    background-color: rgba(55, 66, 250, 0.15);
     border-color: #3742fa;
 }
 
-body.dark-mode .offense-result .element:nth-child(2),
-body.dark-mode .defense-result .element:nth-child(2) {
-    background-color: #5352ed;
+.offense-result .element:nth-child(2).has-damage h3,
+.defense-result .element:nth-child(2).has-damage h3 {
+    color: #1e2ed8;
+}
+
+.offense-result .element:nth-child(2).has-damage p,
+.defense-result .element:nth-child(2).has-damage p {
+    color: #1e2ed8;
+}
+
+body.dark-mode .offense-result .element:nth-child(2).has-damage,
+body.dark-mode .defense-result .element:nth-child(2).has-damage {
+    background-color: rgba(83, 82, 237, 0.15);
     border-color: #5352ed;
 }
 
-/* Light element (3rd element) */
-.offense-result .element:nth-child(3),
-.defense-result .element:nth-child(3) {
-    background-color: #ffa502;
+body.dark-mode .offense-result .element:nth-child(2).has-damage h3,
+body.dark-mode .defense-result .element:nth-child(2).has-damage h3 {
+    color: #5352ed;
+}
+
+body.dark-mode .offense-result .element:nth-child(2).has-damage p,
+body.dark-mode .defense-result .element:nth-child(2).has-damage p {
+    color: #5352ed;
+}
+
+/* Light element (3rd element) - only when active */
+.offense-result .element:nth-child(3).has-damage,
+.defense-result .element:nth-child(3).has-damage {
+    background-color: rgba(255, 165, 2, 0.15);
     border-color: #ffa502;
 }
 
-body.dark-mode .offense-result .element:nth-child(3),
-body.dark-mode .defense-result .element:nth-child(3) {
-    background-color: #ffb142;
+.offense-result .element:nth-child(3).has-damage h3,
+.defense-result .element:nth-child(3).has-damage h3 {
+    color: #cc8400;
+}
+
+.offense-result .element:nth-child(3).has-damage p,
+.defense-result .element:nth-child(3).has-damage p {
+    color: #cc8400;
+}
+
+body.dark-mode .offense-result .element:nth-child(3).has-damage,
+body.dark-mode .defense-result .element:nth-child(3).has-damage {
+    background-color: rgba(255, 177, 66, 0.15);
     border-color: #ffb142;
 }
 
-/* Dark element (4th element) */
-.offense-result .element:nth-child(4),
-.defense-result .element:nth-child(4) {
-    background-color: #7f4397;
+body.dark-mode .offense-result .element:nth-child(3).has-damage h3,
+body.dark-mode .defense-result .element:nth-child(3).has-damage h3 {
+    color: #ffb142;
+}
+
+body.dark-mode .offense-result .element:nth-child(3).has-damage p,
+body.dark-mode .defense-result .element:nth-child(3).has-damage p {
+    color: #ffb142;
+}
+
+/* Dark element (4th element) - only when active */
+.offense-result .element:nth-child(4).has-damage,
+.defense-result .element:nth-child(4).has-damage {
+    background-color: rgba(127, 67, 151, 0.15);
     border-color: #7f4397;
 }
 
-body.dark-mode .offense-result .element:nth-child(4),
-body.dark-mode .defense-result .element:nth-child(4) {
-    background-color: #9c6cb7;
+.offense-result .element:nth-child(4).has-damage h3,
+.defense-result .element:nth-child(4).has-damage h3 {
+    color: #5d3070;
+}
+
+.offense-result .element:nth-child(4).has-damage p,
+.defense-result .element:nth-child(4).has-damage p {
+    color: #5d3070;
+}
+
+body.dark-mode .offense-result .element:nth-child(4).has-damage,
+body.dark-mode .defense-result .element:nth-child(4).has-damage {
+    background-color: rgba(156, 108, 183, 0.15);
     border-color: #9c6cb7;
 }
 
-/* Air element (5th element) */
-.offense-result .element:nth-child(5),
-.defense-result .element:nth-child(5) {
-    background-color: #2ed573;
+body.dark-mode .offense-result .element:nth-child(4).has-damage h3,
+body.dark-mode .defense-result .element:nth-child(4).has-damage h3 {
+    color: #9c6cb7;
+}
+
+body.dark-mode .offense-result .element:nth-child(4).has-damage p,
+body.dark-mode .defense-result .element:nth-child(4).has-damage p {
+    color: #9c6cb7;
+}
+
+/* Air element (5th element) - only when active */
+.offense-result .element:nth-child(5).has-damage,
+.defense-result .element:nth-child(5).has-damage {
+    background-color: rgba(46, 213, 115, 0.15);
     border-color: #2ed573;
 }
 
-body.dark-mode .offense-result .element:nth-child(5),
-body.dark-mode .defense-result .element:nth-child(5) {
-    background-color: #4feb86;
+.offense-result .element:nth-child(5).has-damage h3,
+.defense-result .element:nth-child(5).has-damage h3 {
+    color: #1fa654;
+}
+
+.offense-result .element:nth-child(5).has-damage p,
+.defense-result .element:nth-child(5).has-damage p {
+    color: #1fa654;
+}
+
+body.dark-mode .offense-result .element:nth-child(5).has-damage,
+body.dark-mode .defense-result .element:nth-child(5).has-damage {
+    background-color: rgba(79, 235, 134, 0.15);
     border-color: #4feb86;
 }
 
-/* Earth element (6th element) */
-.offense-result .element:nth-child(6),
-.defense-result .element:nth-child(6) {
-    background-color: #8d6e63;
+body.dark-mode .offense-result .element:nth-child(5).has-damage h3,
+body.dark-mode .defense-result .element:nth-child(5).has-damage h3 {
+    color: #4feb86;
+}
+
+body.dark-mode .offense-result .element:nth-child(5).has-damage p,
+body.dark-mode .defense-result .element:nth-child(5).has-damage p {
+    color: #4feb86;
+}
+
+/* Earth element (6th element) - only when active */
+.offense-result .element:nth-child(6).has-damage,
+.defense-result .element:nth-child(6).has-damage {
+    background-color: rgba(141, 110, 99, 0.15);
     border-color: #8d6e63;
 }
 
-body.dark-mode .offense-result .element:nth-child(6),
-body.dark-mode .defense-result .element:nth-child(6) {
-    background-color: #a1887f;
+.offense-result .element:nth-child(6).has-damage h3,
+.defense-result .element:nth-child(6).has-damage h3 {
+    color: #6d4c41;
+}
+
+.offense-result .element:nth-child(6).has-damage p,
+.defense-result .element:nth-child(6).has-damage p {
+    color: #6d4c41;
+}
+
+body.dark-mode .offense-result .element:nth-child(6).has-damage,
+body.dark-mode .defense-result .element:nth-child(6).has-damage {
+    background-color: rgba(161, 136, 127, 0.15);
     border-color: #a1887f;
 }
 
-/* Physical element (7th element) */
-.offense-result .element:nth-child(7),
-.defense-result .element:nth-child(7) {
-    background-color: #57606f;
+body.dark-mode .offense-result .element:nth-child(6).has-damage h3,
+body.dark-mode .defense-result .element:nth-child(6).has-damage h3 {
+    color: #a1887f;
+}
+
+body.dark-mode .offense-result .element:nth-child(6).has-damage p,
+body.dark-mode .defense-result .element:nth-child(6).has-damage p {
+    color: #a1887f;
+}
+
+/* Physical element (7th element) - only when active */
+.offense-result .element:nth-child(7).has-damage,
+.defense-result .element:nth-child(7).has-damage {
+    background-color: rgba(87, 96, 111, 0.15);
     border-color: #57606f;
 }
 
-body.dark-mode .offense-result .element:nth-child(7),
-body.dark-mode .defense-result .element:nth-child(7) {
-    background-color: #747d8c;
+.offense-result .element:nth-child(7).has-damage h3,
+.defense-result .element:nth-child(7).has-damage h3 {
+    color: #3d434d;
+}
+
+.offense-result .element:nth-child(7).has-damage p,
+.defense-result .element:nth-child(7).has-damage p {
+    color: #3d434d;
+}
+
+body.dark-mode .offense-result .element:nth-child(7).has-damage,
+body.dark-mode .defense-result .element:nth-child(7).has-damage {
+    background-color: rgba(116, 125, 140, 0.15);
     border-color: #747d8c;
+}
+
+body.dark-mode .offense-result .element:nth-child(7).has-damage h3,
+body.dark-mode .defense-result .element:nth-child(7).has-damage h3 {
+    color: #747d8c;
+}
+
+body.dark-mode .offense-result .element:nth-child(7).has-damage p,
+body.dark-mode .defense-result .element:nth-child(7).has-damage p {
+    color: #747d8c;
 }
 
 /* Mobile responsive styles */
