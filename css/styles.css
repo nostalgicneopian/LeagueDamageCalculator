@@ -283,6 +283,38 @@ body.dark-mode .item-details {
     color: #e0e0e0;
 }
 
+.item-icon-container {
+    text-align: center;
+    margin-bottom: 15px;
+    padding: 10px;
+    background: linear-gradient(45deg, #f8f9fa, #e9ecef);
+    border-radius: 8px;
+    border: 2px solid #dee2e6;
+}
+
+body.dark-mode .item-icon-container {
+    background: linear-gradient(45deg, #3d3d3d, #4d4d4d);
+    border-color: #555;
+}
+
+.item-icon {
+    max-width: 80px;
+    max-height: 80px;
+    width: auto;
+    height: auto;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    transition: transform 0.2s ease;
+}
+
+.item-icon:hover {
+    transform: scale(1.05);
+}
+
+body.dark-mode .item-icon {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
 .calculate-section {
     text-align: center;
     margin: 20px 0;

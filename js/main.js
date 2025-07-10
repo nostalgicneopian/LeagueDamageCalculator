@@ -209,6 +209,15 @@ function updateItemDetails(slotType) {
     let hasOffenseIcons = false;
     let hasDefenseIcons = false;
     
+    // Add item icon if available
+    if (item.icon) {
+        detailsHTML += `<div class="item-icon-container">
+            <img src="${item.icon}" alt="${item.name}" class="item-icon" 
+                 onerror="this.style.display='none'" 
+                 title="${item.name}">
+        </div>`;
+    }
+    
     // Helper function to get the correct icon filename
     function getIconFileName(element, isDefense = false) {
         const iconName = element === 'dark' ? 'darkness' : element;
