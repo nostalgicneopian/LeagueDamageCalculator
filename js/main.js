@@ -1,265 +1,413 @@
-const mainhandSelect = document.getElementById('mainhand-select');
-const offhandSelect = document.getElementById('offhand-select');
-const accessorySelect = document.getElementById('accessory-select');
-const abilitySelect = document.getElementById('ability-select');
-const calculateBtn = document.getElementById('calculate-btn');
 const effectsList = document.getElementById('effects-list');
-const addItemForm = document.getElementById('add-item-form');
 const formStatus = document.getElementById('form-status');
 
 const mainhandDetails = document.getElementById('mainhand-details');
 const offhandDetails = document.getElementById('offhand-details');
-const accessoryDetails = document.getElementById('accessory-details');
 const abilityDetails = document.getElementById('ability-details');
+
+// Custom dropdown elements
+const mainhandDropdown = document.getElementById('mainhand-dropdown');
+const offhandDropdown = document.getElementById('offhand-dropdown');
+const abilityDropdown = document.getElementById('ability-dropdown');
 
 const elements = ['fire', 'water', 'light', 'dark', 'air', 'earth', 'physical'];
 const minElements = {};
 const maxElements = {};
+const defenseMinElements = {};
+const defenseMaxElements = {};
+
+// Store all items and current selections
+let allWeapons = [];
+let allAbilities = [];
+let currentSelections = {
+    mainhand: null,
+    offhand: null,
+    ability: null
+};
 
 elements.forEach(element => {
     minElements[element] = document.getElementById(`min-${element}`);
     maxElements[element] = document.getElementById(`max-${element}`);
+    defenseMinElements[element] = document.getElementById(`defense-min-${element}`);
+    defenseMaxElements[element] = document.getElementById(`defense-max-${element}`);
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-    populateDropdowns();
-    mainhandSelect.addEventListener('change', () => updateItemDetails('mainhand'));
-    offhandSelect.addEventListener('change', () => updateItemDetails('offhand'));
-    accessorySelect.addEventListener('change', () => updateItemDetails('accessory'));
-    abilitySelect.addEventListener('change', () => updateItemDetails('ability'));
-    calculateBtn.addEventListener('click', calculateDamage);
-    addItemForm.addEventListener('submit', handleFormSubmit);
+    // Sort weapons and abilities alphabetically by name
+    allWeapons = [...itemsData.weapons].sort((a, b) => a.name.localeCompare(b.name));
+    allAbilities = [...itemsData.abilities].sort((a, b) => a.name.localeCompare(b.name));
+    
+    // Initialize custom dropdowns
+    initCustomDropdown('mainhand', allWeapons, 'Select a weapon');
+    initCustomDropdown('offhand', allWeapons, 'Select a weapon');
+    initCustomDropdown('ability', allAbilities, 'Select an ability');
+    
+    // Initialize dark mode
+    initDarkMode();
+    
+    // Close dropdowns when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('.custom-dropdown')) {
+            closeAllDropdowns();
+        }
+    });
+    
+    // Initial calculation to show default state
+    calculateDamage();
 });
 
-function populateDropdowns() {
-    const mainHandWeapons = itemsData.weapons.filter(weapon => weapon.slot === 'main');
-    const offHandWeapons = itemsData.weapons.filter(weapon => weapon.slot === 'offhand');
-    const accessories = itemsData.weapons.filter(weapon => weapon.slot === 'accessory');
+function initCustomDropdown(type, items, placeholder) {
+    const dropdown = document.getElementById(`${type}-dropdown`);
+    const selected = dropdown.querySelector('.dropdown-selected');
+    const options = dropdown.querySelector('.dropdown-options');
     
-    mainHandWeapons.forEach(weapon => {
-        const option = document.createElement('option');
-        option.value = weapon.id;
-        option.textContent = weapon.name;
-        mainhandSelect.appendChild(option);
+    selected.textContent = placeholder;
+    
+    // Handle clicking on the selected area
+    selected.addEventListener('click', (e) => {
+        e.stopPropagation();
+        closeAllDropdowns();
+        toggleDropdown(type, items);
+    });
+}
+
+function toggleDropdown(type, items) {
+    const dropdown = document.getElementById(`${type}-dropdown`);
+    const selected = dropdown.querySelector('.dropdown-selected');
+    const options = dropdown.querySelector('.dropdown-options');
+    
+    if (options.classList.contains('show')) {
+        closeDropdown(type);
+        return;
+    }
+    
+    // Show dropdown and replace selected area with search input
+    selected.classList.add('active');
+    options.classList.add('show');
+    
+    // Create search input
+    const searchInput = document.createElement('input');
+    searchInput.type = 'text';
+    searchInput.className = 'dropdown-search';
+    searchInput.placeholder = `Search ${type === 'ability' ? 'abilities' : 'weapons'}...`;
+    searchInput.value = '';
+    
+    // Replace selected content with search input
+    const originalContent = selected.textContent;
+    selected.innerHTML = '';
+    selected.appendChild(searchInput);
+    
+    // Focus the search input
+    searchInput.focus();
+    
+    // Populate options
+    populateDropdownOptions(type, items);
+    
+    // Handle search input
+    searchInput.addEventListener('input', (e) => {
+        const searchTerm = e.target.value.toLowerCase();
+        const filteredItems = items.filter(item => 
+            item.name.toLowerCase().includes(searchTerm)
+        );
+        populateDropdownOptions(type, filteredItems);
     });
     
-    offHandWeapons.forEach(weapon => {
-        const option = document.createElement('option');
-        option.value = weapon.id;
-        option.textContent = weapon.name;
-        offhandSelect.appendChild(option);
+    // Handle search input blur/escape
+    searchInput.addEventListener('blur', () => {
+        setTimeout(() => closeDropdown(type), 150);
     });
     
-    accessories.forEach(accessory => {
-        const option = document.createElement('option');
-        option.value = accessory.id;
-        option.textContent = accessory.name;
-        accessorySelect.appendChild(option);
+    searchInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            closeDropdown(type);
+        }
     });
+}
+
+function populateDropdownOptions(type, items) {
+    const options = document.getElementById(`${type}-options`);
+    options.innerHTML = '';
     
-    itemsData.abilities.forEach(ability => {
-        const option = document.createElement('option');
-        option.value = ability.id;
-        option.textContent = ability.name;
-        abilitySelect.appendChild(option);
+    items.forEach(item => {
+        const option = document.createElement('div');
+        option.className = 'dropdown-option';
+        option.textContent = item.name;
+        option.dataset.value = item.id;
+        
+        if (currentSelections[type] && currentSelections[type].id === item.id) {
+            option.classList.add('selected');
+        }
+        
+        option.addEventListener('click', (e) => {
+            e.stopPropagation();
+            selectOption(type, item);
+        });
+        
+        options.appendChild(option);
+    });
+}
+
+function selectOption(type, item) {
+    currentSelections[type] = item;
+    
+    const dropdown = document.getElementById(`${type}-dropdown`);
+    const selected = dropdown.querySelector('.dropdown-selected');
+    
+    // Update display
+    selected.textContent = item.name;
+    selected.classList.remove('active');
+    
+    // Close dropdown
+    closeDropdown(type);
+    
+    // Update item details and recalculate
+    updateItemDetails(type);
+    calculateDamage();
+}
+
+function closeDropdown(type) {
+    const dropdown = document.getElementById(`${type}-dropdown`);
+    const selected = dropdown.querySelector('.dropdown-selected');
+    const options = dropdown.querySelector('.dropdown-options');
+    
+    selected.classList.remove('active');
+    options.classList.remove('show');
+    
+    // Restore selected display
+    if (currentSelections[type]) {
+        selected.textContent = currentSelections[type].name;
+    } else {
+        selected.textContent = selected.dataset.placeholder;
+    }
+}
+
+function closeAllDropdowns() {
+    ['mainhand', 'offhand', 'ability'].forEach(type => {
+        closeDropdown(type);
     });
 }
 
 function updateItemDetails(slotType) {
-    let selectedId, detailsElement, item;
+    let detailsElement, item;
     
     if (slotType === 'mainhand') {
-        selectedId = mainhandSelect.value;
         detailsElement = mainhandDetails;
-        item = itemsData.weapons.find(weapon => weapon.id === selectedId);
+        item = currentSelections.mainhand;
     } else if (slotType === 'offhand') {
-        selectedId = offhandSelect.value;
         detailsElement = offhandDetails;
-        item = itemsData.weapons.find(weapon => weapon.id === selectedId);
-    } else if (slotType === 'accessory') {
-        selectedId = accessorySelect.value;
-        detailsElement = accessoryDetails;
-        item = itemsData.weapons.find(weapon => weapon.id === selectedId);
+        item = currentSelections.offhand;
     } else if (slotType === 'ability') {
-        selectedId = abilitySelect.value;
         detailsElement = abilityDetails;
-        item = itemsData.abilities.find(ability => ability.id === selectedId);
+        item = currentSelections.ability;
     }
-    
+
     detailsElement.innerHTML = '';
     
     if (!item) return;
     
-    if (slotType === 'ability') {
-        detailsElement.innerHTML = `
-            <p><strong>Type:</strong> ${item.damageType.charAt(0).toUpperCase() + item.damageType.slice(1)}</p>
-            <p><strong>Damage:</strong> ${item.minimumIcons} - ${item.maximumIcons} icons</p>
-            <p><strong>Effect:</strong> ${item.effect}</p>
-        `;
-    } else {
-        let detailsHTML = '<p><strong>Element Icons:</strong></p>';
+    let detailsHTML = '';
+    let hasOffenseIcons = false;
+    let hasDefenseIcons = false;
+    
+    // Add item icon if available
+    if (item.icon) {
+        detailsHTML += `<div class="item-icon-container">
+            <img src="${item.icon}" alt="${item.name}" class="item-icon" 
+                 onerror="this.style.display='none'" 
+                 title="${item.name}">
+        </div>`;
+    }
+    
+    // Helper function to get the correct icon filename
+    function getIconFileName(element, isDefense = false) {
+        const iconName = element === 'dark' ? 'darkness' : element;
+        return isDefense ? `blocked-${iconName}-icon.png` : `${iconName}-icon.png`;
+    }
+    
+    // Helper function to generate icon HTML with min + additional format
+    function generateIconsHTML(minValue, maxValue, iconPath) {
+        let iconsHTML = '';
         
-        elements.forEach(element => {
-            const min = item[`minimum${element.charAt(0).toUpperCase() + element.slice(1)}Icons`];
-            const max = item[`maximum${element.charAt(0).toUpperCase() + element.slice(1)}Icons`];
-            
-            if (min > 0 || max > 0) {
-                detailsHTML += `<p>${element.charAt(0).toUpperCase() + element.slice(1)}: ${min} - ${max}</p>`;
-            }
-        });
+        // Handle fractional values by rounding up for display
+        const minIcons = Math.ceil(minValue);
+        const maxIcons = Math.ceil(maxValue);
         
-        if (item.specialEffect) {
-            detailsHTML += `<p><strong>Special Effect:</strong> ${item.specialEffect}</p>`;
+        // Generate minimum icons
+        for (let i = 0; i < minIcons; i++) {
+            iconsHTML += `<img src="images/${iconPath}" alt="" style="width: 20px; height: 20px; margin-right: 2px;">`;
         }
         
-        detailsElement.innerHTML = detailsHTML;
+        // If there are additional icons beyond minimum, add plus sign and additional icons
+        const additionalIcons = maxIcons - minIcons;
+        if (additionalIcons > 0) {
+            iconsHTML += `<span style="margin: 0 4px; font-weight: bold;">+</span>`;
+            for (let i = 0; i < additionalIcons; i++) {
+                iconsHTML += `<img src="images/${iconPath}" alt="" style="width: 20px; height: 20px; margin-right: 2px; opacity: 0.6;">`;
+            }
+        }
+        
+        return iconsHTML;
     }
+    
+    // Check for offense icons first
+    elements.forEach(element => {
+        const offenseMin = item[`offense${element.charAt(0).toUpperCase() + element.slice(1)}Min`] || 0;
+        const offenseMax = item[`offense${element.charAt(0).toUpperCase() + element.slice(1)}Max`] || 0;
+        
+        if (offenseMin > 0 || offenseMax > 0) {
+            if (!hasOffenseIcons) {
+                detailsHTML += `<p><strong>Offense Icons:</strong></p>`;
+                hasOffenseIcons = true;
+            }
+            
+            const iconPath = getIconFileName(element, false);
+            const iconsHTML = generateIconsHTML(offenseMin, offenseMax, iconPath);
+            detailsHTML += `<p>${iconsHTML} ${offenseMin}-${offenseMax}</p>`;
+        }
+    });
+    
+    // Check for defense icons
+    elements.forEach(element => {
+        const defenseMin = item[`defense${element.charAt(0).toUpperCase() + element.slice(1)}Min`] || 0;
+        const defenseMax = item[`defense${element.charAt(0).toUpperCase() + element.slice(1)}Max`] || 0;
+        const percentageBlocked = item[`percentage${element.charAt(0).toUpperCase() + element.slice(1)}Blocked`] || 0;
+        const percentageReflected = item[`percentage${element.charAt(0).toUpperCase() + element.slice(1)}Reflected`] || 0;
+        
+        if (defenseMin > 0 || defenseMax > 0 || percentageBlocked > 0 || percentageReflected > 0) {
+            if (!hasDefenseIcons) {
+                detailsHTML += `<p><strong>Defense Icons:</strong></p>`;
+                hasDefenseIcons = true;
+            }
+            
+            const iconPath = getIconFileName(element, true);
+            const blockIcon = `<img src="images/${iconPath}" alt="" style="width: 20px; height: 20px; margin-right: 2px;">`;
+            
+            let defenseDisplay = '';
+            
+            // Handle blocking
+            if (percentageBlocked > 0) {
+                defenseDisplay += `${blockIcon} 🛡️${percentageBlocked}%`;
+            }
+            
+            // Handle reflection
+            if (percentageReflected > 0) {
+                if (defenseDisplay) defenseDisplay += ' ';
+                // Reflection - show icon with reflection symbol and percentage
+                defenseDisplay += `${blockIcon} ↩️${percentageReflected}%`;
+            }
+            
+            // Handle normal defense ranges
+            if (defenseMin > 0 || defenseMax > 0) {
+                if (defenseDisplay) defenseDisplay += ' ';
+                const iconsHTML = generateIconsHTML(defenseMin, defenseMax, iconPath);
+                defenseDisplay += `${iconsHTML} ${defenseMin}-${defenseMax}`;
+            }
+            
+            if (defenseDisplay) {
+                detailsHTML += `<p>${defenseDisplay}</p>`;
+            }
+        }
+    });
+    
+    // Add effects
+    if (item.effects && item.effects.length > 0) {
+        detailsHTML += `<p><strong>Effects:</strong></p>`;
+        for (const effect of item.effects) {
+            detailsHTML += `<p>• ${effect}</p>`;
+        }
+    }
+    
+    detailsElement.innerHTML = detailsHTML;
 }
 
 function calculateDamage() {
-    const mainhandId = mainhandSelect.value;
-    const offhandId = offhandSelect.value;
-    const accessoryId = accessorySelect.value;
-    const abilityId = abilitySelect.value;
-    
-    const mainhand = itemsData.weapons.find(weapon => weapon.id === mainhandId);
-    const offhand = itemsData.weapons.find(weapon => weapon.id === offhandId);
-    const accessory = itemsData.weapons.find(weapon => weapon.id === accessoryId);
-    const ability = itemsData.abilities.find(ability => ability.id === abilityId);
+    const mainhand = currentSelections.mainhand;
+    const offhand = currentSelections.offhand;
+    const ability = currentSelections.ability;
     
     effectsList.innerHTML = '';
     
     const results = {};
     elements.forEach(element => {
-        results[element] = {
+        results[`offense${element.charAt(0).toUpperCase() + element.slice(1)}`] = {
+            min: 0,
+            max: 0
+        };
+        results[`defense${element.charAt(0).toUpperCase() + element.slice(1)}`] = {
             min: 0,
             max: 0
         };
     });
     
-    [mainhand, offhand, accessory].forEach(item => {
+    [mainhand, offhand, ability].forEach(item => {
         if (item) {
             elements.forEach(element => {
-                const minKey = `minimum${element.charAt(0).toUpperCase() + element.slice(1)}Icons`;
-                const maxKey = `maximum${element.charAt(0).toUpperCase() + element.slice(1)}Icons`;
+                const offenseKeyMin = `offense${element.charAt(0).toUpperCase() + element.slice(1)}Min`;
+                const offenseKeyMax = `offense${element.charAt(0).toUpperCase() + element.slice(1)}Max`;
+                const defenseKeyMin = `defense${element.charAt(0).toUpperCase() + element.slice(1)}Min`;
+                const defenseKeyMax = `defense${element.charAt(0).toUpperCase() + element.slice(1)}Max`;
+                const offenseKeyResult = `offense${element.charAt(0).toUpperCase() + element.slice(1)}`;
+                const defenseKeyResult = `defense${element.charAt(0).toUpperCase() + element.slice(1)}`;
                 
-                results[element].min += item[minKey] || 0;
-                results[element].max += item[maxKey] || 0;
+                results[offenseKeyResult].min += item[offenseKeyMin] || 0;
+                results[offenseKeyResult].max += item[offenseKeyMax] || 0;
+                results[defenseKeyResult].min += item[defenseKeyMin] || 0;
+                results[defenseKeyResult].max += item[defenseKeyMax] || 0;
             });
             
-            if (item.specialEffect) {
-                const effectItem = document.createElement('li');
-                effectItem.textContent = `${item.name}: ${item.specialEffect}`;
-                effectsList.appendChild(effectItem);
+            if (item.effects) {
+                for( const effect of item.effects) {
+                    const effectItem = document.createElement('li');
+                    effectItem.textContent = `${item.name}: ${effect}`;
+                    effectsList.appendChild(effectItem);
+                }
             }
         }
     });
     
-    if (ability) {
-        if (ability.damageType !== 'heal') {
-            results[ability.damageType].min += ability.minimumIcons || 0;
-            results[ability.damageType].max += ability.maximumIcons || 0;
-        } else {
-            results['light'].min += ability.minimumIcons || 0;
-            results['light'].max += ability.maximumIcons || 0;
-        }
-        
-        const abilityEffectItem = document.createElement('li');
-        abilityEffectItem.textContent = `${ability.name}: ${ability.effect}`;
-        effectsList.appendChild(abilityEffectItem);
-    }
-    
     elements.forEach(element => {
-        minElements[element].textContent = results[element].min;
-        maxElements[element].textContent = results[element].max;
+        const offenseKeyResult = `offense${element.charAt(0).toUpperCase() + element.slice(1)}`;
+        const defenseKeyResult = `defense${element.charAt(0).toUpperCase() + element.slice(1)}`;
+        minElements[element].textContent = results[offenseKeyResult].min;
+        maxElements[element].textContent = results[offenseKeyResult].max;
+        defenseMinElements[element].textContent = results[defenseKeyResult].min;
+        defenseMaxElements[element].textContent = results[defenseKeyResult].max;
     });
 }
 
-function handleFormSubmit(event) {
-    event.preventDefault();
+function initDarkMode() {
+    const darkModeToggle = document.getElementById('dark-mode-toggle');
+    const toggleIcon = darkModeToggle?.querySelector('.toggle-icon');
     
-    const newItem = {
-        id: document.getElementById('item-id').value,
-        name: document.getElementById('item-name').value,
-        type: document.getElementById('item-type').value,
-        tags: document.getElementById('item-tags').value.split(',').map(tag => tag.trim()),
-        description: document.getElementById('item-description').value,
-        minimumFireIcons: parseInt(document.getElementById('item-min-fire').value),
-        maximumFireIcons: parseInt(document.getElementById('item-max-fire').value),
-        minimumWaterIcons: parseInt(document.getElementById('item-min-water').value),
-        maximumWaterIcons: parseInt(document.getElementById('item-max-water').value),
-        minimumLightIcons: parseInt(document.getElementById('item-min-light').value),
-        maximumLightIcons: parseInt(document.getElementById('item-max-light').value),
-        minimumDarkIcons: parseInt(document.getElementById('item-min-dark').value),
-        maximumDarkIcons: parseInt(document.getElementById('item-max-dark').value),
-        minimumAirIcons: parseInt(document.getElementById('item-min-air').value),
-        maximumAirIcons: parseInt(document.getElementById('item-max-air').value),
-        minimumEarthIcons: parseInt(document.getElementById('item-min-earth').value),
-        maximumEarthIcons: parseInt(document.getElementById('item-max-earth').value),
-        minimumPhysicalIcons: parseInt(document.getElementById('item-min-physical').value),
-        maximumPhysicalIcons: parseInt(document.getElementById('item-max-physical').value),
-        minimumOffensiveFireIcons: parseInt(document.getElementById('item-min-offensive-fire').value),
-        maximumOffensiveFireIcons: parseInt(document.getElementById('item-max-offensive-fire').value),
-        minimumOffensiveWaterIcons: parseInt(document.getElementById('item-min-offensive-water').value),
-        maximumOffensiveWaterIcons: parseInt(document.getElementById('item-max-offensive-water').value),
-        minimumOffensiveLightIcons: parseInt(document.getElementById('item-min-offensive-light').value),
-        maximumOffensiveLightIcons: parseInt(document.getElementById('item-max-offensive-light').value),
-        minimumOffensiveDarkIcons: parseInt(document.getElementById('item-min-offensive-dark').value),
-        maximumOffensiveDarkIcons: parseInt(document.getElementById('item-max-offensive-dark').value),
-        minimumOffensiveAirIcons: parseInt(document.getElementById('item-min-offensive-air').value),
-        maximumOffensiveAirIcons: parseInt(document.getElementById('item-max-offensive-air').value),
-        minimumOffensiveEarthIcons: parseInt(document.getElementById('item-min-offensive-earth').value),
-        maximumOffensiveEarthIcons: parseInt(document.getElementById('item-max-offensive-earth').value),
-        minimumOffensivePhysicalIcons: parseInt(document.getElementById('item-min-offensive-physical').value),
-        maximumOffensivePhysicalIcons: parseInt(document.getElementById('item-max-offensive-physical').value),
-        minimumDefensiveFireIcons: parseInt(document.getElementById('item-min-defensive-fire').value),
-        maximumDefensiveFireIcons: parseInt(document.getElementById('item-max-defensive-fire').value),
-        minimumDefensiveWaterIcons: parseInt(document.getElementById('item-min-defensive-water').value),
-        maximumDefensiveWaterIcons: parseInt(document.getElementById('item-max-defensive-water').value),
-        minimumDefensiveLightIcons: parseInt(document.getElementById('item-min-defensive-light').value),
-        maximumDefensiveLightIcons: parseInt(document.getElementById('item-max-defensive-light').value),
-        minimumDefensiveDarkIcons: parseInt(document.getElementById('item-min-defensive-dark').value),
-        maximumDefensiveDarkIcons: parseInt(document.getElementById('item-max-defensive-dark').value),
-        minimumDefensiveAirIcons: parseInt(document.getElementById('item-min-defensive-air').value),
-        maximumDefensiveAirIcons: parseInt(document.getElementById('item-max-defensive-air').value),
-        minimumDefensiveEarthIcons: parseInt(document.getElementById('item-min-defensive-earth').value),
-        maximumDefensiveEarthIcons: parseInt(document.getElementById('item-max-defensive-earth').value),
-        minimumDefensivePhysicalIcons: parseInt(document.getElementById('item-min-defensive-physical').value),
-        maximumDefensivePhysicalIcons: parseInt(document.getElementById('item-max-defensive-physical').value),
-        minimumReflectFirePercentage: parseFloat(document.getElementById('item-min-reflect-fire').value),
-        maximumReflectFirePercentage: parseFloat(document.getElementById('item-max-reflect-fire').value),
-        minimumReflectWaterPercentage: parseFloat(document.getElementById('item-min-reflect-water').value),
-        maximumReflectWaterPercentage: parseFloat(document.getElementById('item-max-reflect-water').value),
-        minimumReflectAirPercentage: parseFloat(document.getElementById('item-min-reflect-air').value),
-        maximumReflectAirPercentage: parseFloat(document.getElementById('item-max-reflect-air').value),
-        minimumReflectEarthPercentage: parseFloat(document.getElementById('item-min-reflect-earth').value),
-        maximumReflectEarthPercentage: parseFloat(document.getElementById('item-max-reflect-earth').value),
-        minimumReflectDarkPercentage: parseFloat(document.getElementById('item-min-reflect-dark').value),
-        maximumReflectDarkPercentage: parseFloat(document.getElementById('item-max-reflect-dark').value),
-        minimumReflectLightPercentage: parseFloat(document.getElementById('item-min-reflect-light').value),
-        maximumReflectLightPercentage: parseFloat(document.getElementById('item-max-reflect-light').value),
-        minimumReflectPhysicalPercentage: parseFloat(document.getElementById('item-min-reflect-physical').value),
-        maximumReflectPhysicalPercentage: parseFloat(document.getElementById('item-max-reflect-physical').value),
-        minimumPercentageBlockFire: parseFloat(document.getElementById('item-min-block-fire').value),
-        maximumPercentageBlockFire: parseFloat(document.getElementById('item-max-block-fire').value),
-        minimumPercentageBlockWater: parseFloat(document.getElementById('item-min-block-water').value),
-        maximumPercentageBlockWater: parseFloat(document.getElementById('item-max-block-water').value),
-        minimumPercentageBlockAir: parseFloat(document.getElementById('item-min-block-air').value),
-        maximumPercentageBlockAir: parseFloat(document.getElementById('item-max-block-air').value),
-        minimumPercentageBlockEarth: parseFloat(document.getElementById('item-min-block-earth').value),
-        maximumPercentageBlockEarth: parseFloat(document.getElementById('item-max-block-earth').value),
-        minimumPercentageBlockDark: parseFloat(document.getElementById('item-min-block-dark').value),
-        maximumPercentageBlockDark: parseFloat(document.getElementById('item-max-block-dark').value),
-        minimumPercentageBlockLight: parseFloat(document.getElementById('item-min-block-light').value),
-        maximumPercentageBlockLight: parseFloat(document.getElementById('item-max-block-light').value),
-        minimumPercentageBlockPhysical: parseFloat(document.getElementById('item-min-block-physical').value),
-        maximumPercentageBlockPhysical: parseFloat(document.getElementById('item-max-block-physical').value),
-        specialEffects: document.getElementById('item-special-effects').value.split(',').map(effect => effect.trim())
-    };
+    if (!darkModeToggle || !toggleIcon) {
+        console.error('Dark mode toggle elements not found');
+        return;
+    }
     
-    itemsData.weapons.push(newItem);
-    formStatus.textContent = 'Item added successfully!';
-    formStatus.style.color = 'green';
-    addItemForm.reset();
-    populateDropdowns();
+    // Check for saved dark mode preference or default to light mode
+    const isDarkMode = localStorage.getItem('darkMode') === 'true';
+    
+    if (isDarkMode) {
+        document.body.classList.add('dark-mode');
+        toggleIcon.textContent = '☀️';
+    } else {
+        toggleIcon.textContent = '🌙';
+    }
+    
+    // Add click event listener to toggle button
+    darkModeToggle.addEventListener('click', (e) => {
+        e.preventDefault();
+        document.body.classList.toggle('dark-mode');
+        const isNowDarkMode = document.body.classList.contains('dark-mode');
+        
+        // Update icon
+        toggleIcon.textContent = isNowDarkMode ? '☀️' : '🌙';
+        
+        // Save preference to localStorage
+        localStorage.setItem('darkMode', isNowDarkMode.toString());
+        
+        console.log('Dark mode toggled:', isNowDarkMode);
+    });
+    
+    console.log('Dark mode initialized. Current state:', document.body.classList.contains('dark-mode'));
 }

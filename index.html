@@ -7,50 +7,47 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+    <button id="dark-mode-toggle" class="dark-mode-toggle" aria-label="Toggle dark mode">
+        <span class="toggle-icon">🌙</span>
+    </button>
+    
     <div class="container">
-        <h1>Damage Calculator</h1>
+        <div class="header">
+            <h1>Damage Calculator</h1>
+        </div>
         
         <div class="equipment-selector">
             <div class="slot">
-                <h2>Main Hand</h2>
-                <select id="mainhand-select">
-                    <option value="">Select a weapon</option>
-                </select>
+                <h2>Weapon #1</h2>
+                <div class="custom-dropdown" id="mainhand-dropdown">
+                    <div class="dropdown-selected" data-placeholder="Select a weapon">Select a weapon</div>
+                    <div class="dropdown-options" id="mainhand-options"></div>
+                </div>
                 <div id="mainhand-details" class="item-details"></div>
             </div>
             
             <div class="slot">
-                <h2>Off Hand</h2>
-                <select id="offhand-select">
-                    <option value="">Select a weapon</option>
-                </select>
+                <h2>Weapon #2</h2>
+                <div class="custom-dropdown" id="offhand-dropdown">
+                    <div class="dropdown-selected" data-placeholder="Select a weapon">Select a weapon</div>
+                    <div class="dropdown-options" id="offhand-options"></div>
+                </div>
                 <div id="offhand-details" class="item-details"></div>
-            </div>
-            
-            <div class="slot">
-                <h2>Accessory</h2>
-                <select id="accessory-select">
-                    <option value="">Select an accessory</option>
-                </select>
-                <div id="accessory-details" class="item-details"></div>
             </div>
 
             <div class="slot">
                 <h2>Ability</h2>
-                <select id="ability-select">
-                    <option value="">Select an ability</option>
-                </select>
+                <div class="custom-dropdown" id="ability-dropdown">
+                    <div class="dropdown-selected" data-placeholder="Select an ability">Select an ability</div>
+                    <div class="dropdown-options" id="ability-options"></div>
+                </div>
                 <div id="ability-details" class="item-details"></div>
             </div>
         </div>
 
-        <div class="calculate-section">
-            <button id="calculate-btn">Calculate Damage</button>
-        </div>
-
         <div class="results-section">
             <h2>Damage Output</h2>
-            <div class="damage-result" id="damage-result">
+            <div class="offense-result" id="offense-result">
                 <div class="element">
                     <h3>Fire</h3>
                     <p>Min: <span id="min-fire">0</span> | Max: <span id="max-fire">0</span></p>
@@ -78,6 +75,38 @@
                 <div class="element">
                     <h3>Physical</h3>
                     <p>Min: <span id="min-physical">0</span> | Max: <span id="max-physical">0</span></p>
+                </div>
+            </div>
+
+            <h2>Defense</h2>
+            <div class="defense-result" id="defense-result">
+                <div class="element">
+                    <h3>Fire</h3>
+                    <p>Min: <span id="defense-min-fire">0</span> | Max: <span id="defense-max-fire">0</span></p>
+                </div>
+                <div class="element">
+                    <h3>Water</h3>
+                    <p>Min: <span id="defense-min-water">0</span> | Max: <span id="defense-max-water">0</span></p>
+                </div>
+                <div class="element">
+                    <h3>Light</h3>
+                    <p>Min: <span id="defense-min-light">0</span> | Max: <span id="defense-max-light">0</span></p>
+                </div>
+                <div class="element">
+                    <h3>Dark</h3>
+                    <p>Min: <span id="defense-min-dark">0</span> | Max: <span id="defense-max-dark">0</span></p>
+                </div>
+                <div class="element">
+                    <h3>Air</h3>
+                    <p>Min: <span id="defense-min-air">0</span> | Max: <span id="defense-max-air">0</span></p>
+                </div>
+                <div class="element">
+                    <h3>Earth</h3>
+                    <p>Min: <span id="defense-min-earth">0</span> | Max: <span id="defense-max-earth">0</span></p>
+                </div>
+                <div class="element">
+                    <h3>Physical</h3>
+                    <p>Min: <span id="defense-min-physical">0</span> | Max: <span id="defense-max-physical">0</span></p>
                 </div>
             </div>
 
